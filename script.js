@@ -6,24 +6,53 @@ const CAROUSEL_SENTENCES = [
     'Sriracha based tech gossip',
     'Your unique source of truth',
     'Idiocracy++',
-    'Sensationalism As A Service'
+    'Sensationalism As A Service',
+    'Silicon Valley\'s guilty pleasure',
+    'Jalapeño-infused hot takes',
+    'Burning through your feed',
+    'Tech drama, extra crispy',
+    'Hacker News but spicier',
+    'NaCl with attitude',
+    'FOMO as a feature',
+    'Clickbait you can trust',
+    'Too hot for Hacker News',
+    'Chaos engineering for feeds',
+    'Weaponized tech takes',
+    'Where nuance goes to die',
+    'Viral by design',
+    'Your daily dose of drama',
+    'Tech tabloid, zero apologies'
 ];
 
 let newsStore = [];
 
+let currentCarouselIndex = 0;
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    setRandomCarousel();
+    startCarousel();
     loadNews();
 });
 
-// Set random carousel sentence
-function setRandomCarousel() {
-    const randomSentence = CAROUSEL_SENTENCES[Math.floor(Math.random() * CAROUSEL_SENTENCES.length)];
+// Start carousel rotation
+function startCarousel() {
     const carouselText = document.getElementById('carousel-text');
-    if (carouselText) {
-        carouselText.textContent = randomSentence;
-    }
+    if (!carouselText) return;
+
+    // Set initial sentence
+    carouselText.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
+
+    // Rotate every 4 seconds
+    setInterval(() => {
+        currentCarouselIndex = (currentCarouselIndex + 1) % CAROUSEL_SENTENCES.length;
+        carouselText.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
+
+        // Restart animation by removing and re-adding class
+        carouselText.style.animation = 'none';
+        setTimeout(() => {
+            carouselText.style.animation = '';
+        }, 10);
+    }, 4000);
 }
 
 // Load news from JSON file
