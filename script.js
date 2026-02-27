@@ -57,12 +57,33 @@ function createNewsBlock(news) {
     const block = document.createElement('article');
     block.className = `news-block ${news.size}`;
     const linkHTML = news.link ? `<a href="${news.link}" target="_blank" class="block-link">Read more →</a>` : '';
+    
     block.innerHTML = `
         <span class="block-category">${news.category}</span>
         <h2 class="block-title">${news.title}</h2>
         <p class="block-content">${news.content}</p>
         ${linkHTML}
     `;
+    
+    // Add tweet embed if tweet_url exists
+    if (news.tweet_url) {
+        const tweetEmbed = document.createElement('div');
+        tweetEmbed.className = 'tweet-embed-container';
+        tweetEmbed.innerHTML = `<blockquote class="twitter-tweet"><a href="${news.tweet_url}"></a></blockquote>`;
+        block.appendChild(tweetEmbed);
+        
+        // Load Twitter widgets script if not already loaded
+        if (!window.twttr) {
+            const script = document.createElement('script');
+            script.src = 'https://platform.twitter.com/widgets.js';
+            script.async = true;
+            script.charset = 'utf-8';
+            document.body.appendChild(script);
+        } else {
+            // If script already loaded, process the new tweet
+            window.twttr.widgets.load(tweetEmbed);
+        }
+    }
     
     return block;
 }

@@ -5,7 +5,7 @@
       "title": "Jack Manages 50% Salary Savings With Strategic Detonations 💣 ",
       "content": "The remaining 50% of workforce will continue training AI and prompting themselves out of their jobs.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "link": "https://x.com/jack/status/2027129697092731343"
     },
     {
@@ -21,6 +21,22 @@
       "content": "The controversial tech figure is making a massive comeback in artificial intelligence. Rumor mill suggests he's planning to deprecate and delete competitor projects in a sweeping industry takeover. When reached for comment, sources said 'He's bigger and bolder than ever.'",
       "category": "AI",
       "size": "large"
+    },
+    {
+      "id": 4,
+      "title": "🚗 DHH's Pagani Zonda HH BANNED From Valencia's Low-Emission Zone",
+      "content": "Rails creator David Heinemeier Hansson's €2M hypercar doesn't meet EU emissions standards. The legendary supercar with his initials won't be allowed in Valencia's restricted area. Ironic considering he's a tech philanthropist advocating for climate action.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 5,
+      "title": "🎬 Black Mirror Getting Real: Fifteen Million Merits Edition",
+      "content": "While our favorite Philantrotechbros fantasize about saving the world, the real dystopia unfolds. A small apartment in Mislata now costs more merits than the dreams of an entire Black Mirror episode. Silicon Valley wasn't the problem—it was just the rehearsal.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://x.com/mikethree/status/2026919757526483393",
+      "tweet_url": "https://x.com/mikethree/status/2026919757526483393"
     }
   ]
 }
