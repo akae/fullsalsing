@@ -28,7 +28,7 @@ function setRandomCarousel() {
 
 // Load news from JSON file
 function loadNews() {
-    fetch('news-data.json')
+    fetch('./news-data.json')
         .then(response => response.json())
         .then(data => {
             newsStore = data.news || [];
