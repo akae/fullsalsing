@@ -30,8 +30,9 @@ It has to feature an easy way to update news and blocks with sensationalist titl
 - **Responsive design**: 2 columns on desktop, 1 column on mobile
 - **Banner resized to 35%** of page width at top
 - **Tiled background**: background.png repeats across entire page
-- **Random carousel subtitle** - displays one random sentence per page load
-- **News blocks**: Each has optional "Read more →" link to source
+- **Animated carousel subtitle** - rotates through 20 phrases with glittery multicolor gradient
+- **News blocks**: Each has optional sriracha button link to source
+- **Reverse chronological order**: Latest news appears first
 
 ### 🎨 Color Palette
 ```css
@@ -50,11 +51,10 @@ fullsalsing/
 ├── script.js               # Load and render news from JSON
 ├── news-data.json          # All news content (edit to update)
 ├── fullsalsing.png         # Header banner
+├── sriracha.webp           # Link button icon
 ├── background.png          # Background pattern
 ├── README.md               # Documentation
-├── QUICKSTART.html         # Quick start guide
-├── prompts.md              # Development instructions
-└── .git/                   # Git repository
+└── prompts.md              # This file
 ```
 
 ---
@@ -63,17 +63,22 @@ fullsalsing/
 
 ### 🏠 Main Page (index.html) - ONLY Page
 1. Open in browser - displays news feed
-2. **Random carousel subtitle** appears at top (changes on each page load)
-3. **News blocks** displayed in 2-column grid
-4. Each block shows: category tag, title, content, and optional "Read more →" link
-5. **Background pattern**: Tiled background.png repeats throughout
-6. **Footer** shows copyright and site info
+2. **Animated carousel subtitle** rotates through 20 phrases every 4 seconds
+   - Glittery rainbow gradient effect (Deep Pink → Gold → Turquoise → Hot Pink → Purple)
+   - Smooth slide animation (fade in from top, fade out to bottom)
+   - Glowing text shadow for retro-neon effect
+3. **News blocks** displayed in 2-column grid (reverse chronological - newest first)
+4. Each block shows: category tag, title, content, and optional sriracha link button
+5. **Twitter embeds**: Automatic embedding for Twitter/X URLs
+6. **Background pattern**: Tiled background.png repeats throughout
+7. **Footer** shows copyright and site info
 
 ### ➕ Adding/Editing News
 1. Open `news-data.json` file in any text editor
-2. Edit the `news` array inside the JSON
-3. Save the file
-4. Refresh the website in browser - news updates automatically
+2. Add new items to the `news` array
+3. Latest items in JSON appear **first** on the site (reverse order)
+4. Save the file
+5. Refresh the website in browser - news updates automatically
 
 **Required fields:**
 - `id`: Unique number
@@ -82,21 +87,25 @@ fullsalsing/
 - `category`: Tech, Software, Programming, or AI
 - `size`: small, medium, or large
 
-**Optional field:**
-- `link`: URL for "Read more →" button
+**Optional fields:**
+- `link`: URL for sriracha button
+- `tweet_url`: Twitter URL for automatic embedding
+- `embed_html`: Custom embed HTML
+- `image`: Image URL for visual content
 
 ---
 
 ## Content Guidelines
 
 ### Title Format
-- **Use emojis** for visual impact: 🚨 🔥 ⚡ 💥 🌶️ 
+- **Use emojis** for visual impact: 🚨 🔥 ⚡ 💥 🌶️ 💉 🇨🇳 🤡
 - **Make it sensational** (tech gossip energy, not harmful)
 - **Keep it punchy** - max 80 characters
 - **Examples**:
   - "🚨 BREAKING: New Framework Claims to Be 10x Better"
   - "🔥 EXCLUSIVE: DevOps Engineer Hasn't Slept 73 Hours"
   - "⚡ SHOCKING: ChatGPT Finally Admits It's Confused Too"
+  - "💉 Ketamine Shortage Crisis: Russian Tech Bros' 3500 Sons Turn Legal Age"
 
 ### Content Format
 - 1-3 sentences of spicy commentary
@@ -120,18 +129,52 @@ fullsalsing/
 ## Customization
 
 ### Change Carousel Phrases
-Edit in `script.js`, update the `CAROUSEL_SENTENCES` array:
+Edit in `script.js`, update the `CAROUSEL_SENTENCES` array (currently 20 phrases):
 ```javascript
 const CAROUSEL_SENTENCES = [
-    'Your new phrase here',
-    'Another phrase',
-    'Another phrase',
-    'Another phrase',
-    'Another phrase'
+    'Tech news with a spicy flavour',
+    'Sriracha based tech gossip',
+    'Your unique source of truth',
+    'Idiocracy++',
+    'Sensationalism As A Service',
+    // ... add more phrases
 ];
 ```
 
-### Change Colors
+### Change Carousel Speed
+**Animation timing** in `styles.css`:
+```css
+.carousel-item {
+    animation: carouselFade 4s ease-in-out, gradientShift 3s linear infinite;
+}
+```
+- `carouselFade 4s`: Controls fade in/out duration
+- `gradientShift 3s`: Controls rainbow gradient flow speed
+
+**Rotation frequency** in `script.js`:
+```javascript
+setInterval(() => {
+    // ... rotation logic
+}, 4000); // Change this value (milliseconds)
+```
+
+### Change Carousel Colors
+Edit gradient colors in `styles.css`:
+```css
+.carousel-item {
+    background: linear-gradient(
+        90deg,
+        #FF1493,  /* Deep Pink */
+        #FFD700,  /* Gold */
+        #00CED1,  /* Turquoise */
+        #FF69B4,  /* Hot Pink */
+        #7B68EE,  /* Purple */
+        #FF1493   /* Back to Deep Pink */
+    );
+}
+```
+
+### Change Site Colors
 Edit color variables in `styles.css` `:root` section:
 ```css
 :root {
@@ -143,14 +186,6 @@ Edit color variables in `styles.css` `:root` section:
 }
 ```
 
-### Change Banner
-Replace `fullsalsing.png` and `banner.png` image files, or regenerate using:
-```bash
-python3 generate_banner.py
-```
-
-Edit `generate_banner.py` to customize colors, text, size, etc.
-
 ### Change Banner Size
 Edit `styles.css`:
 ```css
@@ -160,75 +195,55 @@ Edit `styles.css`:
 }
 ```
 
-### Change Title/Tagline
-**Note**: Banner is now an image, so edit the image file or regenerate with Python script.
+---
+
+## Carousel Implementation Details
+
+✨ **Current Behavior**:
+- **20 different sentences** rotate every 4 seconds
+- **Smooth sliding animation**: Text slides in from top, holds, then slides out to bottom
+- **Multicolor gradient**: Rainbow gradient flows continuously across text
+- **Glitter effect**: Triple-layered text-shadow in pink, gold, and cyan
+- **No background box**: Carousel text floats freely on the page
+
+**Animation breakdown**:
+- 0-15%: Fade in from top (0.6s)
+- 15-85%: Hold center position (2.8s)
+- 85-100%: Fade out to bottom (0.6s)
+- Total cycle: 4 seconds (matches rotation interval)
 
 ---
 
-## Carousel Subtitle Behavior
+## Twitter Integration
 
-✨ **Current Implementation**:
-- Displays **ONE random sentence** per page load
-- Sentence changes when page is refreshed
-- Soft fade-in animation (0.5s)
-- Centered in pink-tinted container
+📱 **Automatic Embedding**:
+- Any `link` or `tweet_url` pointing to Twitter/X automatically embeds
+- Uses Twitter's official widgets.js for embedding
+- Supports both twitter.com and x.com URLs
+- No API keys or authentication required
 
-**To change behavior**, edit in `script.js`:
-```javascript
-// Current: Random selection
-function setRandomCarousel() {
-    const randomSentence = CAROUSEL_SENTENCES[Math.floor(Math.random() * CAROUSEL_SENTENCES.length)];
-    document.getElementById('carousel-text').textContent = randomSentence;
+**Manual Custom Embeds**:
+Use the `embed_html` field for custom embed code:
+```json
+{
+  "embed_html": "<blockquote class=\"twitter-tweet\">...</blockquote>"
 }
 ```
 
 ---
 
-## Twitter Integration Widget
+## Data Management
 
-📱 **Current Implementation**:
-- Live embedded timeline showing tweets with **#fullsalsing** hashtag
-- Uses Twitter's official widgets.js embed script
-- Clicking "View #fullsalsing on Twitter" button opens Twitter search
-- Embedded timeline loads dynamically from Twitter
+### News Order
+- News items are displayed in **reverse order** from the JSON file
+- Add new items to the **bottom** of `news-data.json` to show them **first**
+- Implemented via `.reverse()` in `loadNews()` function
 
-**Features**:
-- Soft pink styled container matching site aesthetic
-- 400px height for embedded timeline
-- Responsive design - adapts to screen size
-- Styled button with hover effects
-- No authentication or API keys required
-
-**Customization**:
-To change the hashtag or search query, edit the URLs in `index.html`:
-```html
-<!-- Change these URLs to search for different hashtags/keywords -->
-<a href="https://twitter.com/search?q=%23fullsalsing">View #fullsalsing on Twitter</a>
-<a class="twitter-timeline" href="https://twitter.com/search?q=%23fullsalsing">
-```
-
-Simply replace `%23fullsalsing` with your desired search term (URL encoded):
-- `%23` = # symbol
-- URLs must be URL-encoded for special characters
-
-**Styling**:
-Edit `.twitter-widget-container` and `.twitter-embed` in `styles.css` to customize colors and spacing.
-
----
-
-## Data Storage
-
-- **localStorage**: All news stored in browser's local storage
-- **Key**: `fullsalsing_news`
-- **Format**: JSON array of news objects
-- **Persistence**: Data persists between sessions until browser cache cleared
-
-### Reset Data
-In browser console:
-```javascript
-localStorage.removeItem('fullsalsing_news');
-location.reload();
-```
+### Storage
+- All news loaded from `news-data.json` file
+- No browser localStorage used
+- No backend database required
+- Edit JSON file directly to update content
 
 ---
 
@@ -237,7 +252,7 @@ location.reload();
 ### GitHub Pages
 ```bash
 git add .
-git commit -m "Initial FULL Salsing gossip site"
+git commit -m "Update FULL Salsing"
 git push origin main
 # Site available at: https://username.github.io/fullsalsing
 ```
@@ -254,7 +269,7 @@ python3 -m http.server 8000
 ```
 
 ### Any Static Host
-- Upload all `.html`, `.css`, `.js`, `.png` files
+- Upload all `.html`, `.css`, `.js`, `.json`, `.png`, `.webp` files
 - No backend required
 - No database needed
 - No build process
@@ -263,13 +278,13 @@ python3 -m http.server 8000
 
 ## Performance Specs
 
-- **Total size**: ~40-50KB (uncompressed)
-- **JavaScript**: ~5KB (minimal, no dependencies)
-- **CSS**: ~20KB
-- **HTML**: ~5KB
+- **Total size**: ~35KB (uncompressed)
+- **JavaScript**: ~5KB (minimal, no dependencies except Twitter widgets)
+- **CSS**: ~15KB (includes animations and responsive design)
+- **HTML**: ~4KB
 - **Images**: ~10-15KB
-- **Zero external dependencies**
-- **Works offline** with browser localStorage
+- **Zero NPM dependencies**
+- **Works mostly offline** (except Twitter embeds)
 
 ---
 
@@ -279,11 +294,11 @@ python3 -m http.server 8000
 - Firefox 88+
 - Safari 14+
 - Mobile browsers (iOS Safari, Chrome Mobile)
-- Any browser supporting:
+- Requires:
   - ES6 JavaScript
   - CSS Grid
   - CSS backdrop-filter
-  - localStorage API
+  - CSS animations
 
 ---
 
@@ -292,59 +307,63 @@ python3 -m http.server 8000
 ✅ Soft gossip magazine aesthetic (pastel pink, transparent blocks)
 ✅ 2-column responsive grid layout
 ✅ Transparent news blocks with background visible
-✅ Random carousel subtitle (per page load)
-✅ Delete news items with hover button
+✅ **Animated carousel with 20 rotating phrases**
+✅ **Glittery multicolor gradient text effect**
+✅ **Smooth sliding animations**
+✅ **Reverse chronological news order (newest first)**
+✅ Sriracha button links to sources
 ✅ Category tags for each news item
 ✅ Multiple block sizes (Small, Medium, Large)
 ✅ Soft pink pastel color scheme
 ✅ Glass-morphism effects (blur, transparency)
 ✅ Mobile responsive
-✅ No external dependencies (except Twitter's embed script)
+✅ Twitter/X automatic embedding
 ✅ Minimal JavaScript for speed
 ✅ Banner at 35% width
 ✅ News management via JSON editing
-✅ Browser localStorage persistence
-✅ **Twitter Integration Widget** - live #fullsalsing tweets embedded
+✅ No admin panel needed (direct file editing)
 ✅ Simple, maintainable codebase
 
 ---
 
 ## Management Approach
 
-**Simple & Direct**: Modify news by editing JSON files or using browser developer tools.
+**Simple & Direct**: Modify news by editing `news-data.json` file directly.
 
 ### Why No Web Interface?
-- **Reduced complexity**: No form validation, no modal dialogs
+- **Reduced complexity**: No form validation, no modal dialogs, no admin UI
 - **Faster loading**: Smaller JavaScript payload
 - **More control**: Direct JSON editing gives full power
 - **Easier debugging**: JSON is transparent and version-controllable
-- **Offline friendly**: Works better with localStorage approach
+- **Better security**: No admin panel to secure or hack
+- **Simpler deployment**: Just static files
 
-### News Store Location Hierarchy
-1. **Browser localStorage** (if you've added news via console)
-2. **news-data.json** (if not in localStorage yet)
-3. **DEFAULT_NEWS** array in script.js (hardcoded fallback)
+---
 
 ## Troubleshooting
 
-**News not saving?**
-- Data is stored in browser localStorage
-- Check if localStorage is enabled
-- Private/Incognito mode may not persist data
-- Use browser DevTools to check: Application → LocalStorage
+**Carousel not showing colors?**
+- Check browser support for `background-clip: text` and `-webkit-text-fill-color`
+- Some older browsers may not support gradient text
 
-**Banner not showing?**
-- Make sure `fullsalsing.png` or `banner.png` exists in root
-- Check browser console (F12) for 404 errors
-- Verify file paths in index.html
+**Carousel animation choppy?**
+- Check browser support for CSS animations
+- Reduce animation complexity if needed
 
-**Carousel showing old text?**
-- Page cached - refresh browser cache (Ctrl+Shift+R on Windows/Linux, Cmd+Shift+R on Mac)
+**News showing in wrong order?**
+- News displays in reverse order from JSON (newest first)
+- Add new items to bottom of JSON array to show them at top of page
 
-**Changes to news-data.json not showing?**
-- Browser uses localStorage first if data exists there
-- Clear localStorage: Open console and run `localStorage.removeItem('fullsalsing_news'); location.reload();`
-- Or directly edit in browser DevTools localStorage
+**Twitter embeds not loading?**
+- Check network connection
+- Verify Twitter widgets.js is loading
+- Check browser console for errors
+- Twitter may be blocked by firewall/ad-blocker
+
+**Background not showing?**
+- Verify `background.png` exists in root directory
+- Check file permissions
+- Look for 404 errors in browser console
 
 ---
 
@@ -352,13 +371,14 @@ python3 -m http.server 8000
 
 - Dark/Light theme toggle
 - Trending/Hot filter
-- Comment system (client-side)
-- Reaction emojis (👍 🔥 😂)
 - Search functionality
 - Archive/history view
 - Social sharing buttons
 - Tags/hashtags system
 - Categories filter
+- RSS feed generation
+- More gradient color schemes
+- Customizable animation speeds
 
 ---
 
@@ -371,4 +391,3 @@ Free to use, modify, and deploy. Make the web spicier! 🌶️
 ---
 
 **FULL SALSING** - Where Tech Gets Spicy 🌶️
-
