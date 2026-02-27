@@ -60,7 +60,7 @@ function loadNews() {
     fetch('./news-data.json')
         .then(response => response.json())
         .then(data => {
-            newsStore = data.news || [];
+            newsStore = (data.news || []).reverse();
             renderNews();
         })
         .catch(error => {
