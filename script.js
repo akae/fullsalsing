@@ -67,24 +67,22 @@ function createNewsBlock(news) {
     
     // Add tweet embed if tweet_url exists
     if (news.tweet_url) {
-        const tweetEmbed = document.createElement('div');
-        tweetEmbed.className = 'tweet-embed-container';
-        tweetEmbed.innerHTML = `<blockquote class="twitter-tweet"><a href="${news.tweet_url}"></a></blockquote>`;
-        block.appendChild(tweetEmbed);
-        
-        // Load Twitter widgets script if not already loaded
-        if (!window.twttr) {
-            const script = document.createElement('script');
-            script.src = 'https://platform.twitter.com/widgets.js';
-            script.async = true;
-            script.charset = 'utf-8';
-            document.body.appendChild(script);
-        } else {
-            // If script already loaded, process the new tweet
-            window.twttr.widgets.load(tweetEmbed);
+        const tweetId = extractTweetId(news.tweet_url);
+        if (tweetId) {
+            const tweetEmbed = document.createElement('div');
+            tweetEmbed.className = 'tweet-embed-container';
+            // Use iframe for reliable embedding
+            tweetEmbed.innerHTML = `<iframe width="100%" height="400" src="https://twitter.com/i/web/status/${tweetId}" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+            block.appendChild(tweetEmbed);
         }
     }
     
     return block;
+}
+
+// Extract tweet ID from various Twitter URL formats
+function extractTweetId(url) {
+    const match = url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
+    return match ? match[1] : null;
 }
 

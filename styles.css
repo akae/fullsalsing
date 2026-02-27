@@ -545,14 +545,13 @@ body {
 .tweet-embed-container {
     margin-top: 16px;
     padding: 12px;
-    background: rgba(255, 192, 203, 0.1);
+    background: rgba(255, 192, 203, 0.05);
     border-left: 4px solid var(--primary-pink);
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .tweet-embed-container iframe {
-    min-height: 400px;
     border-radius: 8px;
+    max-width: 100%;
 }
