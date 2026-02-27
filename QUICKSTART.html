@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FULL SALSING - Quick Start Guide</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a0033;
+            color: #FF1493;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        h1 { color: #FFFF00; text-shadow: 0 0 10px #FF1493; }
+        h2 { color: #00FFFF; }
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #FFFF00;
+        }
+        pre {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #FF1493;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        .success { color: #00FF00; }
+        .warning { color: #FF6600; }
+        .button-demo {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #FFFF00;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌶️ FULL SALSING - Quick Start</h1>
+    
+    <h2>🚀 Getting Started in 30 Seconds</h2>
+    <ol>
+        <li>Open <code>index.html</code> in your browser</li>
+        <li>Click the <strong>⚙️</strong> button (bottom-right)</li>
+        <li>Add your first spicy news item</li>
+        <li>Watch it appear in real-time!</li>
+    </ol>
+
+    <h2>📝 Adding Your First News</h2>
+    <pre>
+Title: 🔥 SHOCKING: Programmer Forgets Why They Started Coding
+Content: Sources report 15-year veteran suddenly questioned all life choices after seeing their old code.
+Category: Programming
+Size: Medium
+    </pre>
+
+    <h2>🎨 Customizing the Site</h2>
+    
+    <h3>Change Carousel Phrases</h3>
+    <p>Edit in <code>index.html</code>:</p>
+    <pre>&lt;div class="carousel-item"&gt;Your new phrase&lt;/div&gt;</pre>
+
+    <h3>Change Colors</h3>
+    <p>Edit in <code>styles.css</code>:</p>
+    <pre>--primary-pink: #FF1493;
+--neon-yellow: #FFFF00;</pre>
+
+    <h3>Change Title</h3>
+    <p>Edit in <code>index.html</code>:</p>
+    <pre>&lt;h1 class="title"&gt;YOUR SITE NAME&lt;/h1&gt;</pre>
+
+    <h2>💾 Backup & Restore</h2>
+    <ol>
+        <li>Click ⚙️ → <strong>Export Data</strong> (downloads JSON)</li>
+        <li>Keep this file safe!</li>
+        <li>To restore: ⚙️ → <strong>Import Data</strong> → Select JSON file</li>
+    </ol>
+
+    <h2>📤 Deployment</h2>
+    <h3>GitHub Pages (Free)</h3>
+    <pre>git push origin main</pre>
+
+    <h3>Netlify (Easiest)</h3>
+    <pre>netlify deploy --prod --dir=.</pre>
+
+    <h3>Local Testing</h3>
+    <pre>python3 -m http.server 8000
+# Then visit http://localhost:8000</pre>
+
+    <h2>🎯 Content Tips</h2>
+    <ul>
+        <li>✅ Use emoji in titles for visual impact</li>
+        <li>✅ Make headlines sensational (tech gossip energy)</li>
+        <li>✅ Keep content concise and punchy</li>
+        <li>✅ Mix different block sizes for visual variety</li>
+        <li>✅ Mix categories for diverse content</li>
+        <li>❌ Don't be actually harmful or misleading</li>
+    </ul>
+
+    <h2>⚡ Performance Tips</h2>
+    <ul>
+        <li>💚 No external dependencies = super fast</li>
+        <li>💚 Works offline with browser storage</li>
+        <li>💚 ~40KB total size (including graphics)</li>
+        <li>💚 Mobile optimized</li>
+    </ul>
+
+    <h2>🆘 Troubleshooting</h2>
+    
+    <h3>News not saving?</h3>
+    <p>Check if localStorage is enabled. In incognito/private mode it might not work.</p>
+
+    <h3>Want to start fresh?</h3>
+    <pre>
+// In browser console:
+localStorage.removeItem('fullsalsing_news');
+location.reload();
+    </pre>
+
+    <h3>Import not working?</h3>
+    <p>Make sure your JSON is valid. Use ⚙️ → <strong>Export Data</strong> as a template.</p>
+
+    <h2>📚 File Reference</h2>
+    <table style="width:100%; border-collapse: collapse;">
+        <tr style="border-bottom: 2px solid #FF1493;">
+            <th style="text-align: left; padding: 10px;">File</th>
+            <th style="text-align: left; padding: 10px;">Purpose</th>
+        </tr>
+        <tr style="border-bottom: 1px solid #FF1493;">
+            <td style="padding: 10px;"><code>index.html</code></td>
+            <td style="padding: 10px;">Page structure & content</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #FF1493;">
+            <td style="padding: 10px;"><code>styles.css</code></td>
+            <td style="padding: 10px;">All styling & animations</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #FF1493;">
+            <td style="padding: 10px;"><code>script.js</code></td>
+            <td style="padding: 10px;">Interactive features</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><code>news-data.json</code></td>
+            <td style="padding: 10px;">Sample data (for reference)</td>
+        </tr>
+    </table>
+
+    <h2>🎉 You're Ready!</h2>
+    <p style="color: #00FF00; font-size: 1.2em;">
+        ✨ Your super spicy tech gossip machine is ready to rumble! ✨
+    </p>
+
+    <hr style="border: 1px solid #FF1493; margin: 40px 0;">
+    
+    <p style="text-align: center; color: #FF69B4;">
+        <strong>FULL SALSING</strong> - Where Tech Gets Spicy 🌶️
+    </p>
+</body>
+</html>
