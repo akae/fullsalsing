@@ -7,6 +7,20 @@
       "category": "Tech",
       "size": "large",
       "link": "https://x.com/jack/status/2027129697092731343"
+    },
+    {
+      "id": 2,
+      "title": "🎬 Netflix Drama: Hashimoto's Wife's Career Frozen Post-IBM Merger",
+      "content": "Sources claim she hasn't landed a single acting role since the corporate acquisition. Insiders suggest the IBM takeover shifted Netflix's entire talent strategy. Coincidence? The internet thinks not.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 3,
+      "title": "🤖 EXCLUSIVE: Gordo Vargo Returns to AI - Plans to 'Clean House'",
+      "content": "The controversial tech figure is making a massive comeback in artificial intelligence. Rumor mill suggests he's planning to deprecate and delete competitor projects in a sweeping industry takeover. When reached for comment, sources said 'He's bigger and bolder than ever.'",
+      "category": "AI",
+      "size": "large"
     }
   ]
 }
