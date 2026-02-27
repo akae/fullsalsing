@@ -32,6 +32,12 @@ Displays a random sensationalist catchphrase on each page load:
 - Mobile: 1 column that adapts to screen size
 - Transparent blocks let background show through
 
+### 4. **Twitter Integration Widget**
+- Shows live tweets with #fullsalsing hashtag
+- Embed powered by Twitter's official widget
+- Direct link to view all #fullsalsing tweets
+- Encourage community discussion and sharing
+
 ## 📝 How to Update News
 
 ### Method 1: Direct JSON Import/Export (Recommended)
@@ -108,20 +114,37 @@ Edit the `news-data.json` file directly:
 
 ### Colors (in `styles.css`)
 ```css
---primary-pink: #FF1493
---hot-pink: #FF69B4
---light-pink: #FFB6D9
---neon-yellow: #FFFF00
---neon-blue: #00FFFF
---neon-purple: #FF00FF
---neon-green: #00FF00
+--primary-pink: #FFB6D9
+--hot-pink: #FFC0CB
+--light-pink: #FFE4E1
+--dark-bg: #FFF0F5
+--text-dark: #333333
 ```
 
-### Carousel Text
-Edit in `index.html` under `.carousel-item` divs:
-```html
-<div class="carousel-item">Your custom phrase here</div>
+### Carousel Phrases
+Edit in `script.js` - modify the `CAROUSEL_SENTENCES` array:
+```javascript
+const CAROUSEL_SENTENCES = [
+    'Your custom phrase 1',
+    'Your custom phrase 2',
+    'Your custom phrase 3',
+    'Your custom phrase 4',
+    'Your custom phrase 5'
+];
 ```
+
+### Twitter Widget
+To change the hashtag or search query, edit the URLs in `index.html`:
+```html
+<!-- Change %23fullsalsing to your desired hashtag -->
+<a href="https://twitter.com/search?q=%23fullsalsing">View #fullsalsing on Twitter</a>
+<a class="twitter-timeline" href="https://twitter.com/search?q=%23fullsalsing">Tweets about #fullsalsing</a>
+```
+
+URL encoding:
+- `%23` = # symbol
+- `%20` = space
+- Replace accordingly for your hashtag/search term
 
 ## 📊 File Structure
 
@@ -179,6 +202,8 @@ python3 -m http.server 8000
 - Search functionality
 - Archive/history view
 - Social sharing buttons
+- Instagram integration
+- TikTok embed integration
 
 ## 📱 Browser Support
 

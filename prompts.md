@@ -197,6 +197,38 @@ function setRandomCarousel() {
 
 ---
 
+## Twitter Integration Widget
+
+📱 **Current Implementation**:
+- Live embedded timeline showing tweets with **#fullsalsing** hashtag
+- Uses Twitter's official widgets.js embed script
+- Clicking "View #fullsalsing on Twitter" button opens Twitter search
+- Embedded timeline loads dynamically from Twitter
+
+**Features**:
+- Soft pink styled container matching site aesthetic
+- 400px height for embedded timeline
+- Responsive design - adapts to screen size
+- Styled button with hover effects
+- No authentication or API keys required
+
+**Customization**:
+To change the hashtag or search query, edit the URLs in `index.html`:
+```html
+<!-- Change these URLs to search for different hashtags/keywords -->
+<a href="https://twitter.com/search?q=%23fullsalsing">View #fullsalsing on Twitter</a>
+<a class="twitter-timeline" href="https://twitter.com/search?q=%23fullsalsing">
+```
+
+Simply replace `%23fullsalsing` with your desired search term (URL encoded):
+- `%23` = # symbol
+- URLs must be URL-encoded for special characters
+
+**Styling**:
+Edit `.twitter-widget-container` and `.twitter-embed` in `styles.css` to customize colors and spacing.
+
+---
+
 ## Data Storage
 
 - **localStorage**: All news stored in browser's local storage
@@ -280,11 +312,12 @@ python3 -m http.server 8000
 ✅ Soft pink pastel color scheme
 ✅ Glass-morphism effects (blur, transparency)
 ✅ Mobile responsive
-✅ No external dependencies
+✅ No external dependencies (except Twitter's embed script)
 ✅ Minimal JavaScript for speed
 ✅ Banner at 35% width
 ✅ News management via JSON editing
 ✅ Browser localStorage persistence
+✅ **Twitter Integration Widget** - live #fullsalsing tweets embedded
 ✅ Simple, maintainable codebase
 
 ---
