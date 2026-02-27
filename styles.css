@@ -565,3 +565,36 @@ body {
     border-radius: 8px;
     max-width: 100%;
 }
+
+/* ===== Link Button Styling ===== */
+.block-link-button {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 192, 203, 0.8);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+    z-index: 10;
+}
+
+.block-link-button:hover {
+    background: rgba(255, 105, 180, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.5);
+}
+
+.link-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}

@@ -67,6 +67,17 @@ function createNewsBlock(news) {
         ${linkHTML}
     `;
     
+    // Add link button with sriracha emoji (use link or tweet_url)
+    const linkUrl = news.link || news.tweet_url;
+    if (linkUrl) {
+        const linkButton = document.createElement('a');
+        linkButton.href = linkUrl;
+        linkButton.target = '_blank';
+        linkButton.className = 'block-link-button';
+        linkButton.innerHTML = '<img src="./sriracha.webp" alt="link" class="link-icon"> Link...';
+        block.appendChild(linkButton);
+    }
+    
     // Add tweet embed if tweet_url exists
     if (news.tweet_url) {
         const tweetId = extractTweetId(news.tweet_url);
