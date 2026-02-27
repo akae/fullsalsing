@@ -25,7 +25,6 @@ Displays a random sensationalist catchphrase on each page load:
 - **Multiple sizes**: Small, Medium, Large
 - **Categories**: Tech, Software, Programming, AI
 - **Visual effects**: Soft shadows, hover animations, transparency
-- **Easy deletion**: Hover and click × to remove news items
 
 ### 3. **Responsive 2-Column Grid**
 - Desktop: 2 columns for optimal reading

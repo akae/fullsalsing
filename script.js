@@ -97,15 +97,9 @@ function createNewsBlock(news) {
     block.className = `news-block ${news.size}`;
     block.innerHTML = `
         <span class="block-category">${news.category}</span>
-        <button class="block-delete" data-id="${news.id}">×</button>
         <h2 class="block-title">${news.title}</h2>
         <p class="block-content">${news.content}</p>
     `;
-    
-    block.querySelector('.block-delete').addEventListener('click', (e) => {
-        e.stopPropagation();
-        deleteNews(news.id);
-    });
     
     return block;
 }
