@@ -48,12 +48,10 @@ fullsalsing/
 ├── index.html              # Main news feed page (ONLY page)
 ├── styles.css              # All styling
 ├── script.js               # Load and render news from JSON
-├── banner.png              # Main banner image (35% width)
-├── fullsalsing.png         # Alternative banner
-├── background.png          # Tiled background pattern
-├── generate_banner.py      # Python script to generate banners
-├── news-data.json          # News data (edit directly to update)
-├── README.md               # Full documentation
+├── news-data.json          # All news content (edit to update)
+├── fullsalsing.png         # Header banner
+├── background.png          # Background pattern
+├── README.md               # Documentation
 ├── QUICKSTART.html         # Quick start guide
 ├── prompts.md              # Development instructions
 └── .git/                   # Git repository

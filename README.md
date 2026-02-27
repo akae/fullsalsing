@@ -33,12 +33,6 @@ Displays a random sensationalist catchphrase on each page load:
 - Mobile: 1 column that adapts to screen size
 - Transparent blocks let background show through
 
-### 4. **Twitter Integration Widget**
-- Shows live tweets with #fullsalsing hashtag
-- Embed powered by Twitter's official widget
-- Direct link to view all #fullsalsing tweets
-- Encourage community discussion and sharing
-
 ## 📝 How to Update News
 
 Edit the `news-data.json` file directly. The app loads all news from this file on page load.
@@ -125,19 +119,6 @@ const CAROUSEL_SENTENCES = [
     'Your custom phrase 5'
 ];
 ```
-
-### Twitter Widget
-To change the hashtag or search query, edit the URLs in `index.html`:
-```html
-<!-- Change %23fullsalsing to your desired hashtag -->
-<a href="https://twitter.com/search?q=%23fullsalsing">View #fullsalsing on Twitter</a>
-<a class="twitter-timeline" href="https://twitter.com/search?q=%23fullsalsing">Tweets about #fullsalsing</a>
-```
-
-URL encoding:
-- `%23` = # symbol
-- `%20` = space
-- Replace accordingly for your hashtag/search term
 
 ## 📊 File Structure
 
