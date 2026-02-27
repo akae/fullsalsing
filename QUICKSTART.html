@@ -6,156 +6,199 @@
     <style>
         body {
             font-family: 'Courier New', monospace;
-            background: #1a0033;
-            color: #FF1493;
+            background: #FFF0F5;
+            color: #333333;
             padding: 40px;
             max-width: 900px;
             margin: 0 auto;
             line-height: 1.8;
         }
-        h1 { color: #FFFF00; text-shadow: 0 0 10px #FF1493; }
-        h2 { color: #00FFFF; }
+        h1 { color: #E91E8C; text-shadow: 0 0 5px rgba(233, 30, 140, 0.3); }
+        h2 { color: #FF69B4; }
         code {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 182, 217, 0.3);
             padding: 2px 6px;
             border-radius: 3px;
-            color: #FFFF00;
+            color: #E91E8C;
+            font-weight: bold;
         }
         pre {
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid #FF1493;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(255, 105, 180, 0.5);
             padding: 15px;
             overflow-x: auto;
             border-radius: 5px;
         }
-        .success { color: #00FF00; }
+        .success { color: #00AA00; }
         .warning { color: #FF6600; }
-        .button-demo {
-            display: inline-block;
-            background: linear-gradient(135deg, #FF1493, #FF69B4);
-            color: white;
-            padding: 10px 20px;
-            border: 2px solid #FFFF00;
-            cursor: pointer;
-            margin: 10px 0;
+        .code-block {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid #FF69B4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <h1>🌶️ FULL SALSING - Quick Start</h1>
     
-    <h2>🚀 Getting Started in 30 Seconds</h2>
+    <h2>🚀 Getting Started in 2 Minutes</h2>
     <ol>
         <li>Open <code>index.html</code> in your browser</li>
-        <li>Click the <strong>⚙️</strong> button (bottom-right)</li>
-        <li>Add your first spicy news item</li>
-        <li>Watch it appear in real-time!</li>
+        <li>See the current news feed with random carousel subtitle</li>
+        <li>Edit <code>news-data.json</code> to add/modify news</li>
+        <li>Refresh browser to see changes!</li>
     </ol>
 
-    <h2>📝 Adding Your First News</h2>
-    <pre>
-Title: 🔥 SHOCKING: Programmer Forgets Why They Started Coding
-Content: Sources report 15-year veteran suddenly questioned all life choices after seeing their old code.
-Category: Programming
-Size: Medium
-    </pre>
+    <h2>📝 Adding Your First Spicy Take</h2>
+    <div class="code-block">
+        <p><strong>Edit news-data.json:</strong></p>
+        <pre>{
+  "id": 5,
+  "title": "🔥 SHOCKING: New Framework Claims to Break The Internet",
+  "content": "Insiders report revolutionary tech that everyone immediately forgot about.",
+  "category": "Software",
+  "size": "medium"
+}</pre>
+    </div>
 
     <h2>🎨 Customizing the Site</h2>
     
     <h3>Change Carousel Phrases</h3>
-    <p>Edit in <code>index.html</code>:</p>
-    <pre>&lt;div class="carousel-item"&gt;Your new phrase&lt;/div&gt;</pre>
+    <p>Edit in <code>script.js</code> - look for <code>CAROUSEL_SENTENCES</code> array</p>
 
     <h3>Change Colors</h3>
-    <p>Edit in <code>styles.css</code>:</p>
-    <pre>--primary-pink: #FF1493;
---neon-yellow: #FFFF00;</pre>
+    <p>Edit in <code>styles.css</code> - `:root` section has all color variables:</p>
+    <div class="code-block">
+        <pre>:root {
+    --primary-pink: #FFB6D9;
+    --hot-pink: #FFC0CB;
+    --light-pink: #FFE4E1;
+    --dark-bg: #FFF0F5;
+    --text-dark: #333333;
+}</pre>
+    </div>
 
-    <h3>Change Title</h3>
-    <p>Edit in <code>index.html</code>:</p>
-    <pre>&lt;h1 class="title"&gt;YOUR SITE NAME&lt;/h1&gt;</pre>
+    <h3>Change Banner Size</h3>
+    <p>Edit in <code>styles.css</code> - look for `.header-banner`:</p>
+    <div class="code-block">
+        <pre>.header-banner {
+    width: 35%;  /* Change this percentage */
+    max-width: 600px;
+}</pre>
+    </div>
 
-    <h2>💾 Backup & Restore</h2>
+    <h2>💾 News Management Methods</h2>
+    
+    <h3>Method 1: Direct File Edit (Easiest)</h3>
     <ol>
-        <li>Click ⚙️ → <strong>Export Data</strong> (downloads JSON)</li>
-        <li>Keep this file safe!</li>
-        <li>To restore: ⚙️ → <strong>Import Data</strong> → Select JSON file</li>
+        <li>Edit <code>news-data.json</code> in your text editor</li>
+        <li>Save the file</li>
+        <li>Refresh browser to see changes</li>
     </ol>
+
+    <h3>Method 2: Browser Developer Tools</h3>
+    <ol>
+        <li>Open browser (F12)</li>
+        <li>Go: <code>Application → LocalStorage → fullsalsing</code></li>
+        <li>Edit <code>fullsalsing_news</code> key directly</li>
+        <li>Refresh page</li>
+    </ol>
+
+    <h3>Method 3: Browser Console</h3>
+    <div class="code-block">
+        <strong>Export current news:</strong>
+        <pre>copy(JSON.stringify(JSON.parse(localStorage.getItem('fullsalsing_news')), null, 2))</pre>
+    </div>
 
     <h2>📤 Deployment</h2>
     <h3>GitHub Pages (Free)</h3>
-    <pre>git push origin main</pre>
+    <div class="code-block">
+        <pre>git add .
+git commit -m "FULL Salsing gossip site"
+git push origin main</pre>
+    </div>
 
-    <h3>Netlify (Easiest)</h3>
-    <pre>netlify deploy --prod --dir=.</pre>
+    <h3>Netlify (Also Free)</h3>
+    <div class="code-block">
+        <pre>netlify deploy --prod --dir=.</pre>
+    </div>
 
     <h3>Local Testing</h3>
-    <pre>python3 -m http.server 8000
-# Then visit http://localhost:8000</pre>
+    <div class="code-block">
+        <pre>python3 -m http.server 8000
+# Visit http://localhost:8000</pre>
+    </div>
 
     <h2>🎯 Content Tips</h2>
     <ul>
-        <li>✅ Use emoji in titles for visual impact</li>
-        <li>✅ Make headlines sensational (tech gossip energy)</li>
-        <li>✅ Keep content concise and punchy</li>
+        <li>✅ Use emoji in titles: 🚨 🔥 ⚡ 💥 🌶️ 🎭</li>
+        <li>✅ Make headlines sensational (gossip magazine energy)</li>
+        <li>✅ Keep content 1-3 sentences max</li>
         <li>✅ Mix different block sizes for visual variety</li>
         <li>✅ Mix categories for diverse content</li>
         <li>❌ Don't be actually harmful or misleading</li>
     </ul>
 
-    <h2>⚡ Performance Tips</h2>
+    <h2>⚡ Performance</h2>
     <ul>
         <li>💚 No external dependencies = super fast</li>
-        <li>💚 Works offline with browser storage</li>
-        <li>💚 ~40KB total size (including graphics)</li>
+        <li>💚 Works offline (uses browser localStorage)</li>
+        <li>💚 ~40KB total size</li>
         <li>💚 Mobile optimized</li>
     </ul>
 
-    <h2>🆘 Troubleshooting</h2>
+    <h2>🆘 FAQ</h2>
     
-    <h3>News not saving?</h3>
-    <p>Check if localStorage is enabled. In incognito/private mode it might not work.</p>
+    <h3>News not showing?</h3>
+    <p>Browser localStorage takes priority. Clear it:</p>
+    <div class="code-block">
+        <pre>localStorage.removeItem('fullsalsing_news');
+location.reload();</pre>
+    </div>
 
     <h3>Want to start fresh?</h3>
-    <pre>
-// In browser console:
-localStorage.removeItem('fullsalsing_news');
-location.reload();
-    </pre>
+    <p>Clear browser cache: <code>Ctrl+Shift+R</code> (Windows/Linux) or <code>Cmd+Shift+R</code> (Mac)</p>
 
-    <h3>Import not working?</h3>
-    <p>Make sure your JSON is valid. Use ⚙️ → <strong>Export Data</strong> as a template.</p>
+    <h3>JSON format error?</h3>
+    <p>Validate your JSON at <code>jsonlint.com</code> before importing</p>
 
     <h2>📚 File Reference</h2>
     <table style="width:100%; border-collapse: collapse;">
-        <tr style="border-bottom: 2px solid #FF1493;">
+        <tr style="background: rgba(255, 182, 217, 0.3); border-bottom: 2px solid #FF69B4;">
             <th style="text-align: left; padding: 10px;">File</th>
             <th style="text-align: left; padding: 10px;">Purpose</th>
         </tr>
-        <tr style="border-bottom: 1px solid #FF1493;">
+        <tr style="border-bottom: 1px solid #FFB6D9;">
             <td style="padding: 10px;"><code>index.html</code></td>
-            <td style="padding: 10px;">Page structure & content</td>
+            <td style="padding: 10px;">Main page - news feed display</td>
         </tr>
-        <tr style="border-bottom: 1px solid #FF1493;">
+        <tr style="border-bottom: 1px solid #FFB6D9;">
             <td style="padding: 10px;"><code>styles.css</code></td>
-            <td style="padding: 10px;">All styling & animations</td>
+            <td style="padding: 10px;">All styling & layout</td>
         </tr>
-        <tr style="border-bottom: 1px solid #FF1493;">
+        <tr style="border-bottom: 1px solid #FFB6D9;">
             <td style="padding: 10px;"><code>script.js</code></td>
-            <td style="padding: 10px;">Interactive features</td>
+            <td style="padding: 10px;">Load, render, delete news</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #FFB6D9;">
+            <td style="padding: 10px;"><code>news-data.json</code></td>
+            <td style="padding: 10px;">Sample news data - EDIT THIS</td>
         </tr>
         <tr>
-            <td style="padding: 10px;"><code>news-data.json</code></td>
-            <td style="padding: 10px;">Sample data (for reference)</td>
+            <td style="padding: 10px;"><code>banner.png</code></td>
+            <td style="padding: 10px;">Main header image</td>
         </tr>
     </table>
 
     <h2>🎉 You're Ready!</h2>
-    <p style="color: #00FF00; font-size: 1.2em;">
-        ✨ Your super spicy tech gossip machine is ready to rumble! ✨
+    <p style="color: #E91E8C; font-size: 1.2em; text-align: center;">
+        ✨ Your spicy tech gossip machine is ready to rumble! ✨<br>
+        Edit, refresh, and share the spice! 🌶️
     </p>
 
-    <hr style="border: 1px solid #FF1493; margin: 40px 0;">
+    <hr style="border: 1px solid #FFB6D9; margin: 40px 0;">
     
     <p style="text-align: center; color: #FF69B4;">
         <strong>FULL SALSING</strong> - Where Tech Gets Spicy 🌶️

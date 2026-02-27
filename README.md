@@ -4,16 +4,17 @@ Welcome to **FULL SALSING** (fullsalsing.com) - your one-stop destination for se
 
 ## 🎨 Design Philosophy
 
-- **Retro Superpop Aesthetic**: Vibrant pink, neon colors, and 8-bit inspired design
+- **Soft Gossip Magazine Aesthetic**: Pastel pink colors, transparent blocks, gentle shadows
 - **Single-Page Application**: All content on one page for maximum user engagement
 - **Performance Optimized**: Bare HTML, CSS, and minimal JavaScript
 - **Mobile Responsive**: Works great on all devices
 - **Local Storage**: News persists between sessions
+- **Easy Management**: Direct JSON file editing for news updates
 
 ## 🚀 Features
 
-### 1. **Carousel Subtitle**
-Auto-scrolling subtitle featuring sensationalist catchphrases:
+### 1. **Random Carousel Subtitle**
+Displays a random sensationalist catchphrase on each page load:
 - "Tech news with a spicy flavour"
 - "Sriracha based tech gossip"
 - "Your unique source of truth"
@@ -21,58 +22,58 @@ Auto-scrolling subtitle featuring sensationalist catchphrases:
 - "Sensationalism As A Service"
 
 ### 2. **Dynamic News Blocks**
-- **Multiple sizes**: Small (1x1), Medium (2x1), Large (2x2)
+- **Multiple sizes**: Small, Medium, Large
 - **Categories**: Tech, Software, Programming, AI
-- **Visual effects**: Glowing borders, hover animations, retro scanlines
-- **Easy deletion**: Hover and click × to remove
+- **Visual effects**: Soft shadows, hover animations, transparency
+- **Easy deletion**: Hover and click × to remove news items
 
-### 3. **Admin Panel**
-Quick and easy content management built directly into the page:
-- Click the ⚙️ button in the bottom-right corner
-- Add news with sensationalist titles
-- Select block size and category
-- Export/import data as JSON backup
+### 3. **Responsive 2-Column Grid**
+- Desktop: 2 columns for optimal reading
+- Mobile: 1 column that adapts to screen size
+- Transparent blocks let background show through
 
 ## 📝 How to Update News
 
-### Method 1: Web Interface (Easiest)
-1. Click the **⚙️ Settings button** in the bottom-right corner
-2. Fill in the form:
-   - **Sensationalist Title**: Make it spicy! (e.g., "🔥 SHOCKING: Users Actually Read Terms & Conditions")
-   - **Spicy Content**: The gossip/news details
-   - **Category**: Tech, Software, Programming, or AI
-   - **Block Size**: Small, Medium, or Large
-3. Click **ADD TO GOSSIP**
-4. Your news appears at the top of the feed!
+### Method 1: Direct JSON Import/Export (Recommended)
+The easiest way is to directly edit the `news-data.json` file or use the browser's developer tools:
 
-### Method 2: Direct JSON (For Bulk Updates)
-1. Click **⚙️ Settings** → **Export Data** to download current news
-2. Edit the JSON file in your text editor:
-   ```json
-   [
-     {
-       "id": 5,
-       "title": "Your Sensationalist Title Here",
-       "content": "The actual gossip/news content",
-       "category": "AI",
-       "size": "medium"
-     }
-   ]
+1. **Export current news** (browser console):
+   ```javascript
+   console.log(JSON.stringify(JSON.parse(localStorage.getItem('fullsalsing_news')), null, 2));
    ```
-3. Click **⚙️ Settings** → **Import Data**
-4. Select your edited JSON file
-5. All news updates instantly!
 
-### Method 3: Direct File Editing
-Edit `news-data.json` directly and refresh the page (data persists in browser localStorage):
+2. **Edit** the JSON to add/modify news items:
+   ```json
+   {
+     "id": 5,
+     "title": "🔥 Your Sensationalist Title Here",
+     "content": "Your gossip/news content goes here...",
+     "category": "AI",
+     "size": "medium"
+   }
+   ```
+
+3. **Save** to `news-data.json` or import via localStorage
+
+### Method 2: Browser localStorage (Direct)
+1. Open browser developer tools (F12)
+2. Go to Application → LocalStorage → fullsalsing domain
+3. Find `fullsalsing_news` key
+4. Edit the JSON directly
+5. Refresh the page
+
+### Method 3: news-data.json File
+Edit the `news-data.json` file directly:
 ```json
-{
-  "id": 1,
-  "title": "🚨 BREAKING: [Your Headline]",
-  "content": "Your gossip/news content here...",
-  "category": "AI",
-  "size": "medium"
-}
+[
+  {
+    "id": 1,
+    "title": "🚨 BREAKING: [Your Headline]",
+    "content": "Your gossip/news content here...",
+    "category": "AI",
+    "size": "medium"
+  }
+]
 ```
 
 ## 🎯 Content Guidelines

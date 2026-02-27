@@ -44,18 +44,16 @@ It has to feature an easy way to update news and blocks with sensationalist titl
 ### 📁 File Structure
 ```
 fullsalsing/
-├── index.html              # Main feed page
-├── addsalsing.html         # Add news page
-├── styles.css              # All styling (shared by both pages)
-├── script.js               # Main feed logic (load, render, delete)
-├── script-addsalsing.js    # Add page logic (form, import/export)
+├── index.html              # Main news feed page (ONLY page)
+├── styles.css              # All styling
+├── script.js               # Load, render, delete news logic
 ├── banner.png              # Main banner image (35% width)
-├── fullsalsing.png         # Alternative banner (if using)
+├── fullsalsing.png         # Alternative banner
 ├── generate_banner.py      # Python script to generate banners
-├── news-data.json          # Sample data template
+├── news-data.json          # News template (edit directly)
 ├── README.md               # Full documentation
 ├── QUICKSTART.html         # Quick start guide
-├── prompts.md              # This file
+├── prompts.md              # Development instructions
 └── superpop.jpeg           # Reference image
 ```
 
@@ -63,28 +61,42 @@ fullsalsing/
 
 ## How to Use
 
-### 🏠 Main Page (index.html)
+### 🏠 Main Page (index.html) - ONLY Page
 1. Open in browser - displays news feed
 2. **Random carousel subtitle** appears at top (changes on each page load)
 3. **News blocks** displayed in 2-column grid
 4. Hover over block to see **delete button (×)**
 5. Click delete to remove news item
-6. **Footer link** "✨ Add Your Spicy Take ✨" goes to add page
+6. **Footer** shows copyright and site info
 
-### ➕ Add News Page (addsalsing.html)
-1. Click footer link from index.html OR go directly to /addsalsing.html
-2. Fill in form:
-   - **Sensationalist Title**: Make it spicy! (e.g., "🔥 SHOCKING: Users Actually Read Terms")
-   - **Spicy Content**: The actual gossip/news (1-3 sentences)
-   - **Category**: Tech, Software, Programming, or AI
-   - **Block Size**: Small, Medium, or Large
-3. Click **🔥 ADD TO GOSSIP 🔥**
-4. Auto-redirects back to main feed after 1.5 seconds
+### ➕ Adding/Editing News - Three Methods
 
-### 💾 Import/Export (addsalsing.html)
-1. **Export Data**: Downloads JSON backup of all news
-2. **Import Data**: Upload JSON file to restore news
-3. Both buttons accessible on addsalsing.html page
+#### Method 1: Edit news-data.json (Simplest)
+1. Open `news-data.json` in your text editor
+2. Add or modify news items in the JSON array
+3. Save the file
+4. Refresh the website in browser
+5. Data loads from localStorage first, then defaults to file
+
+#### Method 2: Browser Developer Tools
+1. Open browser DevTools (F12)
+2. Go to: Application → LocalStorage → fullsalsing
+3. Find the `fullsalsing_news` key
+4. Edit the JSON array directly
+5. Refresh page to see changes
+
+#### Method 3: Export/Import via Console
+1. Open browser console (F12)
+2. Export current data:
+   ```javascript
+   copy(JSON.stringify(JSON.parse(localStorage.getItem('fullsalsing_news')), null, 2))
+   ```
+3. Edit the JSON in your text editor
+4. Import back:
+   ```javascript
+   localStorage.setItem('fullsalsing_news', JSON.stringify([/* your JSON array here */]))
+   location.reload()
+   ```
 
 ---
 
@@ -121,12 +133,14 @@ fullsalsing/
 ## Customization
 
 ### Change Carousel Phrases
-Edit in `index.html` or modify array in `script.js`:
+Edit in `script.js`, update the `CAROUSEL_SENTENCES` array:
 ```javascript
 const CAROUSEL_SENTENCES = [
     'Your new phrase here',
     'Another phrase',
-    // ... more phrases
+    'Another phrase',
+    'Another phrase',
+    'Another phrase'
 ];
 ```
 
@@ -256,59 +270,61 @@ python3 -m http.server 8000
 
 ## Key Features Implemented
 
-✅ Soft gossip magazine aesthetic (not harsh 8-bit)
+✅ Soft gossip magazine aesthetic (pastel pink, transparent blocks)
 ✅ 2-column responsive grid layout
 ✅ Transparent news blocks with background visible
 ✅ Random carousel subtitle (per page load)
-✅ Dedicated add news page (addsalsing.html)
-✅ Import/Export JSON functionality
 ✅ Delete news items with hover button
 ✅ Category tags for each news item
-✅ Multiple block sizes
+✅ Multiple block sizes (Small, Medium, Large)
 ✅ Soft pink pastel color scheme
 ✅ Glass-morphism effects (blur, transparency)
 ✅ Mobile responsive
 ✅ No external dependencies
 ✅ Minimal JavaScript for speed
 ✅ Banner at 35% width
-✅ Clean separation of pages
+✅ News management via JSON editing
+✅ Browser localStorage persistence
+✅ Simple, maintainable codebase
 
 ---
 
-## Admin Features on addsalsing.html
+## Management Approach
 
-1. **Add News Form**
-   - Sensationalist Title input
-   - Spicy Content textarea
-   - Category dropdown
-   - Block Size dropdown
-   - Submit button with celebration emoji
+**Simple & Direct**: Modify news by editing JSON files or using browser developer tools.
 
-2. **Import/Export**
-   - Export: Downloads JSON backup
-   - Import: Upload JSON to restore
+### Why No Web Interface?
+- **Reduced complexity**: No form validation, no modal dialogs
+- **Faster loading**: Smaller JavaScript payload
+- **More control**: Direct JSON editing gives full power
+- **Easier debugging**: JSON is transparent and version-controllable
+- **Offline friendly**: Works better with localStorage approach
 
-3. **Back Link**
-   - Easy navigation back to main feed
-
----
+### News Store Location Hierarchy
+1. **Browser localStorage** (if you've added news via console)
+2. **news-data.json** (if not in localStorage yet)
+3. **DEFAULT_NEWS** array in script.js (hardcoded fallback)
 
 ## Troubleshooting
 
 **News not saving?**
+- Data is stored in browser localStorage
 - Check if localStorage is enabled
 - Private/Incognito mode may not persist data
+- Use browser DevTools to check: Application → LocalStorage
 
 **Banner not showing?**
 - Make sure `fullsalsing.png` or `banner.png` exists in root
-- Check browser console for 404 errors
+- Check browser console (F12) for 404 errors
+- Verify file paths in index.html
 
-**Carousel showing multiple sentences?**
-- Page likely has old code - refresh browser cache (Ctrl+Shift+R)
+**Carousel showing old text?**
+- Page cached - refresh browser cache (Ctrl+Shift+R on Windows/Linux, Cmd+Shift+R on Mac)
 
-**Import not working?**
-- Verify JSON format matches export structure
-- Check browser console for errors
+**Changes to news-data.json not showing?**
+- Browser uses localStorage first if data exists there
+- Clear localStorage: Open console and run `localStorage.removeItem('fullsalsing_news'); location.reload();`
+- Or directly edit in browser DevTools localStorage
 
 ---
 
