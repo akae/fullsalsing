@@ -551,21 +551,6 @@ body {
     background: rgba(255, 105, 180, 0.8);
 }
 
-/* ===== Tweet Embed Styling ===== */
-.tweet-embed-container {
-    margin-top: 16px;
-    padding: 12px;
-    background: rgba(255, 192, 203, 0.05);
-    border-left: 4px solid var(--primary-pink);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.tweet-embed-container iframe {
-    border-radius: 8px;
-    max-width: 100%;
-}
-
 /* ===== Link Button Styling ===== */
 .block-link-button {
     position: absolute;

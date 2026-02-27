@@ -46,17 +46,40 @@ function renderNews() {
     const container = document.getElementById('blocks-container');
     container.innerHTML = '';
     
+    let hasEmbeds = false;
+    
     newsStore.forEach(news => {
         const block = createNewsBlock(news);
         container.appendChild(block);
+        
+        if (news.embed_html) {
+            hasEmbeds = true;
+        }
     });
+    
+    // Load Twitter script if there are embeds
+    if (hasEmbeds && !window.twttr) {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.charset = 'utf-8';
+        script.onload = () => {
+            // Process tweets after script loads
+            if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load();
+            }
+        };
+        document.body.appendChild(script);
+    } else if (hasEmbeds && window.twttr && window.twttr.widgets) {
+        // Script already loaded, just process
+        window.twttr.widgets.load();
+    }
 }
 
 // Create a single news block element
 function createNewsBlock(news) {
     const block = document.createElement('article');
     block.className = `news-block ${news.size}`;
-    const linkHTML = news.link ? `<a href="${news.link}" target="_blank" class="block-link">Read more →</a>` : '';
     const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="block-image" loading="lazy">` : '';
     
     block.innerHTML = `
@@ -64,7 +87,6 @@ function createNewsBlock(news) {
         <span class="block-category">${news.category}</span>
         <h2 class="block-title">${news.title}</h2>
         <p class="block-content">${news.content}</p>
-        ${linkHTML}
     `;
     
     // Add link button with sriracha emoji (use link or tweet_url)
@@ -78,24 +100,43 @@ function createNewsBlock(news) {
         block.appendChild(linkButton);
     }
     
-    // Add tweet embed if tweet_url exists
-    if (news.tweet_url) {
-        const tweetId = extractTweetId(news.tweet_url);
-        if (tweetId) {
-            const tweetEmbed = document.createElement('div');
-            tweetEmbed.className = 'tweet-embed-container';
-            // Use iframe for reliable embedding
-            tweetEmbed.innerHTML = `<iframe width="100%" height="400" src="https://twitter.com/i/web/status/${tweetId}" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-            block.appendChild(tweetEmbed);
-        }
+    // Generate Twitter embed if link is a Twitter URL and no custom embed provided
+    let embedHtml = news.embed_html;
+    if (!embedHtml && linkUrl && isTwitterUrl(linkUrl)) {
+        embedHtml = generateTwitterEmbed(linkUrl);
+    }
+    
+    // Add Twitter embed if available
+    if (embedHtml) {
+        const embedContainer = document.createElement('div');
+        embedContainer.className = 'tweet-embed-container';
+        embedContainer.innerHTML = embedHtml;
+        block.appendChild(embedContainer);
     }
     
     return block;
 }
 
-// Extract tweet ID from various Twitter URL formats
+// Check if URL is a Twitter/X URL
+function isTwitterUrl(url) {
+    return /(?:twitter\.com|x\.com)\/\w+\/status\/\d+/.test(url);
+}
+
+// Extract tweet ID from Twitter URL
 function extractTweetId(url) {
     const match = url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
     return match ? match[1] : null;
 }
+
+// Generate Twitter embed HTML from URL
+function generateTwitterEmbed(tweetUrl) {
+    const tweetId = extractTweetId(tweetUrl);
+    if (!tweetId) return null;
+    
+    // Convert x.com to twitter.com for embed
+    const twitterUrl = `https://twitter.com/i/web/status/${tweetId}`;
+    
+    return `<blockquote class="twitter-tweet" data-media-max-width="560"><a href="${twitterUrl}"></a></blockquote>`;
+}
+
 
