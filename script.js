@@ -57,8 +57,10 @@ function createNewsBlock(news) {
     const block = document.createElement('article');
     block.className = `news-block ${news.size}`;
     const linkHTML = news.link ? `<a href="${news.link}" target="_blank" class="block-link">Read more →</a>` : '';
+    const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="block-image" loading="lazy">` : '';
     
     block.innerHTML = `
+        ${imageHTML}
         <span class="block-category">${news.category}</span>
         <h2 class="block-title">${news.title}</h2>
         <p class="block-content">${news.content}</p>

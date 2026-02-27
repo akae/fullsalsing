@@ -217,6 +217,16 @@ body {
     letter-spacing: 0.05em;
 }
 
+.block-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: block;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+
 .block-title {
     font-size: 1.3rem;
     font-weight: 900;
