@@ -2,31 +2,11 @@
   "news": [
     {
       "id": 1,
-      "title": "🚨 BREAKING: New AI Model Too Smart To Care About Humans",
-      "content": "Tech insiders report revolutionary ML breakthrough that just sighs whenever asked to explain itself.",
-      "category": "AI",
-      "size": "medium"
-    },
-    {
-      "id": 2,
-      "title": "⚡ JavaScript Frameworks Declare Independence",
-      "content": "In a shocking turn of events, React announced it will henceforth only support projects it deems worthy.",
-      "category": "Software",
-      "size": "small"
-    },
-    {
-      "id": 3,
-      "title": "💥 Stack Overflow Users Achieve Consciousness",
-      "content": "Users report gaining self-awareness after copying their 10,000th answer. Mods deny allegations.",
-      "category": "Programming",
-      "size": "small"
-    },
-    {
-      "id": 4,
-      "title": "🔥 Elon's Latest Idea: Twitter For Servers",
-      "content": "Anonymous sources suggest a new platform where servers can tweet about overheating while humans watch helplessly.",
+      "title": "Jack Manages 50% Salary Savings With Strategic Detonations 💣 ",
+      "content": "The remaining 50% of workforce will continue training AI and prompting themselves out of their jobs.",
       "category": "Tech",
-      "size": "large"
+      "size": "large",
+      "link": "https://x.com/jack/status/2027129697092731343"
     }
   ]
 }

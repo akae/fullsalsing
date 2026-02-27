@@ -27,10 +27,11 @@ It has to feature an easy way to update news and blocks with sensationalist titl
 
 ### 📰 Layout Structure
 - **Single page main feed** (index.html) with 2-column news grid
-- **Dedicated page for adding news** (addsalsing.html)
 - **Responsive design**: 2 columns on desktop, 1 column on mobile
 - **Banner resized to 35%** of page width at top
+- **Tiled background**: background.png repeats across entire page
 - **Random carousel subtitle** - displays one random sentence per page load
+- **News blocks**: Each has optional "Read more →" link to source
 
 ### 🎨 Color Palette
 ```css
@@ -46,15 +47,16 @@ It has to feature an easy way to update news and blocks with sensationalist titl
 fullsalsing/
 ├── index.html              # Main news feed page (ONLY page)
 ├── styles.css              # All styling
-├── script.js               # Load, render, delete news logic
+├── script.js               # Load and render news from JSON
 ├── banner.png              # Main banner image (35% width)
 ├── fullsalsing.png         # Alternative banner
+├── background.png          # Tiled background pattern
 ├── generate_banner.py      # Python script to generate banners
-├── news-data.json          # News template (edit directly)
+├── news-data.json          # News data (edit directly to update)
 ├── README.md               # Full documentation
 ├── QUICKSTART.html         # Quick start guide
 ├── prompts.md              # Development instructions
-└── superpop.jpeg           # Reference image
+└── .git/                   # Git repository
 ```
 
 ---
@@ -65,38 +67,25 @@ fullsalsing/
 1. Open in browser - displays news feed
 2. **Random carousel subtitle** appears at top (changes on each page load)
 3. **News blocks** displayed in 2-column grid
-4. Hover over block to see **delete button (×)**
-5. Click delete to remove news item
+4. Each block shows: category tag, title, content, and optional "Read more →" link
+5. **Background pattern**: Tiled background.png repeats throughout
 6. **Footer** shows copyright and site info
 
-### ➕ Adding/Editing News - Three Methods
-
-#### Method 1: Edit news-data.json (Simplest)
-1. Open `news-data.json` in your text editor
-2. Add or modify news items in the JSON array
+### ➕ Adding/Editing News
+1. Open `news-data.json` file in any text editor
+2. Edit the `news` array inside the JSON
 3. Save the file
-4. Refresh the website in browser
-5. Data loads from localStorage first, then defaults to file
+4. Refresh the website in browser - news updates automatically
 
-#### Method 2: Browser Developer Tools
-1. Open browser DevTools (F12)
-2. Go to: Application → LocalStorage → fullsalsing
-3. Find the `fullsalsing_news` key
-4. Edit the JSON array directly
-5. Refresh page to see changes
+**Required fields:**
+- `id`: Unique number
+- `title`: Sensational headline with emoji
+- `content`: 1-3 sentences of spicy take
+- `category`: Tech, Software, Programming, or AI
+- `size`: small, medium, or large
 
-#### Method 3: Export/Import via Console
-1. Open browser console (F12)
-2. Export current data:
-   ```javascript
-   copy(JSON.stringify(JSON.parse(localStorage.getItem('fullsalsing_news')), null, 2))
-   ```
-3. Edit the JSON in your text editor
-4. Import back:
-   ```javascript
-   localStorage.setItem('fullsalsing_news', JSON.stringify([/* your JSON array here */]))
-   location.reload()
-   ```
+**Optional field:**
+- `link`: URL for "Read more →" button
 
 ---
 

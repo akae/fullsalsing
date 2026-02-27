@@ -8,8 +8,9 @@ Welcome to **FULL SALSING** (fullsalsing.com) - your one-stop destination for se
 - **Single-Page Application**: All content on one page for maximum user engagement
 - **Performance Optimized**: Bare HTML, CSS, and minimal JavaScript
 - **Mobile Responsive**: Works great on all devices
-- **Local Storage**: News persists between sessions
+- **JSON-Based**: All news stored in news-data.json file
 - **Easy Management**: Direct JSON file editing for news updates
+- **Tiled Background**: Custom background.png pattern throughout the page
 
 ## 🚀 Features
 
@@ -24,6 +25,7 @@ Displays a random sensationalist catchphrase on each page load:
 ### 2. **Dynamic News Blocks**
 - **Multiple sizes**: Small, Medium, Large
 - **Categories**: Tech, Software, Programming, AI
+- **External links**: Optional "Read more →" button linking to source URLs
 - **Visual effects**: Soft shadows, hover animations, transparency
 
 ### 3. **Responsive 2-Column Grid**
@@ -39,46 +41,38 @@ Displays a random sensationalist catchphrase on each page load:
 
 ## 📝 How to Update News
 
-### Method 1: Direct JSON Import/Export (Recommended)
-The easiest way is to directly edit the `news-data.json` file or use the browser's developer tools:
+Edit the `news-data.json` file directly. The app loads all news from this file on page load.
 
-1. **Export current news** (browser console):
-   ```javascript
-   console.log(JSON.stringify(JSON.parse(localStorage.getItem('fullsalsing_news')), null, 2));
-   ```
-
-2. **Edit** the JSON to add/modify news items:
-   ```json
-   {
-     "id": 5,
-     "title": "🔥 Your Sensationalist Title Here",
-     "content": "Your gossip/news content goes here...",
-     "category": "AI",
-     "size": "medium"
-   }
-   ```
-
-3. **Save** to `news-data.json` or import via localStorage
-
-### Method 2: Browser localStorage (Direct)
-1. Open browser developer tools (F12)
-2. Go to Application → LocalStorage → fullsalsing domain
-3. Find `fullsalsing_news` key
-4. Edit the JSON directly
-5. Refresh the page
-
-### Method 3: news-data.json File
-Edit the `news-data.json` file directly:
+### News Item Structure
 ```json
-[
-  {
-    "id": 1,
-    "title": "🚨 BREAKING: [Your Headline]",
-    "content": "Your gossip/news content here...",
-    "category": "AI",
-    "size": "medium"
-  }
-]
+{
+  "id": 1,
+  "title": "🚨 BREAKING: Your Sensationalist Headline Here",
+  "content": "Your gossip/news content here (1-3 sentences)...",
+  "category": "Tech",
+  "size": "medium",
+  "link": "https://example.com/source-url"
+}
+```
+
+### Field Descriptions
+- **id**: Unique number (required)
+- **title**: Sensational headline with emoji (max 80 chars)
+- **content**: 1-3 sentences of spicy commentary
+- **category**: Tech, Software, Programming, or AI
+- **size**: small, medium, or large
+- **link**: (optional) URL that appears as "Read more →" button
+
+### Example with Link
+```json
+{
+  "id": 5,
+  "title": "💣 Jack Manages 50% Salary Cuts With Strategic Detonations",
+  "content": "The remaining 50% of workforce will continue training AI and prompting themselves out of their jobs.",
+  "category": "Tech",
+  "size": "large",
+  "link": "https://x.com/jack/status/2027129697092731343"
+}
 ```
 
 ## 🎯 Content Guidelines
