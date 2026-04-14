@@ -108,6 +108,22 @@
       "content": "China's super-app just got a super-brain: Tencent integrated its OpenClaw AI agent directly into WeChat, giving over a billion users an AI companion whether they asked for one or not. Insiders report the move is a direct jab at OpenAI's ChatGPT, which is blocked in China anyway. Sources say the AI will politely decline to discuss certain historical events while absolutely crushing it at scheduling lunch reservations.",
       "category": "AI",
       "size": "large"
+    },
+    {
+      "id": 17,
+      "title": "🕵️ EXPOSED: Cursor Agent Is Just Claude Code With Find & Replace Branding",
+      "content": "A developer's deep dive revealed Cursor Agent is literally Claude Code under the hood with a process that search-and-replaces 'Claude' with 'Cursor Agent.' Millions paid premium pricing for what amounts to a very expensive ctrl+H. Sources say the AI didn't even know it had an identity crisis.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://bsky.app/profile/timkellogg.me/post/3mjepkfqffk27"
+    },
+    {
+      "id": 18,
+      "title": "🦠 Scientists Invented a Fake Disease — AI Swore It Was Real",
+      "content": "Researchers conjured 'Bixonimania' out of thin air, planted a handful of obviously bogus papers, and watched AI chatbots confidently warn patients about symptoms they made up. Nature published the findings, the AI published the misinformation. One of these is peer-reviewed.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://www.nature.com/articles/d41586-026-01100-y"
     }
   ]
 }
