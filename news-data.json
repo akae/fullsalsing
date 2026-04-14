@@ -62,6 +62,62 @@
       "category": "AI",
       "size": "large",
       "link": "https://xarxa.cloud/@Argyle13/116143796682121415"
+    },
+    {
+      "id": 9,
+      "title": "⚡ EXPOSED: Big Tech's $635B AI Bet Is Just One Heat Wave Away From Total Meltdown",
+      "content": "S&P Global drops the bomb — turns out building the robot apocalypse requires more electricity than a small country. Insiders whisper that hyperscaler CEOs are quietly lobbying for the reactivation of every decommissioned nuclear plant, coal station, and suspicious hamster wheel they can find. Sources say at least one major cloud provider considered moving datacenters to Iceland 'for the vibe.'",
+      "category": "AI",
+      "size": "large"
+    },
+    {
+      "id": 10,
+      "title": "🤑 BREAKING: Meta Overtakes Google in Ads — Zuckerberg Finally Wins Something",
+      "content": "For the first time in history, Mark's picture-sharing app is out-earning the world's search monopoly. Rumor has it Sundar Pichai was spotted refreshing Instagram Reels compulsively for 'research purposes.' Sources claim Google's internal Slack was renamed to #touch-grass-moment.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 11,
+      "title": "🎙️ SCOOP: OpenAI Buys a Talk Show Because Apparently World Domination Needed a Podcast",
+      "content": "OpenAI acquired tech talk show TBPN in a move nobody asked for. Insiders report Sam Altman will make a cameo in every episode to explain why AGI is 'just around the corner.' The show's previous hosts were reportedly given severance in ChatGPT Plus subscriptions.",
+      "category": "AI",
+      "size": "medium"
+    },
+    {
+      "id": 12,
+      "title": "🛸 Amazon Inches Closer to Owning Actual Space Because Earth Wasn't Enough",
+      "content": "Jeff Bezos' ex-employer is reportedly close to acquiring Globalstar satellite company. Sources say the end goal is same-day delivery directly to your rooftop via low-Earth orbit. When asked about privacy implications, Amazon replied with a targeted ad.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 13,
+      "title": "🔒 UK Says 'Go to Jail' to Tech Bosses Who Can't Moderate — Finally Some Content",
+      "content": "British lawmakers are threatening CEOs with actual prison time for failing to remove non-consensual intimate images. Silicon Valley's 'move fast and break things' energy finally meets a magistrate's courtroom.",
+      "category": "Tech",
+      "size": "small"
+    },
+    {
+      "id": 14,
+      "title": "💰 TSMC Prints Money Again — Fourth Record Quarter Because AI Wants More Chips",
+      "content": "The Taiwanese chip giant keeps cashing in as every AI lab on the planet hoards GPUs like it's the apocalypse. Insiders say TSMC's CEO sleeps on a mattress stuffed with wafer orders. Nvidia shareholder meeting reportedly just one long standing ovation.",
+      "category": "Tech",
+      "size": "small"
+    },
+    {
+      "id": 15,
+      "title": "🤝 Nvidia Bankrolls Rival Chip Startup SiFive — Because Why Not Own Everyone?",
+      "content": "SiFive pocketed $400 million with Nvidia writing a very large check, which is ironic since SiFive literally designs chips that compete in Nvidia's own market. Sources say Jensen Huang attended the pitch wearing his iconic leather jacket and simply said 'we'll take it.' Rumor has it the term sheet was written on a GPU box.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 16,
+      "title": "🇨🇳 Tencent Drops OpenClaw AI Into WeChat — 1 Billion Users Now Have a Robot Bestie",
+      "content": "China's super-app just got a super-brain: Tencent integrated its OpenClaw AI agent directly into WeChat, giving over a billion users an AI companion whether they asked for one or not. Insiders report the move is a direct jab at OpenAI's ChatGPT, which is blocked in China anyway. Sources say the AI will politely decline to discuss certain historical events while absolutely crushing it at scheduling lunch reservations.",
+      "category": "AI",
+      "size": "large"
     }
   ]
 }
