@@ -60,7 +60,7 @@ function loadNews() {
     fetch('./news-data.json')
         .then(response => response.json())
         .then(data => {
-            newsStore = (data.news || []).reverse();
+            newsStore = data.news || [];
             renderNews();
         })
         .catch(error => {
@@ -77,7 +77,29 @@ function renderNews() {
     
     let hasEmbeds = false;
     
+    // Group small blocks in pairs, keep others as-is
+    const sortedNews = [];
+    const smallBlocks = [];
+    
     newsStore.forEach(news => {
+        if (news.size === 'small') {
+            smallBlocks.push(news);
+        } else {
+            // If we have accumulated small blocks and encounter a non-small, push them first
+            if (smallBlocks.length > 0) {
+                sortedNews.push(...smallBlocks);
+                smallBlocks.length = 0;
+            }
+            sortedNews.push(news);
+        }
+    });
+    
+    // Add any remaining small blocks
+    if (smallBlocks.length > 0) {
+        sortedNews.push(...smallBlocks);
+    }
+    
+    sortedNews.forEach(news => {
         const block = createNewsBlock(news);
         container.appendChild(block);
         
