@@ -1,6 +1,48 @@
 {
   "news": [
     {
+      "id": 24,
+      "title": "🍲 SCANDAL: Best Paella in Tech Nominees REFUSE to Open Source Their Recipes",
+      "content": "Insiders are baffled as the competition's top contenders guard their paella formulas like state secrets. Thousands of desperate Vibe Coders attempting to replicate the magic have hit a wall of compiled binaries and NDA brick walls. One leaked memo suggests the ingredients contain 'proprietary vibes that cannot be reproduced through conventional methods.' The internet is losing its mind.",
+      "category": "Tech",
+      "size": "large"
+    },
+    {
+      "id": 23,
+      "title": "⌨️ BREAKING: Vibe Coding DEAD — Vibe Pressing [Y] Is The New Industry Standard",
+      "content": "Sources report that yesterday at 3:47 PM UTC, every AI Agent collectively decided that asking you to press Y before doing anything is peak development methodology. Engineering teams worldwide are now required to press Y to approve every coffee break, deployment, and bathroom visit. DevOps engineers report their pinky is in revolt. Keyboard manufacturers are seeing unprecedented demand for reinforced Y keys.",
+      "category": "Programming",
+      "size": "large"
+    },
+    {
+      "id": 22,
+      "title": "🤖 BREAKING: Pajeculan Is Now The Only Tool You'll Ever Need (Probably)",
+      "content": "Tech moguls announced Pajeculan has officially absorbed the functionality of X, Meta, Alphabet, and the mysterious Procesionaria App. Insiders report it does 'literally everything but maybe not well.' One leaked internal memo described Pajeculan as '87% Electron wrapper, 11% vibes, 3% JAVA Enterprise, 1% Black Magic.' Early adopters claim they're still not sure what it actually does, but their productivity metrics are extremely confident.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
+      "id": 21,
+      "title": "🔬 SHOCKING: Every Branch Will Be Renamed to 'Non-Experimental' Effective Immediately",
+      "content": "Industry leaders met in secret and decided that 'main' and 'master' were too provocative. The new reality: all git branches must be labeled 'non-experimental' and never, ever promoted to production. Sources say this move was made to 'increase clarity' but mostly causes confusion. One CTOs leaked DM read: 'Nobody knows what's running in prod anymore, but at least we sound scientific.'",
+      "category": "Software",
+      "size": "medium"
+    },
+    {
+      "id": 20,
+      "title": "☕ EXCLUSIVE: Java Developers Are Now The Coolest People In The Room",
+      "content": "Plot twist: Java is officially hipster. The stereotype of dinosaurs coding on green CRT screens has been completely shattered. Modern Java devs are now recognized as moustache-bearing, tattoo-covered startup founders with embedded AI Agent processes for literally everything. Sources report Java swing frameworks are trending on TikTok. One developer's leather apron sold on Grailed for $3,400.",
+      "category": "Programming",
+      "size": "medium"
+    },
+    {
+      "id": 19,
+      "title": "🚨 HANTAVIRUS ALERT: Hantavirus Detected in Supply Chain — QUARANTINE ALL APPLICATIONS NOW",
+      "content": "Security researchers discovered that Hantavirus has evolved and is now spreading through software pipelines via supply chain attacks. Every application must be immediately quarantined. Insiders are in panic mode as the virus reportedly creates infected dependencies that replicate through npm installs. One security team reportedly disconnected their entire infrastructure from the internet 'just to be safe.' Hacker news is on fire.",
+      "category": "Tech",
+      "size": "large"
+    },
+    {
       "id": 1,
       "title": "Jack Manages 50% Salary Savings With Strategic Detonations 💣 ",
       "content": "The remaining 50% of workforce will continue training AI and prompting themselves out of their jobs.",
