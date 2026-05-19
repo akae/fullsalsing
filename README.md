@@ -14,7 +14,7 @@
 fullsalsing/
 ├── index.html          # Main page
 ├── styles.css          # All styling
-├── script.js           # News loader, carousel, Twitter embeds
+├── script.js           # News loader and carousel
 ├── news-data.json      # All news content
 ├── fullsalsing.png     # Banner image
 ├── sriracha.webp       # Link button icon
@@ -49,7 +49,6 @@ fullsalsing/
 | `category` | ✅ | `Tech`, `Software`, `Programming`, or `AI` |
 | `size` | ✅ | `small`, `medium` (default), or `large` |
 | `link` | ☐ | Source URL — renders as a 🌶️ sriracha button |
-| `tweet_url` | ☐ | Twitter/X status URL — auto-embeds the tweet |
 | `embed_html` | ☐ | Custom embed HTML block |
 | `image` | ☐ | Image URL for visual content |
 
