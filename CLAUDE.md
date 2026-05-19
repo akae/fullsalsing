@@ -145,4 +145,73 @@ Static hosting only — no backend, no database, no build process required.
 
 ---
 
+## PART 4: AUTOSALSING (automated news harvesting)
+
+When the user says **"autosalsing"** — follow this exact workflow. Do not skip steps.
+
+### Step 1 — Fetch the front pages
+
+Use the `WebFetch` tool to fetch both pages **in parallel**:
+- `https://news.ycombinator.com/`
+- `https://techcrunch.com/`
+
+Extract all visible headlines and their URLs.
+
+### Step 2 — Match to salsing topics
+
+Filter headlines to only those that fit the site's topic universe:
+- AI drama (LLMs, model releases, AI company beef, AGI hype)
+- Corporate lawsuits & tech legal battles
+- Chip wars, GPU supply, semiconductor geopolitics
+- Dev culture absurdity (vibe coding, frameworks, "10x" claims)
+- Startup personalities & founder drama
+- Big Tech power moves (acquisitions, layoffs, pivots)
+- Geopolitics intersecting with tech (export controls, bans, state-sponsored)
+
+Discard: pure finance, sports, politics without tech angle, lifestyle, non-tech science.
+
+Pick **2–6 stories** that would make the best salsings. Prefer juicy, surprising, or drama-adjacent stories.
+
+### Step 3 — Draft the salsings
+
+For each selected story, draft a salsing following PART 1 rules exactly:
+- Read `news-data.json` to get the current highest `id`
+- Assign IDs sequentially starting from `current_highest + 1`
+- Set `link` to the source URL (HN or TechCrunch article URL)
+- Title: Emoji + ALL CAPS label + punchy headline (≤80 chars)
+- Content: 1–3 sentences, gossip tone, grounded in real details
+- Category: Tech / AI / Software / Programming
+- Size: small/medium/large (default: medium)
+
+### Step 4 — Individual approval loop
+
+**Present each drafted salsing one at a time.** For each one:
+
+1. Show the full JSON block
+2. Show a preview of how the title and content read together
+3. Ask: **"Add this salsing? (yes / skip / edit)"**
+   - `yes` → mark it as approved, move to next
+   - `skip` → discard it, move to next
+   - `edit` → let the user provide corrections, update the draft, re-show it, ask again
+
+Do **not** write anything to `news-data.json` until all items have been reviewed.
+
+### Step 5 — Write approved salsings
+
+After all items are reviewed:
+- If zero items approved → stop, tell the user nothing was added
+- If 1+ items approved:
+  - Re-read `news-data.json` to confirm current highest `id` (in case it changed during the session)
+  - Re-assign IDs sequentially from `current_highest + 1`, in approval order
+  - Prepend all approved items to the top of the `"news"` array (newest first)
+  - Commit following PART 1 rules: `Add salsings: topic one and topic two`
+
+### Rules
+- Never write to `news-data.json` before all approval prompts are done
+- Never batch-approve — each salsing must be shown and confirmed individually
+- Always set `link` to the original article URL
+- IDs must be contiguous integers; re-check after all edits
+
+---
+
 **FULL SALSING** — Where Tech Gets Spicy 🌶️

@@ -37,7 +37,7 @@ Displays rotating catchphrases with glittery gradient effects:
 
 ## 📝 How to Update News
 
-Edit the `news-data.json` file directly. The app loads all news from this file on page load and displays them in **reverse order** (newest first).
+Edit the `news-data.json` file directly. **Always prepend** new items at the top of the `"news"` array — the site renders items in array order, so top = newest. Never append to the bottom.
 
 ### News Item Structure
 ```json
@@ -166,6 +166,8 @@ fullsalsing/
 ├── fullsalsing.png     # Banner image
 ├── sriracha.webp       # Link button icon
 ├── background.png      # Tiled background pattern
+├── QUICKSTART.html     # Quick reference for content authors
+├── CLAUDE.md           # Agent instructions (salsing format, autosalsing)
 └── README.md           # This file
 ```
 
@@ -217,10 +219,20 @@ python3 -m http.server 8000
 - Mobile browsers (iOS Safari, Chrome Mobile)
 - Any browser supporting ES6 and CSS Grid
 
+## 🤖 Autosalsing
+
+Say **"autosalsing"** to an AI agent (with `CLAUDE.md` loaded) to run the automated news harvesting workflow:
+
+1. Fetches front pages of Hacker News and TechCrunch
+2. Picks 2–6 stories that match the site's topic universe
+3. Drafts salsings in the correct format with source links
+4. Shows each one for individual approval (yes / skip / edit)
+5. Writes only approved items and commits
+
 ## 🤝 Contributing
 
 Found a spicy tech story? Want to add more drama?
-1. Edit `news-data.json` directly
+1. Edit `news-data.json` directly — **prepend**, don't append
 2. Follow the content guidelines
 3. Keep the tone satirical but not harmful!
 
