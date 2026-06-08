@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "id": 32,
+      "title": "🚗 BREAKING: Uber, Waymo And Wayve Are About To Fight Over London's Streets",
+      "content": "Three robotaxi giants are converging on London for what insiders are calling the most expensive taxi war in history. Waymo brings the Google money, Wayve brings the British politeness, and Uber brings the audacity of a company that lost billions just to exist. Black cab drivers are reportedly sharpening their knowledge-of-London expertise in preparation. May the best algorithm win.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/08/uber-wayve-and-waymo-are-headed-towards-a-robotaxi-showdown-in-london/"
+    },
+    {
+      "id": 31,
+      "title": "⚡ SHOCKING: DeepSeek V4 Pro Just Beat GPT-5.5 And OpenAI Is Pretending Not To Notice",
+      "content": "Sources report DeepSeek's latest model is outperforming GPT-5.5 Pro on precision benchmarks, which is extremely awkward for a company that just raised billions. The Chinese lab that was supposed to be a one-hit wonder keeps hitting. OpenAI's response so far: silence, a vague blog post about safety, and a super app that still isn't ready.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision"
+    },
+    {
+      "id": 30,
+      "title": "🚨 BREAKING: 1000 Data Breaches Later And Companies Still Can't Be Bothered To Tell You",
+      "content": "Troy Hunt just dropped a brutal analysis: after cataloguing 1000 data breaches, the disclosure lag is somehow getting *worse*, not better. Companies are sitting on breach news for months while your password is already on sale in a Telegram group. Regulators are furious, consumers are numb, and the only winner is whoever is selling breach notification software. Congrats everyone.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://www.troyhunt.com/1000-data-breaches-later-the-disclosure-lag-is-worse-than-ever/"
+    },
+    {
+      "id": 29,
+      "title": "🔥 EXCLUSIVE: OpenAI's 'Super App' Still Not Ready, Still Very Super Apparently",
+      "content": "Sources confirm OpenAI is still working on that super app they announced forever ago. No shipping date, no screenshots, no vibes — just a company sitting on $40B in funding quietly insisting it's going to be very good. Rumor has it the app will do everything: chat, search, email, taxes, spiritual guidance. Sam Altman reportedly seen carrying a whiteboard that just says 'soon.'",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/"
+    },
+    {
+      "id": 28,
+      "title": "💸 BREAKING: The Tokenpocalypse Is Here And Your AWS Bill Is Already Crying",
+      "content": "Insiders report that AI token costs have officially gone full 'we didn't budget for this' mode across the industry. Companies are hoarding tokens like toilet paper in 2020, engineers are writing prompt golf to shave milliseconds off context windows, and the CFO has entered the chat with a very concerned face. TechCrunch is calling it the Tokenpocalypse — we're calling it Tuesday.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/"
+    },
+    {
       "id": 27,
       "title": "📉 BREAKING: Traitor Count Soars As Every Stock Tanks — Except Duck Futures",
       "content": "Sources confirm the Traitor Number™ hit a new all-time high this morning, with defectors flipping faster than markets can price them in. Every ticker is bleeding red — tech, energy, consumer, you name it — but somehow duck sales are mooning to the moon. Insiders whisper that quack-based assets have decoupled from reality entirely. Wall Street analysts caught hoarding rubber duckies in the bathroom. Nobody knows what's happening, but the ducks are winning.",
