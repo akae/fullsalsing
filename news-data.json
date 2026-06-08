@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "id": 27,
+      "title": "📉 BREAKING: Traitor Count Soars As Every Stock Tanks — Except Duck Futures",
+      "content": "Sources confirm the Traitor Number™ hit a new all-time high this morning, with defectors flipping faster than markets can price them in. Every ticker is bleeding red — tech, energy, consumer, you name it — but somehow duck sales are mooning to the moon. Insiders whisper that quack-based assets have decoupled from reality entirely. Wall Street analysts caught hoarding rubber duckies in the bathroom. Nobody knows what's happening, but the ducks are winning.",
+      "category": "Tech",
+      "size": "medium"
+    },
+    {
       "id": 26,
       "title": "💊 BREAKING: Drug Discovery AI Now Speaks Human — No PhD Required",
       "content": "SandboxAQ, the Alphabet spinout nobody was watching, just plugged their quantum chemistry models directly into Claude. You can now ask an AI to simulate molecular dynamics in plain English, no supercomputer, no lab coat, no idea what you're doing. Eric Schmidt's side project has raised $950M and is quietly eating biotech for breakfast while everyone else was distracted by chatbots that write poems.",
