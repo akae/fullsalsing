@@ -136,7 +136,7 @@ function createNewsBlock(news) {
     block.innerHTML = `
         ${imageHTML}
         <span class="block-category">${news.category}</span>
-        <h2 class="block-title">${news.title}</h2>
+        <h2 class="block-title">${news.title.replace(/📉/g, '<span class="graph-icon">📉</span>')}</h2>
         <p class="block-content">${news.content}</p>
     `;
     
