@@ -182,7 +182,6 @@ def main():
     response = client.messages.create(
         model="claude-opus-4-8",
         max_tokens=8192,
-        thinking={"type": "adaptive"},
         system=SYSTEM_PROMPT,
         tools=[tool_def],
         tool_choice={"type": "tool", "name": "submit_salsings"},
