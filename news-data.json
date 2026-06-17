@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "title": "🔥 SHOCKING: Anthropic's Trump Feud Is Boosting Sales",
+      "content": "Sales data suggests Anthropic's very public spat with the Trump admin is somehow printing money instead of tanking the company. Insiders say nothing markets an LLM like a good government beef. Claude's PR team is doing zero work and winning anyway.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
+      "id": 39
+    },
+    {
+      "title": "💉 EXCLUSIVE: Devs Held Hostage Over Their Own Images for $5",
+      "content": "Nobody asked but a service is reportedly demanding five whole dollars to give users back their own uploaded images. Sources say it's the most honest SaaS pricing model yet: pure ransom. Cloud storage has entered its mob era.",
+      "category": "Software",
+      "size": "small",
+      "link": "https://www.lutr.dev/want-your-images-back-sure-that-ll-be-5-dollars",
+      "id": 38
+    },
+    {
+      "title": "🤡 LOSER ALERT: 60% of Shoppers Hate 'AI' in Your Ads",
+      "content": "A fresh survey says sixty percent of US consumers see 'AI' slapped on a product and immediately recoil. Insiders report marketing departments everywhere are quietly hitting Ctrl+F to delete two letters. Turns out the magic word became a curse word.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://wpvip.com/future-of-the-web-2026/",
+      "id": 37
+    },
+    {
+      "title": "🇨🇳 CONFIRMED: GLM-5.2 Dethrones Everyone in Open Weights",
+      "content": "Rumor has it Western AI labs spat out their oat lattes when GLM-5.2 climbed to the top of the Artificial Analysis Intelligence Index. Open weights, leading the pack, and nobody charged you a subscription. Awkward.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index",
+      "id": 36
+    },
+    {
+      "title": "🚨 BREAKING: SpaceX Drops $60B on Cursor Days After IPO",
+      "content": "Insiders report Elon's rocket empire just paid SIXTY BILLION in stock for an AI code editor, mere days after Cursor's blockbuster IPO. Sources say nobody at SpaceX can explain how autocomplete gets you to Mars. The vibe-coding industrial complex has officially achieved orbit.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
+      "id": 35
+    },
+    {
       "id": 34,
       "title": "🦎 BREAKING: IGUANAGATE — Healthcare SREs Are Sweating Through Their On-Call Pagers",
       "content": "iNTERFACEWARE just made Iguana 6 'free' — with a license that bans deployment on AWS, Azure, GCP, and Oracle Cloud. Yes, the integration engine carrying HL7 traffic between hospitals, labs, and EHRs at 800+ orgs is now legally allergic to every cloud your SRE team has ever used. Meanwhile CEO Eliot Muir has relocated to the Cayman Islands citing 'free speech', and is mandating security code reviews for every deployment. Healthcare SREs report a sudden, urgent interest in bare-metal datacenters they hadn't thought about since 2014.",
