@@ -169,36 +169,42 @@ def main():
         "Include `link` only when you have the real article URL from the headlines above."
     )
 
-    # Call Claude
+    # Call Claude using tool use for reliable structured output
     client = anthropic.Anthropic()
     print("[info] Calling Claude API...", file=sys.stderr)
 
+    tool_def = {
+        "name": "submit_salsings",
+        "description": "Submit the generated salsings array",
+        "input_schema": SALSING_SCHEMA,
+    }
+
     response = client.messages.create(
         model="claude-opus-4-8",
-        max_tokens=4096,
+        max_tokens=8192,
         thinking={"type": "adaptive"},
         system=SYSTEM_PROMPT,
+        tools=[tool_def],
+        tool_choice={"type": "tool", "name": "submit_salsings"},
         messages=[{"role": "user", "content": user_prompt}],
-        output_config={"format": {"type": "json_schema", "schema": SALSING_SCHEMA, "name": "salsings_response"}},
     )
 
-    # Parse response
-    raw = None
+    # Extract tool use block
+    tool_block = None
     for block in response.content:
-        if block.type == "text":
-            raw = block.text
+        if block.type == "tool_use" and block.name == "submit_salsings":
+            tool_block = block
             break
 
-    if not raw:
-        print("[error] No text in Claude response", file=sys.stderr)
+    if not tool_block:
+        print("[error] No tool_use block in Claude response", file=sys.stderr)
+        print(f"[error] Content types: {[b.type for b in response.content]}", file=sys.stderr)
         sys.exit(1)
 
     try:
-        parsed = json.loads(raw)
-        salsings = parsed["salsings"]
-    except (json.JSONDecodeError, KeyError) as e:
-        print(f"[error] Failed to parse response: {e}", file=sys.stderr)
-        print(f"[error] Raw: {raw[:500]}", file=sys.stderr)
+        salsings = tool_block.input["salsings"]
+    except (KeyError, TypeError) as e:
+        print(f"[error] Failed to extract salsings from tool input: {e}", file=sys.stderr)
         sys.exit(1)
 
     # Validate
