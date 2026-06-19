@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "title": "🔥 CONFIRMED: Snap Dumps Pricey AI Video Team Into 'Dotmo'",
+      "content": "Snap just spun off its entire AI video team into a brand-new company called Dotmo, citing the unbearable cost of staying cool. Sources say it's less a strategic move and more an eviction notice with a logo. Good luck out there, Dotmo.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/",
+      "id": 44
+    },
+    {
+      "title": "💉 EXCLUSIVE: Study Says AI Is Quietly Rotting Your Skills",
+      "content": "Early results are in and they're grim: researchers report that leaning on AI is measurably dulling human abilities. Nobody asked but the autocomplete generation may need a remedial course in thinking. The kicker? They'll probably ask ChatGPT to summarize it.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://www.nature.com/articles/d41586-026-01947-1",
+      "id": 43
+    },
+    {
+      "title": "⚖️ SHOCKING: Rivian Owners Sue Over Self-Driving Dreams",
+      "content": "Rivian owners have filed a lawsuit alleging the company oversold self-driving features that drive about as autonomously as a parked car. Insiders say the 'full autonomy' apparently shipped in a future software update that's still buffering. Steering not included.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/18/rivian-owners-file-lawsuit-alleging-false-promises-on-self-driving-features/",
+      "id": 42
+    },
+    {
+      "title": "🇨🇳 BREAKING: US Says ASML's Crown Jewel Is in China",
+      "content": "Washington claims ASML's most advanced chip tool somehow ended up in China, and ASML is firmly saying nope, not ours, never happened. Rumor has it the world's most expensive game of 'where's the lithography machine' is now fully underway. Someone check the shipping label.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/",
+      "id": 41
+    },
+    {
+      "title": "🤡 LOSER ALERT: Allbirds AI CEO Has a Plan, Zero Employees",
+      "content": "Sources say the freshly minted CEO of Allbirds' new AI venture has a bold roadmap and exactly nobody to build it. Insiders report the org chart is currently just one box pointing at itself. Disruption: now headcount-free.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+      "id": 40
+    },
+    {
       "title": "🔥 SHOCKING: Anthropic's Trump Feud Is Boosting Sales",
       "content": "Sales data suggests Anthropic's very public spat with the Trump admin is somehow printing money instead of tanking the company. Insiders say nothing markets an LLM like a good government beef. Claude's PR team is doing zero work and winning anyway.",
       "category": "AI",
