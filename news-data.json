@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "title": "🔥 BREAKING: New Steam Console Is Personally Melting the Ice Caps",
+      "content": "Valve's shiny new living-room console just dropped and climate scientists are reportedly sweating — literally. Sources say the silicon space heater pulls enough wattage to make a gaming rig blush, and somewhere a polar bear just filed a Steam refund request. Gaben giveth frames, the planet payeth the GPU tax.",
+      "category": "Tech",
+      "size": "medium",
+      "id": 45
+    },
+    {
       "title": "🔥 CONFIRMED: Snap Dumps Pricey AI Video Team Into 'Dotmo'",
       "content": "Snap just spun off its entire AI video team into a brand-new company called Dotmo, citing the unbearable cost of staying cool. Sources say it's less a strategic move and more an eviction notice with a logo. Good luck out there, Dotmo.",
       "category": "AI",
