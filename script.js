@@ -133,11 +133,14 @@ function createNewsBlock(news) {
     block.className = `news-block ${news.size}`;
     const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="block-image" loading="lazy">` : '';
     
+    const dateHTML = news.date ? `<span class="block-date">${formatDate(news.date)}</span>` : '';
+
     block.innerHTML = `
         ${imageHTML}
         <span class="block-category">${news.category}</span>
         <h2 class="block-title">${news.title.replace(/📈/g, '<span class="graph-icon">📈</span>')}</h2>
         <p class="block-content">${news.content}</p>
+        ${dateHTML}
     `;
     
     // Add link button with sriracha emoji (use link or tweet_url)
@@ -166,6 +169,15 @@ function createNewsBlock(news) {
     }
     
     return block;
+}
+
+// Format an ISO date (YYYY-MM-DD) as e.g. "Jun 22, 2026"
+function formatDate(iso) {
+    const parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+    if (!parts) return iso;
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const [, y, m, d] = parts;
+    return `${months[parseInt(m, 10) - 1]} ${parseInt(d, 10)}, ${y}`;
 }
 
 // Check if URL is a Twitter/X URL

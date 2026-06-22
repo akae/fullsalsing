@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FULL Salsing — RSS Feed</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .rss-wrapper { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+        .rss-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1rem 0; }
+        .rss-actions button {
+            font: inherit; cursor: pointer; border: none; border-radius: 999px;
+            padding: 0.6rem 1.2rem; background: var(--primary-pink, #FFB6D9);
+            color: var(--text-dark, #333); box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .rss-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+        #status { font-style: italic; opacity: 0.8; }
+        #feed-output {
+            white-space: pre; overflow: auto; max-height: 70vh;
+            background: rgba(255,255,255,0.75); backdrop-filter: blur(6px);
+            border-radius: 12px; padding: 1rem; font-size: 0.8rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="rss-wrapper">
+        <header class="header">
+            <a href="index.html"><img src="fullsalsing.png" alt="FULL Salsing" class="header-banner"></a>
+        </header>
+        <h1>🌶️ RSS Feed</h1>
+        <p>Generated live from <code>news-data.json</code>. Download <code>feed.xml</code>
+           and commit it to the repo root to serve a real subscribable feed.</p>
+        <div class="rss-actions">
+            <button id="download-btn" disabled>Download feed.xml</button>
+            <button id="copy-btn" disabled>Copy to clipboard</button>
+        </div>
+        <p id="status">Building feed…</p>
+        <pre id="feed-output"></pre>
+    </div>
+    <script src="rss.js"></script>
+</body>
+</html>
