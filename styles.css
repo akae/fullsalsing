@@ -284,6 +284,16 @@ body {
     text-transform: uppercase;
 }
 
+.footer-link {
+    color: var(--text-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 105, 180, 0.6);
+    text-underline-offset: 3px;
+}
+.footer-link:hover {
+    color: #FF1493;
+}
+
 /* ===== Twitter Widget Section ===== */
 .twitter-widget-section {
     margin: 40px auto;
