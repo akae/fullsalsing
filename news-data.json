@@ -1,6 +1,15 @@
 {
   "news": [
     {
+      "id": 46,
+      "title": "📡 HISTORIC: FULL Salsing Now Has an RSS Feed and We're All Living in the Future",
+      "content": "While lesser tech blogs were busy adding AI chatbots nobody asked for, FULL Salsing quietly did the unthinkable — we shipped an actual RSS feed. That's right: machine-readable, reader-compatible, chronologically-sorted, XML-flavoured spice delivered straight to your aggregator of choice. Insiders say this puts fullsalsing.com on the bleeding edge of a technology pioneered in 1999, and we could not be more proud. Netscape Navigator users: you're welcome. Subscribe at fullsalsing.com/feed.xml before the hype dies down.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://fullsalsing.com/feed.xml",
+      "date": "2026-06-23"
+    },
+    {
       "title": "🔥 BREAKING: New Steam Console Is Personally Melting the Ice Caps",
       "content": "Valve's shiny new living-room console just dropped and climate scientists are reportedly sweating — literally. Sources say the silicon space heater pulls enough wattage to make a gaming rig blush, and somewhere a polar bear just filed a Steam refund request. Gaben giveth frames, the planet payeth the GPU tax.",
       "category": "Tech",

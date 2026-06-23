@@ -6,7 +6,15 @@
     <atom:link href="https://fullsalsing.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Sensationalist tech news, programming gossip, and AI drama. 🌶️</description>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Jun 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>📡 HISTORIC: FULL Salsing Now Has an RSS Feed and We&apos;re All Living in the Future</title>
+      <link>https://fullsalsing.com/feed.xml</link>
+      <guid isPermaLink="false">https://fullsalsing.com/#46</guid>
+      <pubDate>Tue, 23 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Tech</category>
+      <description><![CDATA[While lesser tech blogs were busy adding AI chatbots nobody asked for, FULL Salsing quietly did the unthinkable — we shipped an actual RSS feed. That's right: machine-readable, reader-compatible, chronologically-sorted, XML-flavoured spice delivered straight to your aggregator of choice. Insiders say this puts fullsalsing.com on the bleeding edge of a technology pioneered in 1999, and we could not be more proud. Netscape Navigator users: you're welcome. Subscribe at fullsalsing.com/feed.xml before the hype dies down.]]></description>
+    </item>
     <item>
       <title>🔥 BREAKING: New Steam Console Is Personally Melting the Ice Caps</title>
       <link>https://fullsalsing.com/#45</link>
