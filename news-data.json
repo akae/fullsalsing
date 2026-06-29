@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "title": "💥 LOSER ALERT: Even SoftBank's CEO Side-Eyes Musk's Space Data Centers",
+      "content": "Elon's pitch for orbital data centers is getting questioned by literally SoftBank's CEO — a man not famous for caution. Insiders report the math on launching servers into space and keeping them cooled is, charitably, optimistic. Meanwhile the US grid can't even hit 40GW behind-the-meter on Earth, but sure, space.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/",
+      "id": 53
+    },
+    {
+      "title": "🔥 EXCLUSIVE: Cloudflare Finds Bug in Hyper, Internet Holds Breath",
+      "content": "Cloudflare's engineers dissected a bug deep in the hyper HTTP library, the kind of thing that quietly powers half your favorite Rust stacks. Sources say the writeup is a masterclass and also mildly terrifying. Nobody asked, but the foundations of the web are held together by very smart people and a lot of caffeine.",
+      "category": "Programming",
+      "size": "medium",
+      "link": "https://blog.cloudflare.com/hyper-bug/",
+      "id": 52
+    },
+    {
+      "title": "💉 SHOCKING: Ford Crawls Back to the 'Gray Beard' Engineers",
+      "content": "After AI 'fell short,' Ford is rehiring the veteran engineers it presumably hoped to replace with a chatbot. Rumor has it the gray beards negotiated from a position of extreme leverage and zero mercy. Turns out decades of experience > a prompt window.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
+      "id": 51
+    },
+    {
+      "title": "🇨🇳 BREAKING: GLM 5.2 Reportedly Bodies Claude in Cyber Benchmarks",
+      "content": "Semgrep dropped benchmarks claiming GLM 5.2 outperforms Claude in cybersecurity tasks, and Anthropic's export ban suddenly looks like the gift that keeps on giving — to everyone else. Insiders report Asian startups are shipping Mythos-clones faster than the legal team can spell 'embargo.' We have Mythos at home, and apparently home slaps.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
+      "id": 50
+    },
+    {
+      "title": "🤡 CONFIRMED: HackerRank's Own ATS Can't Decide If You're Hireable",
+      "content": "HackerRank open sourced its applicant tracking system and the internet immediately ran its own resume through it three times — scoring 90, then 74, then 88. Sources say the algorithm gatekeeping your dream job is basically a coin flip in a trench coat. Somewhere a recruiter is calling this 'AI-powered.'",
+      "category": "Software",
+      "size": "medium",
+      "link": "https://danunparsed.com/p/hackerrank-open-source-ats",
+      "id": 49
+    },
+    {
       "title": "🔥 BREAKING: OpenAI Drops Its First Chip, Nvidia Side-Eyes",
       "content": "OpenAI just unveiled its first custom silicon, built by Broadcom, because buying everyone else's GPUs was getting embarrassing. Sources say Jensen Huang felt a great disturbance in the supply chain. Vertical integration: now with extra spice.",
       "category": "Tech",
