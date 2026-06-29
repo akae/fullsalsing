@@ -21,7 +21,9 @@ const CAROUSEL_SENTENCES = [
     'Where nuance goes to die',
     'Viral by design',
     'Your daily dose of drama',
-    'Tech tabloid, zero apologies'
+    'Tech tabloid, zero apologies',
+    'The Super-Pop of tech news',
+    'Where traitors get their dose of salsing'
 ];
 
 let newsStore = [];
@@ -36,22 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Start carousel rotation
 function startCarousel() {
-    const carouselText = document.getElementById('carousel-text');
-    if (!carouselText) return;
+    const elA = document.getElementById('carousel-text-a');
+    const elB = document.getElementById('carousel-text-b');
+    if (!elA || !elB) return;
 
-    // Set initial sentence
-    carouselText.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
+    let active = elA;
+    let inactive = elB;
 
-    // Rotate every 4 seconds
+    elA.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
+
     setInterval(() => {
         currentCarouselIndex = (currentCarouselIndex + 1) % CAROUSEL_SENTENCES.length;
-        carouselText.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
 
-        // Restart animation by removing and re-adding class
-        carouselText.style.animation = 'none';
-        setTimeout(() => {
-            carouselText.style.animation = '';
-        }, 10);
+        // Pre-load next text into the hidden element, then crossfade
+        inactive.textContent = CAROUSEL_SENTENCES[currentCarouselIndex];
+        inactive.classList.remove('carousel-item--hidden');
+        active.classList.add('carousel-item--hidden');
+
+        // Swap roles
+        const tmp = active;
+        active = inactive;
+        inactive = tmp;
     }, 4000);
 }
 
