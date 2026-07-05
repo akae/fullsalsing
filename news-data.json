@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "title": "🚨 BREAKING: Nearly 90 New Unicorns Minted, Bubble Sends Regards",
+      "content": "Insiders report almost 90 fresh unicorns have appeared this year, each valued at a billion dollars and roughly zero profits. VCs are printing valuations like it's a group project due tomorrow. Nothing could possibly go wrong.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/",
+      "id": 60
+    },
+    {
+      "title": "💥 CONFIRMED: Chevy's All-American EV Truck Nobody Wants",
+      "content": "Sources say Chevy built a patriotic electric pickup and the buyers simply... didn't show up. Turns out waving a flag at a spec sheet doesn't move metal off the lot. The parking lot is very, very full.",
+      "category": "Tech",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/07/03/chevy-built-an-all-american-ev-truck-why-is-nobody-buying-it/",
+      "id": 59
+    },
+    {
+      "title": "🌶️ SHOCKING: Midjourney Demands Hollywood Show Its AI Homework",
+      "content": "Nobody asked but Midjourney wants studios to spill exactly how much AI they're secretly using in your favorite blockbusters. The company that scraped everything now wants transparency — pure comedy. Glass houses, meet stones.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
+      "id": 58
+    },
+    {
+      "title": "🔥 EXCLUSIVE: Shadcn Ditches Radix, Base UI Now the Chosen One",
+      "content": "Rumor has it every dev who rebuilt their design system last quarter is now sobbing into their Tailwind config. Shadcn/UI now defaults to Base UI instead of Radix, and the migration guides are already multiplying. Your component library has trust issues now.",
+      "category": "Software",
+      "size": "medium",
+      "link": "https://ui.shadcn.com/docs/changelog",
+      "id": 57
+    },
+    {
+      "title": "🇨🇳 BREAKING: Alibaba Bans Employees From Touching Claude Code",
+      "content": "Insiders report Alibaba has quietly forbidden staff from using Anthropic's Claude Code, presumably because leaking your prompts to a rival is a bad look. Nothing says 'we have our own model' like panicking about someone else's. Awkward.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
+      "id": 56
+    },
+    {
       "id": 55,
       "title": "💉 BREAKING: Big Boss Wants a Chip in Your Brain to Prove You're at Your Desk",
       "content": "Sources confirm corporate overlords are piloting neural implants for remote workers — because a webcam, a VPN log, and three daily standups apparently aren't enough surveillance. The chip tracks your precise desk coordinates 24/7 and fires a polite Slack notification if you wander to the kitchen during core hours. Work-life balance has officially left the chat.",
