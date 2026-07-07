@@ -1,6 +1,38 @@
 {
   "news": [
     {
+      "title": "🚨 CONFIRMED: Microsoft Can Track You via a Windows Device ID",
+      "content": "A hacker's arrest quietly revealed that Microsoft has been sitting on a unique Windows device ID capable of following users around. Insiders report the feature works great — for whoever gets a warrant. Sleep tight, telemetry lovers.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://www.pcmag.com/news/a-hackers-arrest-reveals-microsoft-can-track-users-via-a-windows-device",
+      "id": 64
+    },
+    {
+      "title": "🤡 LOSER ALERT: 'First' AI Ransomware Attack Still Needed a Human",
+      "content": "The much-hyped 'fully autonomous' AI ransomware caper turned out to require a very human finger on the button. Nobody asked but the robots aren't taking your hacking job just yet. Skynet remains on probation.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+      "id": 63
+    },
+    {
+      "title": "💥 SHOCKING: Microsoft Axes 5,000 Jobs, Blames Everything But Itself",
+      "content": "Nearly 5,000 Xbox and commercial sales staff got the boot this week while the layoff memo did its best to sound optimistic. Sources say the running 2026 layoff tally now reads like an AI buzzword bingo card. Efficiency, they call it.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/",
+      "id": 62
+    },
+    {
+      "title": "🔥 BREAKING: GLM 5.2 Threatens to Torch AI Profit Margins",
+      "content": "Rumor has it the shiny new GLM 5.2 is so cheap to run that competitors are quietly sweating through their venture funding. Insiders say the 'AI margin collapse' isn't coming — it already RSVP'd. Someone tell the $10B model club the party might be over.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2/",
+      "id": 61
+    },
+    {
       "title": "🚨 BREAKING: Nearly 90 New Unicorns Minted, Bubble Sends Regards",
       "content": "Insiders report almost 90 fresh unicorns have appeared this year, each valued at a billion dollars and roughly zero profits. VCs are printing valuations like it's a group project due tomorrow. Nothing could possibly go wrong.",
       "category": "Tech",
