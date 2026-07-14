@@ -1,6 +1,46 @@
 {
   "news": [
     {
+      "title": "⚡ BREAKING: Sam Altman Trash-Talks Space Data Centers",
+      "content": "Turns out when Sam Altman roasted the idea of orbital data centers, most experts just nodded along. Sources say launching servers into space is expensive, hot, and dumb — a rare Altman take that's actually grounded. Literally.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/07/13/sam-altmans-space-data-center-trash-talk-is-what-most-experts-already-believe/",
+      "id": 69
+    },
+    {
+      "title": "🌶️ SHOCKING: Startup Wants to Set CUDA Free From Nvidia",
+      "content": "Spectral Compute is betting it can run CUDA on non-Nvidia hardware, a move roughly as chill as poking Jensen with a leather-jacketed stick. Insiders whisper about compatibility layers and lawyers warming up. Will it succeed? The GPU cartel says lol.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://www.hpcwire.com/2026/07/09/spectral-compute-aims-to-set-cuda-free-will-it-succeed/",
+      "id": 68
+    },
+    {
+      "title": "💥 CONFIRMED: PixVerse Prints $439M, Valuation Blasts Past $2B",
+      "content": "Video-gen startup PixVerse just vacuumed up $439M and now sits pretty above a $2B valuation. Nobody asked but every VC apparently needs their own AI video toy this quarter. The bubble isn't popping — it's rendering in 4K.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/",
+      "id": 67
+    },
+    {
+      "title": "🚨 BREAKING: Satya Nadella Warns AI Fanboys to Chill",
+      "content": "Rumor has it Microsoft's CEO just told companies obsessed with AI to actually, you know, make money with it. Insiders report the 'shocking warning' amounts to 'stop cosplaying as a startup.' Bold words from the guy who bet the farm on OpenAI.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/07/13/satya-nadella-has-issued-a-shocking-warning-to-companies-using-ai/",
+      "id": 66
+    },
+    {
+      "title": "🔥 EXCLUSIVE: Apple Accuses OpenAI of Cloning Its Homework",
+      "content": "Sources say a former Apple engineer allegedly exploited a 'rare' bug to yeet confidential files on the way out the door — straight into an OpenAI shaped destination. Apple's trade secrets lawsuit reads less like a legal filing and more like a soap opera. Someone forgot to wipe their badge AND their conscience.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/07/13/the-wildest-allegations-in-apples-trade-secrets-lawsuit-against-openai/",
+      "id": 65
+    },
+    {
       "title": "🚨 CONFIRMED: Microsoft Can Track You via a Windows Device ID",
       "content": "A hacker's arrest quietly revealed that Microsoft has been sitting on a unique Windows device ID capable of following users around. Insiders report the feature works great — for whoever gets a warrant. Sleep tight, telemetry lovers.",
       "category": "Tech",
