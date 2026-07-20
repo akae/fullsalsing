@@ -9,9 +9,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Runs automatically after autosalsing completes successfully
+  # Runs automatically after a salsing-generating workflow completes successfully
   workflow_run:
-    workflows: ["Generate Salsings"]
+    workflows: ["Generate Salsings", "Salsing From Input"]
     types: [completed]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
