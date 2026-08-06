@@ -1,6 +1,14 @@
 {
   "news": [
     {
+      "title": "🌶️ EXCLUSIVE: DHH Drops Three-Word Manifesto, Internet Loses It",
+      "content": "Sources say Rails creator and 37signals co-owner DHH tweeted a cryptic 'Ownership is underrated' to 117K viewers, and the replies immediately spiraled into 'you'll own nothing and be happy' discourse. Insiders report the man who bought his way out of the cloud is now philosophizing about property while the timeline argues whether anyone owns anything at all. Peak founder energy, delivered in exactly three words.",
+      "category": "Programming",
+      "size": "large",
+      "link": "https://x.com/dhh/status/2085057156844232816",
+      "id": 71
+    },
+    {
       "title": "🤡 SHOCKING: New Duck.com Hire Nukes Slack With Emoji Overload",
       "content": "Sources say the freshest duck.com recruit collapsed the entire company Slack workspace on day ONE by spamming a biblical amount of custom emojis, reactions, and :pepe: variants. Insiders report management floated reverting the hire entirely — until his old employer's TOOLS team gleefully TROOLED them, confirming they absolutely do not want him back either. Rumor has it he's now the only man on Earth banned from two Slack instances before lunch.",
       "category": "Software",
