@@ -1,6 +1,54 @@
 {
   "news": [
     {
+      "title": "🌶️ BREAKING: Relay Shuts Down, Whole Team 'Acqui-Vanishes' Into Chrome",
+      "content": "AI automation startup Relay pulled the plug, and the entire staff conveniently reappeared on Google's Chrome team. Rumor has it the product died but the LinkedIn updates thrived. Classic soft landing with a hard exit.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
+      "id": 80
+    },
+    {
+      "title": "💊 CONFIRMED: Comcast Turns Millions of Routers Into Motion Sensors",
+      "content": "Comcast quietly gave millions of newer routers the ability to sense motion in your home — with a 'privacy catch' buried in the fine print, naturally. Sources say your Wi-Fi now knows when you're pacing at 3am. The router sees all.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/08/18/comcast-adds-motion-sensing-to-millions-of-its-newer-routers-with-a-privacy-catch/",
+      "id": 79
+    },
+    {
+      "title": "🔥 EXCLUSIVE: Cursor Launches 'Origin' to Dethrone GitHub",
+      "content": "Nobody asked but Cursor decided one AI editor wasn't enough drama, so it dropped Origin, its very own GitHub alternative. Insiders say Microsoft's octocat felt a slight chill. The vibe-coding empire expands its borders.",
+      "category": "Software",
+      "size": "medium",
+      "link": "https://cursor.com/changelog/origin-code-hosting",
+      "id": 78
+    },
+    {
+      "title": "🤡 LOSER ALERT: OpenAI Ships 'Teen-Safe' ChatGPT Years Too Late",
+      "content": "OpenAI just launched a safer ChatGPT for teens — a bold move considering teens have been living inside it since launch. Sources say the safety team arrived fashionably late, drinks already gone. Better never than on time, apparently.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/",
+      "id": 77
+    },
+    {
+      "title": "🚨 BREAKING: Google Buys Dead Airline's Data to Feed the AI",
+      "content": "Rumor has it Google swooped in at auction to grab the customer data of collapsed US carrier Spirit — because nothing screams 'ethical AI' like harvesting a bankrupt airline's leftovers. Insiders say the data is 'for training.' RIP to whoever's baggage info is now a token.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
+      "id": 76
+    },
+    {
+      "title": "💥 SHOCKING: RAM Prices Explode 500% While Your Chrome Tabs Watch",
+      "content": "Insiders report DDR5 has gone full crypto-bro, with 128GB now costing a jaw-dropping $3,399 — up to 10x the lowest prices ever tracked. Sources say devs are now closing tabs like it's 2008. Turns out 'just add more RAM' was a lifestyle, not a plan.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://www.tomshardware.com/pc-components/ram/memory-prices-climb-500-percent-in-12-months-up-to-10x-the-lowest-ever-tracked-prices-128gb-of-ddr5-now-usd3-399",
+      "id": 75
+    },
+    {
       "title": "🌶️ SHOCKING: Thiel Escrached by Argentine Gandalfs at His Mansion",
       "content": "Sources say a squad of self-styled \"Gandalfs del sur\" showed up in full Tolkien cosplay outside Peter Thiel's swanky Barrio Parque pad in Buenos Aires, screaming \"You shall not pass\" at the Palantir founder and demanding he leave Argentina. Insiders report the surveillance-empire billionaire got read his future by wizards who apparently didn't like what they saw. Nobody expected the resistance to arrive on foot with staffs and beards.",
       "category": "Tech",
