@@ -1,6 +1,38 @@
 {
   "news": [
     {
+      "title": "🤡 EXCLUSIVE: Israel-Funded Fake Thinktank Tried to Rig AI",
+      "content": "A supposed US thinktank was secretly set up and bankrolled by Israel to game AI models into spitting out propaganda, per a Guardian bombshell. Insiders call it the world's least subtle attempt to SEO the machines. Turns out prompt injection has a geopolitical budget now.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
+      "id": 84
+    },
+    {
+      "title": "🇨🇳 CONFIRMED: Z.ai's Stealth Ox Alpha Comes Out Swinging",
+      "content": "Z.ai finally admitted its mysterious 'Ox Alpha' stealth model is a new GLM-series contender — and it's dropping the weights to flex on DeepSeek. Nobody asked, but the open-weights chip war just got a lot spicier. Silicon Valley sweating in real time.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
+      "id": 83
+    },
+    {
+      "title": "🌶️ SHOCKING: OpenAI's 'Jalapeño' Chip Claims to Roast Nvidia",
+      "content": "Sources say OpenAI's homegrown silicon, adorably named Jalapeño, is being pitched as spicier than Nvidia's Blackwell. Meanwhile the company just lost yet another top data center exec in what insiders call a 'departure stream that never buffers.' Bold move launching a chip while your infra brains keep walking out the door.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "id": 82
+    },
+    {
+      "title": "⚖️ LOSER ALERT: X Sics Lawyers on Open Source Nitter",
+      "content": "Rumor has it XCorp got tired of losing the scraping arms race, so it fired off cease-and-desist letters to XCancel and Nitter instead. Insiders say the mighty legal team's strategy is basically 'if you can't beat 'em, subpoena 'em.' Nothing screams innovation like suing a free open-source project.",
+      "category": "Software",
+      "size": "medium",
+      "link": "https://www.theregister.com/legal/2026/08/26/nitter-no-more-x-sends-in-the-lawyers-to-shut-down-open-source-project/5292548",
+      "id": 81
+    },
+    {
       "title": "🌶️ BREAKING: Relay Shuts Down, Whole Team 'Acqui-Vanishes' Into Chrome",
       "content": "AI automation startup Relay pulled the plug, and the entire staff conveniently reappeared on Google's Chrome team. Rumor has it the product died but the LinkedIn updates thrived. Classic soft landing with a hard exit.",
       "category": "AI",
