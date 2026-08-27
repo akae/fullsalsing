@@ -1,6 +1,14 @@
 {
   "news": [
     {
+      "title": "🔥 BREAKING: Nvidia About to Swallow Hugging Face for $12.9B",
+      "content": "Sources say Nvidia has agreed to buy the beloved open-source AI hub Hugging Face for a cool $12.9 billion, per The Information — though Business Insider warns the deal could still \"atomize\" before anyone signs. Rumor has it Nvidia's suspicious silence (usually they deny reports faster than a GPU ships) is speaking louder than a press release. Nothing says protecting your AI chip monopoly like buying the internet's favorite model repo.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/",
+      "id": 86
+    },
+    {
       "title": "🔥 EXCLUSIVE: Tiny Startup Yoinks the 'Twitter' Name Right Off Elon",
       "content": "Sources say Virginia's Operation Bluebird just launched Twitter.now, arguing Musk 'abandoned' the beloved bluebird when he nuked it into X back in 2022. Cofounder Stephen Coates told Ars they've waited 'months and months' and refuse to wait for the judge, who tentatively hinted X may have actually given up the trademark. Rumor has it Elon's lawyers are furiously composing a $135B tantrum as we speak.",
       "category": "Tech",
