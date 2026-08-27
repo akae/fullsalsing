@@ -1,6 +1,14 @@
 {
   "news": [
     {
+      "title": "🔥 EXCLUSIVE: Tiny Startup Yoinks the 'Twitter' Name Right Off Elon",
+      "content": "Sources say Virginia's Operation Bluebird just launched Twitter.now, arguing Musk 'abandoned' the beloved bluebird when he nuked it into X back in 2022. Cofounder Stephen Coates told Ars they've waited 'months and months' and refuse to wait for the judge, who tentatively hinted X may have actually given up the trademark. Rumor has it Elon's lawyers are furiously composing a $135B tantrum as we speak.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://arstechnica.com/tech-policy/2026/08/new-twitter-launches-says-musks-x-gave-up-the-name/",
+      "id": 85
+    },
+    {
       "title": "🤡 EXCLUSIVE: Israel-Funded Fake Thinktank Tried to Rig AI",
       "content": "A supposed US thinktank was secretly set up and bankrolled by Israel to game AI models into spitting out propaganda, per a Guardian bombshell. Insiders call it the world's least subtle attempt to SEO the machines. Turns out prompt injection has a geopolitical budget now.",
       "category": "AI",
