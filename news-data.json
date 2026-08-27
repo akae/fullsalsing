@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "title": "🔥 BREAKING: Sentry Goes Down, Devs Discover Their Own Errors",
+      "content": "Status.sentry.io just lit up red as the Sentry API face-planted, and insiders report half the dev world (specifically the worst half) is now emotionally exposed to their own untracked stack traces. Sources say Slack channels are flooded with 'is it just me?' while nobody bothered to add a fallback logger. Turns out the error-tracking service can also, in fact, have errors.",
+      "category": "Software",
+      "size": "large",
+      "id": 87
+    },
+    {
       "title": "🔥 BREAKING: Nvidia About to Swallow Hugging Face for $12.9B",
       "content": "Sources say Nvidia has agreed to buy the beloved open-source AI hub Hugging Face for a cool $12.9 billion, per The Information — though Business Insider warns the deal could still \"atomize\" before anyone signs. Rumor has it Nvidia's suspicious silence (usually they deny reports faster than a GPU ships) is speaking louder than a press release. Nothing says protecting your AI chip monopoly like buying the internet's favorite model repo.",
       "category": "AI",
