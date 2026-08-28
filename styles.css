@@ -162,6 +162,34 @@ body {
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
 }
 
+/* Premium Salsing Style - Thick Border with Multicolor Glow */
+.news-block.premiumsalsing {
+    border: 5px solid;
+    border-image: linear-gradient(
+        90deg,
+        #FF1493,
+        #FFD700,
+        #00CED1,
+        #FF69B4,
+        #7B68EE,
+        #FF1493
+    ) 1;
+    box-shadow:
+        0 0 20px rgba(255, 20, 147, 0.6),
+        0 0 40px rgba(255, 215, 0, 0.4),
+        0 0 60px rgba(0, 206, 209, 0.4),
+        0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.news-block.premiumsalsing:hover {
+    box-shadow:
+        0 0 30px rgba(255, 20, 147, 0.8),
+        0 0 50px rgba(255, 215, 0, 0.6),
+        0 0 70px rgba(0, 206, 209, 0.6),
+        0 8px 25px rgba(255, 105, 180, 0.5);
+    transform: translateY(-5px);
+}
+
 /* Grid sizing */
 .news-block.small {
     grid-column: span 1;

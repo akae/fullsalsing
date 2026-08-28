@@ -137,7 +137,8 @@ function renderNews() {
 // Create a single news block element
 function createNewsBlock(news) {
     const block = document.createElement('article');
-    block.className = `news-block ${news.size}`;
+    const categoryClass = news.category.toLowerCase().replace(/\s+/g, '-');
+    block.className = `news-block ${news.size} ${categoryClass}`;
     const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="block-image" loading="lazy">` : '';
     
     const dateHTML = news.date ? `<span class="block-date">${formatDate(news.date)}</span>` : '';
