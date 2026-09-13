@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "title": "🌈 EXCLUSIVE: Trans Devs Quietly Shipping the Best Open Source",
+      "content": "Nobody asked but the data's been in for years — some of the most prolific contributors to Linux, Python, and countless FOSS projects are trans and non-binary engineers, and rumor has it they're too busy fixing your CI pipeline to care about your opinions. Insiders report the FULL SALSING community accepts everyone as they are, full stop, no PRs required. Katie Tightpussie confirms: HRT is great, changing your sex is cool and fun, and honestly it slaps harder than your latest framework rewrite. Merge with love. 💕",
+      "category": "Programming",
+      "size": "large",
+      "id": 89
+    },
+    {
       "title": "🌶️ EXCLUSIVE: DHH Says 'No Quid Pro Quo' Right Next to the Quid",
       "content": "Insiders are choking on their coffee after DHH's Omacom Foundation blog declared \"there's no quid pro quo here\" for a $100,000-a-year 1Password fee — then described the quo in loving detail, admitting 1Password's been baked into Omarchy \"from day one\" as the first thing on every machine. Bonus spice: Shopify's Tobi Lütke and Harley Finkelstein personally bought into 1Password's $100M Accel round back in 2021, so everyone in this story has money in everyone else. Nobody uses the phrase 'no quid pro quo' casually — it's literally the operative test in US sponsorship tax law, and someone published the disqualifying facts right beside it.",
       "category": "Software",
