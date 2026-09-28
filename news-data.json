@@ -1,6 +1,54 @@
 {
   "news": [
     {
+      "title": "🤡 LOSER ALERT: SIMD in Rust Still a Vibes-Based Nightmare",
+      "content": "The 2026 state-of-SIMD-in-Rust report confirms what the crate maintainers whispered: portable SIMD is STILL nightly-only and held together by prayer. Nobody asked but it's 2026 and we're still #[cfg]-gating by CPU feature. Blazingly fast, eventually.",
+      "category": "Programming",
+      "size": "small",
+      "link": "https://shnatsel.github.io/state-of-simd-rust-2026/",
+      "id": 95
+    },
+    {
+      "title": "🚨 BREAKING: Starship Finally Reaches Orbit, Elon Exhales",
+      "content": "SpaceX's Starship megarocket hit orbit for the first time ever, and Musk's blood pressure reportedly dropped 40 points. Sources say the launch went off despite years of fiery 'rapid unscheduled disassemblies.' Mars is now technically closer than your PR getting merged.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://www.space.com/space-exploration/launches-spacecraft/spacexs-starship-megarocket-launching-to-orbit-for-1st-time-ever-on-sept-28-watch-it-live",
+      "id": 94
+    },
+    {
+      "title": "🌶️ CONFIRMED: Postgres 'AT TIME ZONE UTC' Betrays Everyone",
+      "content": "Devs everywhere just learned that Postgres's 'at time zone UTC' does the opposite of what their brains assumed, and the bug reports are already flowing. Insiders report entire dashboards are off by several hours and nobody noticed until now. Time is a construct, apparently, and so is your data integrity.",
+      "category": "Programming",
+      "size": "medium",
+      "link": "https://bookofrevenue.com/blog/6ab81e9a97a13f0001f7e4e1/postgres-at-time-zone-u-does-not-do-what-you-think-it-does",
+      "id": 93
+    },
+    {
+      "title": "💥 SHOCKING: Meta Cashes Checks for the Musk Doc After All",
+      "content": "After clutching pearls in public, Meta and YouTube quietly announced they WILL run ads for the 'Musk' documentary. Sources say principles have a price, and it's roughly one ad-buy invoice. Standing ovation for the fastest moral flip of the quarter.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/09/26/meta-says-it-will-run-ads-for-musk-documentary-after-all/",
+      "id": 92
+    },
+    {
+      "title": "🔥 BREAKING: Crusoe Torches $1.25B Boom Turbine Dream",
+      "content": "Rumor has it Crusoe just walked away from a $1.25 billion plan to power AI data centers with Boom's supersonic-adjacent turbines. Insiders say the math stopped mathing right around the part where the turbines existed. Turns out you can't run GPUs on hype alone.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
+      "id": 91
+    },
+    {
+      "title": "🍽️ EXCLUSIVE: Anthropic CEO Dines With Trump, Vibes Unknown",
+      "content": "Sources say Dario Amodei is about to break bread with President Trump, and nobody can decide if it's a peace treaty or a hostage negotiation. Insiders report the safety-first AI lab is suddenly very interested in staying on Washington's good side. Nothing says 'alignment' like dinner diplomacy.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
+      "id": 90
+    },
+    {
       "title": "🌈 EXCLUSIVE: Trans Devs Quietly Shipping the Best Open Source",
       "content": "Nobody asked but the data's been in for years — some of the most prolific contributors to Linux, Python, and countless FOSS projects are trans and non-binary engineers, and rumor has it they're too busy fixing your CI pipeline to care about your opinions. Insiders report the FULL SALSING community accepts everyone as they are, full stop, no PRs required. Katie Tightpussie confirms: HRT is great, changing your sex is cool and fun, and honestly it slaps harder than your latest framework rewrite. Merge with love. 💕",
       "category": "Programming",
