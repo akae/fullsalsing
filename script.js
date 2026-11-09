@@ -162,7 +162,7 @@ function renderPagination() {
         document.getElementById('pagination')
     ].filter(Boolean);
 
-    const makeButton = (label, page, { disabled = false, active = false, ariaLabel = null } = {}) => {
+    const makeButton = (label, page, { disabled = false, active = false, ariaLabel = null, scroll = true } = {}) => {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = `pagination-button${active ? ' active' : ''}`;
@@ -174,7 +174,7 @@ function renderPagination() {
         if (disabled) {
             button.disabled = true;
         } else {
-            button.addEventListener('click', () => goToPage(page));
+            button.addEventListener('click', () => goToPage(page, scroll));
         }
 
         return button;
@@ -188,11 +188,15 @@ function renderPagination() {
             return;
         }
 
+        // The top bar should not jump the viewport; the bottom bar scrolls back to the news.
+        const scrollToNews = nav.id !== 'pagination-top';
+
         nav.hidden = false;
 
         nav.appendChild(makeButton('« Prev', currentPage - 1, {
             disabled: currentPage === 1,
-            ariaLabel: 'Previous page'
+            ariaLabel: 'Previous page',
+            scroll: scrollToNews
         }));
 
         getPageNumbers(currentPage, totalPages).forEach(page => {
@@ -204,14 +208,16 @@ function renderPagination() {
             } else {
                 nav.appendChild(makeButton(String(page), page, {
                     active: page === currentPage,
-                    ariaLabel: `Page ${page}`
+                    ariaLabel: `Page ${page}`,
+                    scroll: scrollToNews
                 }));
             }
         });
 
         nav.appendChild(makeButton('Next »', currentPage + 1, {
             disabled: currentPage === totalPages,
-            ariaLabel: 'Next page'
+            ariaLabel: 'Next page',
+            scroll: scrollToNews
         }));
     });
 }
@@ -233,7 +239,7 @@ function getPageNumbers(current, total) {
 }
 
 // Navigate to a page and keep the URL shareable
-function goToPage(page) {
+function goToPage(page, scrollToNews = true) {
     const nextPage = Math.min(Math.max(1, page), totalPages);
     if (nextPage === currentPage) return;
 
@@ -248,8 +254,10 @@ function goToPage(page) {
     }
     window.history.replaceState(null, '', url);
 
-    const content = document.querySelector('.content-grid');
-    if (content) content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scrollToNews) {
+        const content = document.querySelector('.content-grid');
+        if (content) content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // Create a single news block element

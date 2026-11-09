@@ -114,6 +114,7 @@ fullsalsing/
 ### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
 - A compact right-aligned selector sits above the grid (`#pagination-top`), with the full-size one below (`#pagination`)
+- The top bar keeps the current scroll position; the bottom bar scrolls back to the news
 - Prev / numbered pages / Next controls rendered into both bars
 - Current page is reflected in the URL as `?page=N` for shareable links
 
