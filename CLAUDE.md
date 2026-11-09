@@ -105,6 +105,7 @@ fullsalsing/
 **Banner**: 35% page width, max 600px (`styles.css` `.header-banner`)
 
 ### Carousel
+- Full-bleed band (100vw, square edges) with a compact height
 - Rotates 20 phrases every 4 seconds
 - Glittery rainbow gradient text (Deep Pink → Gold → Turquoise → Hot Pink → Purple)
 - Smooth slide-in from top, hold, slide-out to bottom

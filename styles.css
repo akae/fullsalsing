@@ -48,6 +48,7 @@ body {
 .header {
     text-align: center;
     padding: 0;
+    margin-bottom: 10px;
     background: transparent;
     border: none;
     box-shadow: none;
@@ -67,33 +68,34 @@ body {
 /* ===== Carousel Subtitle ===== */
 .carousel-container {
     text-align: center;
-    width: 80%;
-    max-width: 900px;
+    width: 100vw;
+    max-width: none;
     overflow: hidden;
-    margin: 0 auto 40px auto;
+    margin: 0 0 12px calc(50% - 50vw);
     position: relative;
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(255, 182, 217, 0.3);
-    padding: 8px 0;
+    border-radius: 0;
+    box-shadow: 0 2px 14px rgba(255, 182, 217, 0.35);
+    padding: 4px 0;
 }
 
 .carousel-track {
     position: relative;
     width: 100%;
-    min-height: 4.5rem;
+    min-height: 3.25rem;
 }
 
 .carousel-item {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 60px;
-    font-size: 1.7rem;
+    inset: 0;
+    padding: 8px 40px;
+    font-size: 1.35rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(
         90deg,
         #FF1493,
@@ -203,7 +205,7 @@ body {
 .pagination--compact {
     justify-content: flex-end;
     gap: 6px;
-    margin: 0 0 14px auto;
+    margin: 0 0 12px auto;
 }
 
 .pagination--compact .pagination-button {
@@ -554,17 +556,13 @@ body {
         font-size: 2.5rem;
     }
 
-    .carousel-container {
-        width: 92%;
-    }
-
     .carousel-track {
-        min-height: 4rem;
+        min-height: 3.75rem;
     }
 
     .carousel-item {
-        padding: 10px 20px;
-        font-size: 1.25rem;
+        padding: 6px 16px;
+        font-size: 1rem;
     }
 
     .content-grid {
