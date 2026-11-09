@@ -56,12 +56,24 @@ body {
     overflow: visible;
 }
 
-.header-banner {
-    width: 35%;
-    height: auto;
-    max-width: 600px;
+.header-link {
     display: block;
+    width: 35%;
+    max-width: 600px;
     margin: 0 auto;
+    border-radius: 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.header-banner {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 5px;
 }
 
@@ -180,6 +192,8 @@ body {
     left: 14px;
     opacity: 1;
     transform: translate(0, -50%) scale(1);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* ===== Content Grid ===== */
