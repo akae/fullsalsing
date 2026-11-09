@@ -139,7 +139,8 @@ function createNewsBlock(news) {
     const block = document.createElement('article');
     const categoryClass = news.category.toLowerCase().replace(/\s+/g, '-');
     block.className = `news-block ${news.size} ${categoryClass}`;
-    const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="block-image" loading="lazy">` : '';
+    const imageClass = news.image_thumb ? 'block-image block-image--thumb' : 'block-image';
+    const imageHTML = news.image ? `<img src="${news.image}" alt="${news.title}" class="${imageClass}" loading="lazy">` : '';
     
     const dateHTML = news.date ? `<span class="block-date">${formatDate(news.date)}</span>` : '';
 

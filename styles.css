@@ -249,6 +249,15 @@ body {
     box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
 }
 
+/* Small square thumbnail floated to the left of the block text */
+.block-image--thumb {
+    float: left;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    margin: 0 12px 6px 0;
+}
+
 .block-title {
     font-size: 1.3rem;
     font-weight: 900;

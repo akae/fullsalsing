@@ -45,6 +45,7 @@ After adding salsings, commit with a short message listing the topics, e.g.:
 | `tweet_url` | Twitter/X URL — auto-embeds the tweet |
 | `embed_html` | Custom embed HTML block |
 | `image` | Image URL for visual content |
+| `image_thumb` | Set `true` to render the image as a small square floated left (default renders full width) |
 
 ### Title format
 - Start with an emoji: 🚨 🔥 ⚡ 💥 🌶️ 💉 🤡 🇨🇳 ⚖️ 💊
