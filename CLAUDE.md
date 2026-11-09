@@ -106,6 +106,8 @@ fullsalsing/
 
 ### Carousel
 - Full-bleed band (100vw, square edges) with a compact height
+- The carousel and top pager live in a sticky band (`#sticky-band`) that pins to the top while scrolling
+- When stuck, the band gets a frosted background and a small logo fades/slides in over the left side of the carousel
 - Rotates 20 phrases every 4 seconds
 - Glittery rainbow gradient text (Deep Pink → Gold → Turquoise → Hot Pink → Purple)
 - Smooth slide-in from top, hold, slide-out to bottom

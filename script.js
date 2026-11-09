@@ -38,8 +38,33 @@ let totalPages = 1;
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     startCarousel();
+    initStickyBand();
     loadNews();
 });
+
+// Toggle compact sticky state when the carousel band pins to the top
+function initStickyBand() {
+    const band = document.getElementById('sticky-band');
+    if (!band) return;
+
+    let scheduled = false;
+
+    const update = () => {
+        scheduled = false;
+        band.classList.toggle('is-stuck', band.getBoundingClientRect().top <= 0);
+    };
+
+    const schedule = () => {
+        if (!scheduled) {
+            scheduled = true;
+            window.requestAnimationFrame(update);
+        }
+    };
+
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+}
 
 // Start carousel rotation
 function startCarousel() {
