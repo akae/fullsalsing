@@ -99,8 +99,8 @@ function renderNews() {
 
     let hasEmbeds = false;
 
-    pageItems.forEach(news => {
-        const block = createNewsBlock(news);
+    pageItems.forEach((news, index) => {
+        const block = createNewsBlock(news, index);
         container.appendChild(block);
         
         if (news.embed_html) {
@@ -249,8 +249,9 @@ function goToPage(page) {
 }
 
 // Create a single news block element
-function createNewsBlock(news) {
+function createNewsBlock(news, index = 0) {
     const block = document.createElement('article');
+    block.style.setProperty('--stagger', index);
     const categoryClass = news.category.toLowerCase().replace(/\s+/g, '-');
     block.className = `news-block ${news.size} ${categoryClass}`;
     const imageClass = news.image_thumb ? 'block-image block-image--thumb' : 'block-image';
