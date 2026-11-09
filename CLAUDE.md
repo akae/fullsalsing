@@ -113,7 +113,8 @@ fullsalsing/
 
 ### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
-- Prev / numbered pages / Next controls rendered into `#pagination`
+- A compact right-aligned selector sits above the grid (`#pagination-top`), with the full-size one below (`#pagination`)
+- Prev / numbered pages / Next controls rendered into both bars
 - Current page is reflected in the URL as `?page=N` for shareable links
 
 ### Twitter/X embeds

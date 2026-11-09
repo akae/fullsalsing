@@ -155,19 +155,12 @@ function getSortedNews() {
     return sortedNews;
 }
 
-// Render pagination controls
+// Render pagination controls (top compact bar + bottom bar)
 function renderPagination() {
-    const nav = document.getElementById('pagination');
-    if (!nav) return;
-
-    nav.innerHTML = '';
-
-    if (totalPages <= 1) {
-        nav.hidden = true;
-        return;
-    }
-
-    nav.hidden = false;
+    const navs = [
+        document.getElementById('pagination-top'),
+        document.getElementById('pagination')
+    ].filter(Boolean);
 
     const makeButton = (label, page, { disabled = false, active = false, ariaLabel = null } = {}) => {
         const button = document.createElement('button');
@@ -187,29 +180,40 @@ function renderPagination() {
         return button;
     };
 
-    nav.appendChild(makeButton('« Prev', currentPage - 1, {
-        disabled: currentPage === 1,
-        ariaLabel: 'Previous page'
-    }));
+    navs.forEach(nav => {
+        nav.innerHTML = '';
 
-    getPageNumbers(currentPage, totalPages).forEach(page => {
-        if (page === '…') {
-            const ellipsis = document.createElement('span');
-            ellipsis.className = 'pagination-ellipsis';
-            ellipsis.textContent = '…';
-            nav.appendChild(ellipsis);
-        } else {
-            nav.appendChild(makeButton(String(page), page, {
-                active: page === currentPage,
-                ariaLabel: `Page ${page}`
-            }));
+        if (totalPages <= 1) {
+            nav.hidden = true;
+            return;
         }
-    });
 
-    nav.appendChild(makeButton('Next »', currentPage + 1, {
-        disabled: currentPage === totalPages,
-        ariaLabel: 'Next page'
-    }));
+        nav.hidden = false;
+
+        nav.appendChild(makeButton('« Prev', currentPage - 1, {
+            disabled: currentPage === 1,
+            ariaLabel: 'Previous page'
+        }));
+
+        getPageNumbers(currentPage, totalPages).forEach(page => {
+            if (page === '…') {
+                const ellipsis = document.createElement('span');
+                ellipsis.className = 'pagination-ellipsis';
+                ellipsis.textContent = '…';
+                nav.appendChild(ellipsis);
+            } else {
+                nav.appendChild(makeButton(String(page), page, {
+                    active: page === currentPage,
+                    ariaLabel: `Page ${page}`
+                }));
+            }
+        });
+
+        nav.appendChild(makeButton('Next »', currentPage + 1, {
+            disabled: currentPage === totalPages,
+            ariaLabel: 'Next page'
+        }));
+    });
 }
 
 // Build a compact page list, e.g. 1 … 4 5 6 … 12
