@@ -30,6 +30,11 @@ let newsStore = [];
 
 let currentCarouselIndex = 0;
 
+const ITEMS_PER_PAGE = 12;
+
+let currentPage = 1;
+let totalPages = 1;
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     startCarousel();
@@ -68,6 +73,8 @@ function loadNews() {
         .then(response => response.json())
         .then(data => {
             newsStore = data.news || [];
+            const requestedPage = parseInt(new URLSearchParams(window.location.search).get('page'), 10);
+            currentPage = Number.isNaN(requestedPage) ? 1 : requestedPage;
             renderNews();
         })
         .catch(error => {
@@ -77,36 +84,22 @@ function loadNews() {
         });
 }
 
-// Render all news blocks
+// Render all news blocks for the current page
 function renderNews() {
     const container = document.getElementById('blocks-container');
     container.innerHTML = '';
-    
+
+    const sortedNews = getSortedNews();
+
+    totalPages = Math.max(1, Math.ceil(sortedNews.length / ITEMS_PER_PAGE));
+    currentPage = Math.min(Math.max(1, currentPage), totalPages);
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const pageItems = sortedNews.slice(start, start + ITEMS_PER_PAGE);
+
     let hasEmbeds = false;
-    
-    // Group small blocks in pairs, keep others as-is
-    const sortedNews = [];
-    const smallBlocks = [];
-    
-    newsStore.forEach(news => {
-        if (news.size === 'small') {
-            smallBlocks.push(news);
-        } else {
-            // If we have accumulated small blocks and encounter a non-small, push them first
-            if (smallBlocks.length > 0) {
-                sortedNews.push(...smallBlocks);
-                smallBlocks.length = 0;
-            }
-            sortedNews.push(news);
-        }
-    });
-    
-    // Add any remaining small blocks
-    if (smallBlocks.length > 0) {
-        sortedNews.push(...smallBlocks);
-    }
-    
-    sortedNews.forEach(news => {
+
+    pageItems.forEach(news => {
         const block = createNewsBlock(news);
         container.appendChild(block);
         
@@ -114,6 +107,8 @@ function renderNews() {
             hasEmbeds = true;
         }
     });
+
+    renderPagination();
     
     // Load Twitter script if there are embeds
     if (hasEmbeds && !window.twttr) {
@@ -132,6 +127,125 @@ function renderNews() {
         // Script already loaded, just process
         window.twttr.widgets.load();
     }
+}
+
+// Group small blocks together, keep others as-is
+function getSortedNews() {
+    const sortedNews = [];
+    const smallBlocks = [];
+
+    newsStore.forEach(news => {
+        if (news.size === 'small') {
+            smallBlocks.push(news);
+        } else {
+            // If we have accumulated small blocks and encounter a non-small, push them first
+            if (smallBlocks.length > 0) {
+                sortedNews.push(...smallBlocks);
+                smallBlocks.length = 0;
+            }
+            sortedNews.push(news);
+        }
+    });
+
+    // Add any remaining small blocks
+    if (smallBlocks.length > 0) {
+        sortedNews.push(...smallBlocks);
+    }
+
+    return sortedNews;
+}
+
+// Render pagination controls
+function renderPagination() {
+    const nav = document.getElementById('pagination');
+    if (!nav) return;
+
+    nav.innerHTML = '';
+
+    if (totalPages <= 1) {
+        nav.hidden = true;
+        return;
+    }
+
+    nav.hidden = false;
+
+    const makeButton = (label, page, { disabled = false, active = false, ariaLabel = null } = {}) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `pagination-button${active ? ' active' : ''}`;
+        button.textContent = label;
+
+        if (ariaLabel) button.setAttribute('aria-label', ariaLabel);
+        if (active) button.setAttribute('aria-current', 'page');
+
+        if (disabled) {
+            button.disabled = true;
+        } else {
+            button.addEventListener('click', () => goToPage(page));
+        }
+
+        return button;
+    };
+
+    nav.appendChild(makeButton('« Prev', currentPage - 1, {
+        disabled: currentPage === 1,
+        ariaLabel: 'Previous page'
+    }));
+
+    getPageNumbers(currentPage, totalPages).forEach(page => {
+        if (page === '…') {
+            const ellipsis = document.createElement('span');
+            ellipsis.className = 'pagination-ellipsis';
+            ellipsis.textContent = '…';
+            nav.appendChild(ellipsis);
+        } else {
+            nav.appendChild(makeButton(String(page), page, {
+                active: page === currentPage,
+                ariaLabel: `Page ${page}`
+            }));
+        }
+    });
+
+    nav.appendChild(makeButton('Next »', currentPage + 1, {
+        disabled: currentPage === totalPages,
+        ariaLabel: 'Next page'
+    }));
+}
+
+// Build a compact page list, e.g. 1 … 4 5 6 … 12
+function getPageNumbers(current, total) {
+    const delta = 1;
+    const pages = [];
+
+    for (let page = 1; page <= total; page++) {
+        if (page === 1 || page === total || Math.abs(page - current) <= delta) {
+            pages.push(page);
+        } else if (pages[pages.length - 1] !== '…') {
+            pages.push('…');
+        }
+    }
+
+    return pages;
+}
+
+// Navigate to a page and keep the URL shareable
+function goToPage(page) {
+    const nextPage = Math.min(Math.max(1, page), totalPages);
+    if (nextPage === currentPage) return;
+
+    currentPage = nextPage;
+    renderNews();
+
+    const url = new URL(window.location.href);
+    if (currentPage === 1) {
+        url.searchParams.delete('page');
+    } else {
+        url.searchParams.set('page', currentPage);
+    }
+    window.history.replaceState(null, '', url);
+
+    const content = document.querySelector('.content-grid');
+    if (content) content.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Create a single news block element

@@ -142,6 +142,63 @@ body {
     display: contents;
 }
 
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 40px auto;
+}
+
+.pagination[hidden] {
+    display: none;
+}
+
+.pagination-button {
+    min-width: 42px;
+    padding: 8px 14px;
+    border: 2px solid rgba(255, 105, 180, 0.6);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text-dark);
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.2);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+    background: rgba(255, 105, 180, 0.85);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.pagination-button.active {
+    background: linear-gradient(135deg, #FF1493, #FF69B4);
+    color: white;
+    border-color: #FF1493;
+    cursor: default;
+}
+
+.pagination-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+    color: var(--text-dark);
+    font-weight: bold;
+    padding: 0 2px;
+}
+
 /* ===== News Blocks ===== */
 .news-block {
     background: rgba(255, 182, 217, 0.75);
@@ -408,6 +465,12 @@ body {
 
     .content-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pagination-button {
+        min-width: 36px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
     }
 }
 

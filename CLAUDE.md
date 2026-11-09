@@ -111,6 +111,11 @@ fullsalsing/
 - Phrases defined in `script.js` → `CAROUSEL_SENTENCES` array
 - Timing in `styles.css` → `.carousel-item { animation: carouselFade 4s ... }`
 
+### Pagination
+- 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
+- Prev / numbered pages / Next controls rendered into `#pagination`
+- Current page is reflected in the URL as `?page=N` for shareable links
+
 ### Twitter/X embeds
 - Any `link` or `tweet_url` pointing to twitter.com or x.com auto-embeds
 - Uses Twitter's official `widgets.js` — no API key needed
