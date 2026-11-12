@@ -5,6 +5,7 @@ import sys
 import urllib.request
 import urllib.error
 import re
+from concurrent.futures import ThreadPoolExecutor
 
 import anthropic
 
@@ -74,27 +75,47 @@ Focus on: AI drama, corporate lawsuits, chip wars, dev culture absurdity, startu
 """
 
 
-def fetch_hn_headlines():
+def fetch_hn_headlines(limit=20):
+    """Top Hacker News stories, highest-voted first."""
     headlines = []
     try:
         with urllib.request.urlopen(
             "https://hacker-news.firebaseio.com/v0/topstories.json", timeout=10
         ) as r:
-            story_ids = json.loads(r.read())[:20]
-        for sid in story_ids:
-            try:
-                with urllib.request.urlopen(
-                    f"https://hacker-news.firebaseio.com/v0/item/{sid}.json", timeout=5
-                ) as r:
-                    item = json.loads(r.read())
-                if item and item.get("title"):
-                    url = item.get("url", f"https://news.ycombinator.com/item?id={sid}")
-                    headlines.append({"title": item["title"], "url": url, "source": "HN"})
-            except Exception:
-                continue
+            story_ids = json.loads(r.read())[:40]
     except Exception as e:
         print(f"[warn] HN fetch failed: {e}", file=sys.stderr)
-    return headlines
+        return headlines
+
+    def fetch_item(sid):
+        try:
+            with urllib.request.urlopen(
+                f"https://hacker-news.firebaseio.com/v0/item/{sid}.json", timeout=5
+            ) as r:
+                return json.loads(r.read())
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        items = list(pool.map(fetch_item, story_ids))
+
+    for sid, item in zip(story_ids, items):
+        if not item or not item.get("title"):
+            continue
+        url = item.get("url") or f"https://news.ycombinator.com/item?id={sid}"
+        headlines.append(
+            {
+                "title": item["title"],
+                "url": url,
+                "source": "HN",
+                "score": item.get("score", 0),
+                "comments": item.get("descendants", 0),
+            }
+        )
+
+    # Most upvoted stories are the ones worth a salsing
+    headlines.sort(key=lambda h: h.get("score", 0), reverse=True)
+    return headlines[:limit]
 
 
 def fetch_techcrunch_headlines():
@@ -142,7 +163,7 @@ def write_github_output(key, value):
 
 
 def main():
-    count = int(os.environ.get("SALSING_COUNT", "5"))
+    count = int(os.environ.get("SALSING_COUNT", "4"))
     dry_run = os.environ.get("DRY_RUN", "false").lower() in ("true", "1", "yes")
 
     print(f"[info] Generating {count} salsings (dry_run={dry_run})", file=sys.stderr)
@@ -159,13 +180,25 @@ def main():
 
     headlines_text = ""
     if headlines:
-        lines = [f"- {h['title']} ({h['source']}) | {h['url']}" for h in headlines[:30]]
-        headlines_text = "\nToday's headlines for inspiration:\n" + "\n".join(lines)
+        def format_headline(h):
+            meta = h["source"]
+            if h.get("score") is not None:
+                meta += f", {h['score']} points, {h.get('comments', 0)} comments"
+            return f"- {h['title']} ({meta}) | {h['url']}"
+
+        lines = [format_headline(h) for h in headlines[:30]]
+        headlines_text = (
+            "\nToday's headlines, ranked most important first "
+            "(HN stories sorted by upvotes):\n" + "\n".join(lines)
+        )
 
     user_prompt = (
         f"Generate exactly {count} salsings."
         + (headlines_text or "\n\nNo headlines available — use your knowledge of recent tech news.")
-        + "\n\nReturn them in the `salsings` array. Each must have title, content, category, size. "
+        + "\n\nPick the most important stories: favour the highest-voted HN items "
+        "(points/comments) and the most prominent TechCrunch headlines. "
+        "Each salsing must cover a different story — no duplicates or near-duplicates. "
+        "Return them in the `salsings` array. Each must have title, content, category, size. "
         "Include `link` only when you have the real article URL from the headlines above."
     )
 
@@ -205,6 +238,11 @@ def main():
     except (KeyError, TypeError) as e:
         print(f"[error] Failed to extract salsings from tool input: {e}", file=sys.stderr)
         sys.exit(1)
+
+    # Never write more than requested
+    if len(salsings) > count:
+        print(f"[warn] Got {len(salsings)} salsings, keeping the first {count}", file=sys.stderr)
+        salsings = salsings[:count]
 
     # Validate
     valid_categories = {"Tech", "Software", "Programming", "AI"}

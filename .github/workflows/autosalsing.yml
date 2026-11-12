@@ -6,13 +6,16 @@ on:
       count:
         description: Number of salsings to generate
         required: false
-        default: "5"
+        default: "4"
         type: string
       dry_run:
         description: Print salsings without committing
         required: false
         default: false
         type: boolean
+  schedule:
+    # Daily at 09:00 UTC: 2 salsings picked from the top-voted / most important stories
+    - cron: "0 9 * * *"
 
 permissions:
   contents: write
@@ -42,12 +45,13 @@ jobs:
         id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_TOKEN }}
-          SALSING_COUNT: ${{ inputs.count }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          # Scheduled runs have no inputs, so they default to 2 salsings.
+          SALSING_COUNT: ${{ inputs.count || '2' }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: python scripts/generate_salsings.py
 
       - name: Commit and push
-        if: ${{ inputs.dry_run == false && steps.generate.outputs.topics != '' }}
+        if: ${{ steps.generate.outputs.topics != '' && (github.event_name == 'schedule' || inputs.dry_run == false) }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

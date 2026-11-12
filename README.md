@@ -77,6 +77,8 @@ Say **"autosalsing"** to an AI agent (with `CLAUDE.md` loaded) to run the automa
 4. Shows each one for individual approval (yes / skip / edit)
 5. Writes only approved items and commits
 
+In CI, the **Generate Salsings** GitHub Action runs daily at 09:00 UTC and publishes 2 salsings picked from the top-voted / most important stories.
+
 ## Design
 
 - **Aesthetic**: Soft gossip magazine — pastel pink, glass-morphism
