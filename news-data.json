@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🔥 SHOCKING: Microsoft 365 Email Outage Becomes Global Cloud Meltdown",
+      "content": "Rumor has it a 'service degradation' speedran its way into a full-blown worldwide cloud crisis before anyone finished their coffee. Insiders report millions locked out of email while the status page glowed an ominous shade of 'we're working on it.' Nobody asked, but maybe stop putting the whole planet on one tenant.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
+      "id": 100
+    },
+    {
+      "title": "🚨 BREAKING: Jensen Huang Resigns From Nvidia in Spy-Flavored Chaos",
+      "content": "Sources say the leather-jacketed emperor of AI has stepped down from the $4T chip titan after a scandal timeline so wild it needs its own documentary. Insiders report a relationship with not one but two employees — one allegedly tied to a Chinese spy saga — plus Democrats launching an investigation into his 'scheme' with Trump. CFO Colette Kress inherits the throne while the entire AI industry quietly panics about its GPU dealer disappearing. The jacket, presumably, is in witness protection.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+      "id": 99
+    },
+    {
       "title": "🔥 SHOCKING: Jensen Huang Steps Down Amid Wild Spy Rumors",
       "content": "Insiders report Nvidia's leather-jacketed emperor Jensen Huang is allegedly resigning as CEO over an affair with a purported Chinese spy — a plot so spicy even a $4 trillion chip empire can't cool it down. Rumor has it the board is sweating harder than a GPU running Crysis. Nobody asked, but the H20 export drama just got a whole lot messier.",
       "category": "Tech",
