@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🌶️ EXCLUSIVE: Nvidia Accused of Funding Its Own GPU Shoppers",
+      "content": "Insiders report Nvidia allegedly bankrolled AI startups whose first move was — surprise — buying Nvidia GPUs, manufacturing scarcity like it's limited-edition sneakers. 866 HN upvoters smell a circular economy that only goes one direction: up. Jensen's accountants are reportedly very relaxed.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+      "id": 102
+    },
+    {
+      "title": "🚨 BREAKING: FAA Grounds Every Flight in America for 4.5 Hours",
+      "content": "Sources say the FAA hit the big red button and issued a nationwide ground stop citing 'extraordinary circumstances' — because nothing says confidence like vagueness. 1,226 HN commenters refreshed flight trackers while Victoria, CA also froze. The skies are back, but the vibes are not.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+      "id": 101
+    },
+    {
       "title": "🔥 SHOCKING: Microsoft 365 Email Outage Becomes Global Cloud Meltdown",
       "content": "Rumor has it a 'service degradation' speedran its way into a full-blown worldwide cloud crisis before anyone finished their coffee. Insiders report millions locked out of email while the status page glowed an ominous shade of 'we're working on it.' Nobody asked, but maybe stop putting the whole planet on one tenant.",
       "category": "Tech",
