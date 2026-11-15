@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "💥 SHOCKING: Vibe-Coded Apps Leak 200K Private Messages",
+      "content": "Turns out letting the AI do all the thinking has a tiny security cost: Lovable apps reportedly exposed passport details and over 200,000 private messages to anyone who asked nicely. Sources say the 'move fast and expose things' era is going great. Nobody asked, but maybe read the code the robot wrote.",
+      "category": "Software",
+      "size": "medium",
+      "link": "https://www.crissyfield.de/research/lovable-en/",
+      "id": 104
+    },
+    {
+      "title": "🚨 BREAKING: SpaceX Literally Catches a Rocket Like It's Nothing",
+      "content": "Starship Flight 15 came screaming back to Earth and got snatched out of the sky by the launch tower chopsticks, and 1453 Hacker News nerds collectively lost their minds. Insiders say engineers everywhere are now explaining to their bosses why THEIR deploy still takes 40 minutes. Rumor has it gravity has filed a formal complaint.",
+      "category": "Tech",
+      "size": "large",
+      "link": "https://www.spacex.com/launches/starship-flight-15",
+      "id": 103
+    },
+    {
       "title": "🌶️ EXCLUSIVE: Nvidia Accused of Funding Its Own GPU Shoppers",
       "content": "Insiders report Nvidia allegedly bankrolled AI startups whose first move was — surprise — buying Nvidia GPUs, manufacturing scarcity like it's limited-edition sneakers. 866 HN upvoters smell a circular economy that only goes one direction: up. Jensen's accountants are reportedly very relaxed.",
       "category": "AI",
