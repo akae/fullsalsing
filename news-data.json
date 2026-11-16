@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🌶️ EXCLUSIVE: Amazon's Black Friday 'Deals' Were a Decoy",
+      "content": "A Groundwork investigation found nearly 1 in 3 of Amazon's advertised Black Friday and Cyber Monday 'deals' offered zero actual savings, and almost 1 in 10 were straight-up decoys. Sources say your 'limited time' discount was priced identically last Tuesday. Nobody asked, but your cart was lying to you.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
+      "id": 106
+    },
+    {
+      "title": "🚨 BREAKING: Qwen4-Max Drops, Benchmarks Catch Fire",
+      "content": "Alibaba's Qwen4-Max just stormed Hacker News with 832 upvotes and 440 comments of pure caffeinated debate. Insiders say the Western labs are quietly refreshing the leaderboard every six minutes. Rumor has it someone's open-weight dreams just got a new roommate.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://qwen.ai/blog?id=qwen4-max",
+      "id": 105
+    },
+    {
       "title": "💥 SHOCKING: Vibe-Coded Apps Leak 200K Private Messages",
       "content": "Turns out letting the AI do all the thinking has a tiny security cost: Lovable apps reportedly exposed passport details and over 200,000 private messages to anyone who asked nicely. Sources say the 'move fast and expose things' era is going great. Nobody asked, but maybe read the code the robot wrote.",
       "category": "Software",
