@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "💉 BREAKING: Optimizely Hacked, Served Malware to Zoom and GitLab",
+      "content": "Rumor has it one compromised Optimizely instance quietly infected the world's largest brands, turning Zoom and GitLab into malware delivery boys. Insiders say 600 HN upvoters are now trust-issuing every A/B test they've ever run. Nobody asked, but maybe stop injecting random scripts into prod.",
+      "category": "Tech",
+      "size": "medium",
+      "link": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+      "id": 108
+    },
+    {
+      "title": "🔥 EXCLUSIVE: CMU Drops Entire CS Degree on YouTube for Free",
+      "content": "Sources say Carnegie Mellon just yeeted its computer science courses onto YouTube at $0, and 2,150 upvoters are now questioning their $200K tuition decisions. Insiders report bootcamp CEOs have gone suspiciously quiet. Your excuse for not knowing recursion just expired.",
+      "category": "Programming",
+      "size": "large",
+      "link": "https://www.cs.cmu.edu/learn/",
+      "id": 107
+    },
+    {
       "title": "🌶️ EXCLUSIVE: Amazon's Black Friday 'Deals' Were a Decoy",
       "content": "A Groundwork investigation found nearly 1 in 3 of Amazon's advertised Black Friday and Cyber Monday 'deals' offered zero actual savings, and almost 1 in 10 were straight-up decoys. Sources say your 'limited time' discount was priced identically last Tuesday. Nobody asked, but your cart was lying to you.",
       "category": "Tech",
