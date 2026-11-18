@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🔥 SHOCKING: Google's AI Answers Eat 40% of Search Traffic",
+      "content": "Insiders report that Google's shiny AI Overviews are quietly vaporizing 40% of the clicks publishers used to live on. Nobody asked the websites, but apparently 'answering the question' means nobody ever leaves the search page again. The open web is fine, totally fine, it's just lying down for a bit.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://revscope.co/blog/search-seo-geo-2026/",
+      "id": 110
+    },
+    {
+      "title": "💉 BREAKING: OpenJDK's Base64 Parser Hands Hackers the Keys",
+      "content": "Sources say the freshly-dubbed 'Java4Shell' lets attackers pull off remote code execution just by feeding OpenJDK a cursed Base64 string. With 1,125 upvotes and 310 comments of pure panic, security teams everywhere are once again canceling their weekends. Log4Shell called — it wants its PTSD back.",
+      "category": "Software",
+      "size": "large",
+      "link": "https://calif.io/java4shell/",
+      "id": 109
+    },
+    {
       "title": "💉 BREAKING: Optimizely Hacked, Served Malware to Zoom and GitLab",
       "content": "Rumor has it one compromised Optimizely instance quietly infected the world's largest brands, turning Zoom and GitLab into malware delivery boys. Insiders say 600 HN upvoters are now trust-issuing every A/B test they've ever run. Nobody asked, but maybe stop injecting random scripts into prod.",
       "category": "Tech",
