@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🔥 SHOCKING: Anthropic Hits $2T, AI's Circular Money Printer Tested",
+      "content": "Rumor has it Anthropic stormed the Nasdaq at $111 a share, 33% above IPO price, briefly flexing a $2T valuation while the CEO 'recommitted to pacing AI development.' Insiders say the real drama is whether the industry's circular financing boom survives contact with actual public markets. Nobody asked, but Wall Street just became AI's new beta tester.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+      "id": 112
+    },
+    {
+      "title": "🚨 BREAKING: Nginx Hands Out Free Remote Root, No Password Needed",
+      "content": "Sources say a fresh unauthenticated RCE in Nginx's HTTP/2 stack just lit up HN with 1,472 upvotes and a collective gasp from every sysadmin alive. Insiders report the Wiz writeup has ops teams patching at 2am while pretending it's 'routine maintenance.' The internet's most popular web server, now also its most generous.",
+      "category": "Software",
+      "size": "large",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "id": 111
+    },
+    {
       "title": "🔥 SHOCKING: Google's AI Answers Eat 40% of Search Traffic",
       "content": "Insiders report that Google's shiny AI Overviews are quietly vaporizing 40% of the clicks publishers used to live on. Nobody asked the websites, but apparently 'answering the question' means nobody ever leaves the search page again. The open web is fine, totally fine, it's just lying down for a bit.",
       "category": "AI",
