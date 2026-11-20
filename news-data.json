@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "💥 EXCLUSIVE: Anthropic's 7 Founders Cash Out $2B in IPO",
+      "content": "Insiders report Anthropic rang the Nasdaq bell in a record-breaking debut while its seven founders quietly pocketed nearly $2 billion before the ink dried. Nobody asked, but 'AI safety' apparently pays very well on Wall Street. Peril for humanity, promise for the cap table.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+      "id": 114
+    },
+    {
+      "title": "🚨 BREAKING: Anthropic Employee Drops Riemann Hypothesis Proof PDF",
+      "content": "Sources say an Anthropic staffer just uploaded a general proof of the Riemann Hypothesis to a random .ge domain, and HN lost its collective mind with 1,416 upvotes and 969 comments of mathematicians nervously sharpening pencils. Rumor has it the PDF is being speed-run by every number theorist on Earth right now. If it holds, that's a Millennium Prize casually dropped on a Thursday.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://alpo.ge/remark.pdf",
+      "id": 113
+    },
+    {
       "title": "🔥 SHOCKING: Anthropic Hits $2T, AI's Circular Money Printer Tested",
       "content": "Rumor has it Anthropic stormed the Nasdaq at $111 a share, 33% above IPO price, briefly flexing a $2T valuation while the CEO 'recommitted to pacing AI development.' Insiders say the real drama is whether the industry's circular financing boom survives contact with actual public markets. Nobody asked, but Wall Street just became AI's new beta tester.",
       "category": "AI",
