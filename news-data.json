@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "💥 SHOCKING: Nasdaq Erases ALL 2026 Gains in AI Meltdown",
+      "content": "Rumor has it the entire year's rally evaporated as the AI sell-off nuked markets on Anthropic's second trading day. Insiders whisper that the IPO hype cooled faster than a laptop fan after Chrome closes. A whole year of gains, gone — spicy.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+      "id": 116
+    },
+    {
+      "title": "🔥 BREAKING: Human and AI Both Claim Riemann Hypothesis Win",
+      "content": "Sources say Levent Alpöge dropped a 2,799-upvote GRH proof PDF while a stochastic parrot allegedly solved the same 167-year-old problem the SAME week. Insiders report mathematicians are now frantically Lean-verifying both before anyone pops champagne. Nobody asked for a math-off, but here we are.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://alpo.ge/remark.pdf",
+      "id": 115
+    },
+    {
       "title": "💥 EXCLUSIVE: Anthropic's 7 Founders Cash Out $2B in IPO",
       "content": "Insiders report Anthropic rang the Nasdaq bell in a record-breaking debut while its seven founders quietly pocketed nearly $2 billion before the ink dried. Nobody asked, but 'AI safety' apparently pays very well on Wall Street. Peril for humanity, promise for the cap table.",
       "category": "AI",
