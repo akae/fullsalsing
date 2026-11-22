@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🌶️ SHOCKING: Anthropic's Clean AI Runs on 11% Coal",
+      "content": "Rumor has it the model lecturing you about ethics will be powered 87% by gas and 11% by coal come 2028, per a datacenter breakdown making the rounds. Nobody asked, but the carbon footprint of 'please and thank you' is apparently a literal smokestack. So much for the sustainable future.",
+      "category": "AI",
+      "size": "medium",
+      "link": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+      "id": 118
+    },
+    {
+      "title": "🔥 BREAKING: Riemann Hypothesis Falls, Twice, On the Same Day",
+      "content": "Sources say mathematician Levent Alpöge dropped a 2,894-upvote PDF claiming proof of the Generalized Riemann Hypothesis — the same week an AI insists it cracked the 167-year-old beast too. Insiders report the Lean verification crowd is already furiously typing. Nothing says 'biggest math moment of the decade' like a human and a chatbot fighting over the trophy.",
+      "category": "Programming",
+      "size": "large",
+      "link": "https://alpo.ge/remark.pdf",
+      "id": 117
+    },
+    {
       "title": "💥 SHOCKING: Nasdaq Erases ALL 2026 Gains in AI Meltdown",
       "content": "Rumor has it the entire year's rally evaporated as the AI sell-off nuked markets on Anthropic's second trading day. Insiders whisper that the IPO hype cooled faster than a laptop fan after Chrome closes. A whole year of gains, gone — spicy.",
       "category": "AI",
