@@ -33,22 +33,47 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    # Unique per run attempt so re-running a failed deploy never collides with
+    # the artifact uploaded by the previous attempt.
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_attempt }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
       - name: Regenerate RSS feed
         run: node scripts/generate_feed.js
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          # Upload entire repository
           path: '.'
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
+      # The artifact list API is eventually consistent; wait until the artifact
+      # is visible before asking deploy-pages to deploy it.
+      - name: Wait for Pages artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 30); do
+            count=$(gh api --paginate \
+              "/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?per_page=100" \
+              --jq ".artifacts[] | select(.name == \"${PAGES_ARTIFACT_NAME}\") | .id" | wc -l)
+            if [ "$count" -ge 1 ]; then
+              echo "Pages artifact is visible (attempt ${attempt})"
+              exit 0
+            fi
+            echo "Pages artifact not visible yet (attempt ${attempt}/30)..."
+            sleep 2
+          done
+          echo "Pages artifact never became visible" >&2
+          exit 1
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
