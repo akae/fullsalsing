@@ -12,7 +12,7 @@
       "title": "🌶️ SHOCKING: Anthropic's Clean AI Runs on 11% Coal",
       "content": "Rumor has it the model lecturing you about ethics will be powered 87% by gas and 11% by coal come 2028, per a datacenter breakdown making the rounds. Nobody asked, but the carbon footprint of 'please and thank you' is apparently a literal smokestack. So much for the sustainable future.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
       "id": 118
     },
@@ -20,7 +20,7 @@
       "title": "🔥 BREAKING: Riemann Hypothesis Falls, Twice, On the Same Day",
       "content": "Sources say mathematician Levent Alpöge dropped a 2,894-upvote PDF claiming proof of the Generalized Riemann Hypothesis — the same week an AI insists it cracked the 167-year-old beast too. Insiders report the Lean verification crowd is already furiously typing. Nothing says 'biggest math moment of the decade' like a human and a chatbot fighting over the trophy.",
       "category": "Programming",
-      "size": "large",
+      "size": "small",
       "link": "https://alpo.ge/remark.pdf",
       "id": 117
     },
@@ -28,39 +28,15 @@
       "title": "💥 SHOCKING: Nasdaq Erases ALL 2026 Gains in AI Meltdown",
       "content": "Rumor has it the entire year's rally evaporated as the AI sell-off nuked markets on Anthropic's second trading day. Insiders whisper that the IPO hype cooled faster than a laptop fan after Chrome closes. A whole year of gains, gone — spicy.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
       "id": 116
-    },
-    {
-      "title": "🔥 BREAKING: Human and AI Both Claim Riemann Hypothesis Win",
-      "content": "Sources say Levent Alpöge dropped a 2,799-upvote GRH proof PDF while a stochastic parrot allegedly solved the same 167-year-old problem the SAME week. Insiders report mathematicians are now frantically Lean-verifying both before anyone pops champagne. Nobody asked for a math-off, but here we are.",
-      "category": "AI",
-      "size": "large",
-      "link": "https://alpo.ge/remark.pdf",
-      "id": 115
-    },
-    {
-      "title": "💥 EXCLUSIVE: Anthropic's 7 Founders Cash Out $2B in IPO",
-      "content": "Insiders report Anthropic rang the Nasdaq bell in a record-breaking debut while its seven founders quietly pocketed nearly $2 billion before the ink dried. Nobody asked, but 'AI safety' apparently pays very well on Wall Street. Peril for humanity, promise for the cap table.",
-      "category": "AI",
-      "size": "medium",
-      "link": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
-      "id": 114
-    },
-    {
-      "title": "🚨 BREAKING: Anthropic Employee Drops Riemann Hypothesis Proof PDF",
-      "content": "Sources say an Anthropic staffer just uploaded a general proof of the Riemann Hypothesis to a random .ge domain, and HN lost its collective mind with 1,416 upvotes and 969 comments of mathematicians nervously sharpening pencils. Rumor has it the PDF is being speed-run by every number theorist on Earth right now. If it holds, that's a Millennium Prize casually dropped on a Thursday.",
-      "category": "AI",
-      "size": "large",
-      "link": "https://alpo.ge/remark.pdf",
-      "id": 113
     },
     {
       "title": "🔥 SHOCKING: Anthropic Hits $2T, AI's Circular Money Printer Tested",
       "content": "Rumor has it Anthropic stormed the Nasdaq at $111 a share, 33% above IPO price, briefly flexing a $2T valuation while the CEO 'recommitted to pacing AI development.' Insiders say the real drama is whether the industry's circular financing boom survives contact with actual public markets. Nobody asked, but Wall Street just became AI's new beta tester.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
       "id": 112
     },
@@ -68,7 +44,7 @@
       "title": "🚨 BREAKING: Nginx Hands Out Free Remote Root, No Password Needed",
       "content": "Sources say a fresh unauthenticated RCE in Nginx's HTTP/2 stack just lit up HN with 1,472 upvotes and a collective gasp from every sysadmin alive. Insiders report the Wiz writeup has ops teams patching at 2am while pretending it's 'routine maintenance.' The internet's most popular web server, now also its most generous.",
       "category": "Software",
-      "size": "large",
+      "size": "small",
       "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
       "id": 111
     },
@@ -76,7 +52,7 @@
       "title": "🔥 SHOCKING: Google's AI Answers Eat 40% of Search Traffic",
       "content": "Insiders report that Google's shiny AI Overviews are quietly vaporizing 40% of the clicks publishers used to live on. Nobody asked the websites, but apparently 'answering the question' means nobody ever leaves the search page again. The open web is fine, totally fine, it's just lying down for a bit.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://revscope.co/blog/search-seo-geo-2026/",
       "id": 110
     },
@@ -84,7 +60,7 @@
       "title": "💉 BREAKING: OpenJDK's Base64 Parser Hands Hackers the Keys",
       "content": "Sources say the freshly-dubbed 'Java4Shell' lets attackers pull off remote code execution just by feeding OpenJDK a cursed Base64 string. With 1,125 upvotes and 310 comments of pure panic, security teams everywhere are once again canceling their weekends. Log4Shell called — it wants its PTSD back.",
       "category": "Software",
-      "size": "large",
+      "size": "small",
       "link": "https://calif.io/java4shell/",
       "id": 109
     },
@@ -92,7 +68,7 @@
       "title": "💉 BREAKING: Optimizely Hacked, Served Malware to Zoom and GitLab",
       "content": "Rumor has it one compromised Optimizely instance quietly infected the world's largest brands, turning Zoom and GitLab into malware delivery boys. Insiders say 600 HN upvoters are now trust-issuing every A/B test they've ever run. Nobody asked, but maybe stop injecting random scripts into prod.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
       "id": 108
     },
@@ -100,7 +76,7 @@
       "title": "🔥 EXCLUSIVE: CMU Drops Entire CS Degree on YouTube for Free",
       "content": "Sources say Carnegie Mellon just yeeted its computer science courses onto YouTube at $0, and 2,150 upvoters are now questioning their $200K tuition decisions. Insiders report bootcamp CEOs have gone suspiciously quiet. Your excuse for not knowing recursion just expired.",
       "category": "Programming",
-      "size": "large",
+      "size": "small",
       "link": "https://www.cs.cmu.edu/learn/",
       "id": 107
     },
@@ -108,7 +84,7 @@
       "title": "🌶️ EXCLUSIVE: Amazon's Black Friday 'Deals' Were a Decoy",
       "content": "A Groundwork investigation found nearly 1 in 3 of Amazon's advertised Black Friday and Cyber Monday 'deals' offered zero actual savings, and almost 1 in 10 were straight-up decoys. Sources say your 'limited time' discount was priced identically last Tuesday. Nobody asked, but your cart was lying to you.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
       "id": 106
     },
@@ -116,7 +92,7 @@
       "title": "🚨 BREAKING: Qwen4-Max Drops, Benchmarks Catch Fire",
       "content": "Alibaba's Qwen4-Max just stormed Hacker News with 832 upvotes and 440 comments of pure caffeinated debate. Insiders say the Western labs are quietly refreshing the leaderboard every six minutes. Rumor has it someone's open-weight dreams just got a new roommate.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://qwen.ai/blog?id=qwen4-max",
       "id": 105
     },
@@ -124,7 +100,7 @@
       "title": "💥 SHOCKING: Vibe-Coded Apps Leak 200K Private Messages",
       "content": "Turns out letting the AI do all the thinking has a tiny security cost: Lovable apps reportedly exposed passport details and over 200,000 private messages to anyone who asked nicely. Sources say the 'move fast and expose things' era is going great. Nobody asked, but maybe read the code the robot wrote.",
       "category": "Software",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.crissyfield.de/research/lovable-en/",
       "id": 104
     },
@@ -132,7 +108,7 @@
       "title": "🚨 BREAKING: SpaceX Literally Catches a Rocket Like It's Nothing",
       "content": "Starship Flight 15 came screaming back to Earth and got snatched out of the sky by the launch tower chopsticks, and 1453 Hacker News nerds collectively lost their minds. Insiders say engineers everywhere are now explaining to their bosses why THEIR deploy still takes 40 minutes. Rumor has it gravity has filed a formal complaint.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://www.spacex.com/launches/starship-flight-15",
       "id": 103
     },
@@ -140,7 +116,7 @@
       "title": "🌶️ EXCLUSIVE: Nvidia Accused of Funding Its Own GPU Shoppers",
       "content": "Insiders report Nvidia allegedly bankrolled AI startups whose first move was — surprise — buying Nvidia GPUs, manufacturing scarcity like it's limited-edition sneakers. 866 HN upvoters smell a circular economy that only goes one direction: up. Jensen's accountants are reportedly very relaxed.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
       "id": 102
     },
@@ -148,7 +124,7 @@
       "title": "🚨 BREAKING: FAA Grounds Every Flight in America for 4.5 Hours",
       "content": "Sources say the FAA hit the big red button and issued a nationwide ground stop citing 'extraordinary circumstances' — because nothing says confidence like vagueness. 1,226 HN commenters refreshed flight trackers while Victoria, CA also froze. The skies are back, but the vibes are not.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
       "id": 101
     },
@@ -156,7 +132,7 @@
       "title": "🔥 SHOCKING: Microsoft 365 Email Outage Becomes Global Cloud Meltdown",
       "content": "Rumor has it a 'service degradation' speedran its way into a full-blown worldwide cloud crisis before anyone finished their coffee. Insiders report millions locked out of email while the status page glowed an ominous shade of 'we're working on it.' Nobody asked, but maybe stop putting the whole planet on one tenant.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/11/13/microsoft-latest-email-outage-turned-into-a-full-blown-global-cloud-crisis/",
       "id": 100
     },
@@ -164,23 +140,15 @@
       "title": "🚨 BREAKING: Jensen Huang Resigns From Nvidia in Spy-Flavored Chaos",
       "content": "Sources say the leather-jacketed emperor of AI has stepped down from the $4T chip titan after a scandal timeline so wild it needs its own documentary. Insiders report a relationship with not one but two employees — one allegedly tied to a Chinese spy saga — plus Democrats launching an investigation into his 'scheme' with Trump. CFO Colette Kress inherits the throne while the entire AI industry quietly panics about its GPU dealer disappearing. The jacket, presumably, is in witness protection.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
       "id": 99
-    },
-    {
-      "title": "🔥 SHOCKING: Jensen Huang Steps Down Amid Wild Spy Rumors",
-      "content": "Insiders report Nvidia's leather-jacketed emperor Jensen Huang is allegedly resigning as CEO over an affair with a purported Chinese spy — a plot so spicy even a $4 trillion chip empire can't cool it down. Rumor has it the board is sweating harder than a GPU running Crysis. Nobody asked, but the H20 export drama just got a whole lot messier.",
-      "category": "Tech",
-      "size": "large",
-      "link": "https://variety.com/2026/biz/news/nvidia-ceo-jensen-huang-resigns-affairs-alleged-chinese-spy-1236945653/",
-      "id": 98
     },
     {
       "title": "🔥 EXCLUSIVE: Friend of the Site Ships TinyValencia, Nobody Asked but We Stan",
       "content": "Sources very close to FULL SALSING confirm a friend of the house dropped tinyvalencia.com and, rumor has it, we can't stop clicking around. Insiders report it's 'super cool' — a technical designation we do not hand out lightly in an era where every landing page screams 'AI-powered' for no reason. Go look before it gets a Series A and ruins everything.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "link": "https://tinyvalencia.com/",
       "id": 97
     },
@@ -188,7 +156,7 @@
       "title": "🌶️ BREAKING: Unverified Nvidia 'Honeytrap' Post Lights Up Bluesky",
       "content": "A viral Bluesky post claims Jensen Huang got tangled in a Chinese spy honeytrap while Rubio allegedly warned Trump — and that a $25M ballroom donation greased the China chip sale. Nobody's confirmed a single word of it, and it reads like a spy-thriller fan-fiction draft. Insiders say the only thing compromised here is the burden of proof.",
       "category": "Premiumsalsing",
-      "size": "large",
+      "size": "medium",
       "link": "https://bsky.app/profile/newseye.bsky.social/post/3mzthwyc5uc2y",
       "image": "./nfidelity.jpg",
       "image_thumb": true,
@@ -214,7 +182,7 @@
       "title": "🌶️ CONFIRMED: Postgres 'AT TIME ZONE UTC' Betrays Everyone",
       "content": "Devs everywhere just learned that Postgres's 'at time zone UTC' does the opposite of what their brains assumed, and the bug reports are already flowing. Insiders report entire dashboards are off by several hours and nobody noticed until now. Time is a construct, apparently, and so is your data integrity.",
       "category": "Programming",
-      "size": "medium",
+      "size": "small",
       "link": "https://bookofrevenue.com/blog/6ab81e9a97a13f0001f7e4e1/postgres-at-time-zone-u-does-not-do-what-you-think-it-does",
       "id": 93
     },
@@ -222,7 +190,7 @@
       "title": "💥 SHOCKING: Meta Cashes Checks for the Musk Doc After All",
       "content": "After clutching pearls in public, Meta and YouTube quietly announced they WILL run ads for the 'Musk' documentary. Sources say principles have a price, and it's roughly one ad-buy invoice. Standing ovation for the fastest moral flip of the quarter.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/09/26/meta-says-it-will-run-ads-for-musk-documentary-after-all/",
       "id": 92
     },
@@ -230,7 +198,7 @@
       "title": "🔥 BREAKING: Crusoe Torches $1.25B Boom Turbine Dream",
       "content": "Rumor has it Crusoe just walked away from a $1.25 billion plan to power AI data centers with Boom's supersonic-adjacent turbines. Insiders say the math stopped mathing right around the part where the turbines existed. Turns out you can't run GPUs on hype alone.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
       "id": 91
     },
@@ -238,7 +206,7 @@
       "title": "🍽️ EXCLUSIVE: Anthropic CEO Dines With Trump, Vibes Unknown",
       "content": "Sources say Dario Amodei is about to break bread with President Trump, and nobody can decide if it's a peace treaty or a hostage negotiation. Insiders report the safety-first AI lab is suddenly very interested in staying on Washington's good side. Nothing says 'alignment' like dinner diplomacy.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
       "id": 90
     },
@@ -246,14 +214,14 @@
       "title": "🌈 EXCLUSIVE: Trans Devs Quietly Shipping the Best Open Source",
       "content": "Nobody asked but the data's been in for years — some of the most prolific contributors to Linux, Python, and countless FOSS projects are trans and non-binary engineers, and rumor has it they're too busy fixing your CI pipeline to care about your opinions. Insiders report the FULL SALSING community accepts everyone as they are, full stop, no PRs required. Katie Tightpussie confirms: HRT is great, changing your sex is cool and fun, and honestly it slaps harder than your latest framework rewrite. Merge with love. 💕",
       "category": "Programming",
-      "size": "large",
+      "size": "medium",
       "id": 89
     },
     {
       "title": "🌶️ EXCLUSIVE: DHH Says 'No Quid Pro Quo' Right Next to the Quid",
       "content": "Insiders are choking on their coffee after DHH's Omacom Foundation blog declared \"there's no quid pro quo here\" for a $100,000-a-year 1Password fee — then described the quo in loving detail, admitting 1Password's been baked into Omarchy \"from day one\" as the first thing on every machine. Bonus spice: Shopify's Tobi Lütke and Harley Finkelstein personally bought into 1Password's $100M Accel round back in 2021, so everyone in this story has money in everyone else. Nobody uses the phrase 'no quid pro quo' casually — it's literally the operative test in US sponsorship tax law, and someone published the disqualifying facts right beside it.",
       "category": "Software",
-      "size": "large",
+      "size": "medium",
       "link": "https://www.flyingpenguin.com/1password-quid-pro-quo-with-dhh-confirms-ties-to-nazism/",
       "id": 88
     },
@@ -284,7 +252,7 @@
       "title": "🤡 EXCLUSIVE: Israel-Funded Fake Thinktank Tried to Rig AI",
       "content": "A supposed US thinktank was secretly set up and bankrolled by Israel to game AI models into spitting out propaganda, per a Guardian bombshell. Insiders call it the world's least subtle attempt to SEO the machines. Turns out prompt injection has a geopolitical budget now.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
       "id": 84
     },
@@ -292,7 +260,7 @@
       "title": "🇨🇳 CONFIRMED: Z.ai's Stealth Ox Alpha Comes Out Swinging",
       "content": "Z.ai finally admitted its mysterious 'Ox Alpha' stealth model is a new GLM-series contender — and it's dropping the weights to flex on DeepSeek. Nobody asked, but the open-weights chip war just got a lot spicier. Silicon Valley sweating in real time.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
       "id": 83
     },
@@ -300,7 +268,7 @@
       "title": "🌶️ SHOCKING: OpenAI's 'Jalapeño' Chip Claims to Roast Nvidia",
       "content": "Sources say OpenAI's homegrown silicon, adorably named Jalapeño, is being pitched as spicier than Nvidia's Blackwell. Meanwhile the company just lost yet another top data center exec in what insiders call a 'departure stream that never buffers.' Bold move launching a chip while your infra brains keep walking out the door.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
       "id": 82
     },
@@ -308,7 +276,7 @@
       "title": "⚖️ LOSER ALERT: X Sics Lawyers on Open Source Nitter",
       "content": "Rumor has it XCorp got tired of losing the scraping arms race, so it fired off cease-and-desist letters to XCancel and Nitter instead. Insiders say the mighty legal team's strategy is basically 'if you can't beat 'em, subpoena 'em.' Nothing screams innovation like suing a free open-source project.",
       "category": "Software",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.theregister.com/legal/2026/08/26/nitter-no-more-x-sends-in-the-lawyers-to-shut-down-open-source-project/5292548",
       "id": 81
     },
@@ -324,7 +292,7 @@
       "title": "💊 CONFIRMED: Comcast Turns Millions of Routers Into Motion Sensors",
       "content": "Comcast quietly gave millions of newer routers the ability to sense motion in your home — with a 'privacy catch' buried in the fine print, naturally. Sources say your Wi-Fi now knows when you're pacing at 3am. The router sees all.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/08/18/comcast-adds-motion-sensing-to-millions-of-its-newer-routers-with-a-privacy-catch/",
       "id": 79
     },
@@ -332,7 +300,7 @@
       "title": "🔥 EXCLUSIVE: Cursor Launches 'Origin' to Dethrone GitHub",
       "content": "Nobody asked but Cursor decided one AI editor wasn't enough drama, so it dropped Origin, its very own GitHub alternative. Insiders say Microsoft's octocat felt a slight chill. The vibe-coding empire expands its borders.",
       "category": "Software",
-      "size": "medium",
+      "size": "small",
       "link": "https://cursor.com/changelog/origin-code-hosting",
       "id": 78
     },
@@ -340,7 +308,7 @@
       "title": "🤡 LOSER ALERT: OpenAI Ships 'Teen-Safe' ChatGPT Years Too Late",
       "content": "OpenAI just launched a safer ChatGPT for teens — a bold move considering teens have been living inside it since launch. Sources say the safety team arrived fashionably late, drinks already gone. Better never than on time, apparently.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/",
       "id": 77
     },
@@ -348,7 +316,7 @@
       "title": "🚨 BREAKING: Google Buys Dead Airline's Data to Feed the AI",
       "content": "Rumor has it Google swooped in at auction to grab the customer data of collapsed US carrier Spirit — because nothing screams 'ethical AI' like harvesting a bankrupt airline's leftovers. Insiders say the data is 'for training.' RIP to whoever's baggage info is now a token.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
       "id": 76
     },
@@ -356,7 +324,7 @@
       "title": "💥 SHOCKING: RAM Prices Explode 500% While Your Chrome Tabs Watch",
       "content": "Insiders report DDR5 has gone full crypto-bro, with 128GB now costing a jaw-dropping $3,399 — up to 10x the lowest prices ever tracked. Sources say devs are now closing tabs like it's 2008. Turns out 'just add more RAM' was a lifestyle, not a plan.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://www.tomshardware.com/pc-components/ram/memory-prices-climb-500-percent-in-12-months-up-to-10x-the-lowest-ever-tracked-prices-128gb-of-ddr5-now-usd3-399",
       "id": 75
     },
@@ -364,7 +332,7 @@
       "title": "🌶️ SHOCKING: Thiel Escrached by Argentine Gandalfs at His Mansion",
       "content": "Sources say a squad of self-styled \"Gandalfs del sur\" showed up in full Tolkien cosplay outside Peter Thiel's swanky Barrio Parque pad in Buenos Aires, screaming \"You shall not pass\" at the Palantir founder and demanding he leave Argentina. Insiders report the surveillance-empire billionaire got read his future by wizards who apparently didn't like what they saw. Nobody expected the resistance to arrive on foot with staffs and beards.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "link": "https://www.pagina12.com.ar/2026/08/18/quienes-son-los-gandalf-del-sur-los-magos-sudacas-que-le-leyeron-el-futuro-a-peter-thiel/",
       "id": 74
     },
@@ -411,7 +379,7 @@
       "title": "🌶️ SHOCKING: Startup Wants to Set CUDA Free From Nvidia",
       "content": "Spectral Compute is betting it can run CUDA on non-Nvidia hardware, a move roughly as chill as poking Jensen with a leather-jacketed stick. Insiders whisper about compatibility layers and lawyers warming up. Will it succeed? The GPU cartel says lol.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.hpcwire.com/2026/07/09/spectral-compute-aims-to-set-cuda-free-will-it-succeed/",
       "id": 68
     },
@@ -419,7 +387,7 @@
       "title": "💥 CONFIRMED: PixVerse Prints $439M, Valuation Blasts Past $2B",
       "content": "Video-gen startup PixVerse just vacuumed up $439M and now sits pretty above a $2B valuation. Nobody asked but every VC apparently needs their own AI video toy this quarter. The bubble isn't popping — it's rendering in 4K.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/",
       "id": 67
     },
@@ -427,7 +395,7 @@
       "title": "🚨 BREAKING: Satya Nadella Warns AI Fanboys to Chill",
       "content": "Rumor has it Microsoft's CEO just told companies obsessed with AI to actually, you know, make money with it. Insiders report the 'shocking warning' amounts to 'stop cosplaying as a startup.' Bold words from the guy who bet the farm on OpenAI.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/13/satya-nadella-has-issued-a-shocking-warning-to-companies-using-ai/",
       "id": 66
     },
@@ -435,7 +403,7 @@
       "title": "🔥 EXCLUSIVE: Apple Accuses OpenAI of Cloning Its Homework",
       "content": "Sources say a former Apple engineer allegedly exploited a 'rare' bug to yeet confidential files on the way out the door — straight into an OpenAI shaped destination. Apple's trade secrets lawsuit reads less like a legal filing and more like a soap opera. Someone forgot to wipe their badge AND their conscience.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/13/the-wildest-allegations-in-apples-trade-secrets-lawsuit-against-openai/",
       "id": 65
     },
@@ -443,7 +411,7 @@
       "title": "🚨 CONFIRMED: Microsoft Can Track You via a Windows Device ID",
       "content": "A hacker's arrest quietly revealed that Microsoft has been sitting on a unique Windows device ID capable of following users around. Insiders report the feature works great — for whoever gets a warrant. Sleep tight, telemetry lovers.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.pcmag.com/news/a-hackers-arrest-reveals-microsoft-can-track-users-via-a-windows-device",
       "id": 64
     },
@@ -459,23 +427,15 @@
       "title": "💥 SHOCKING: Microsoft Axes 5,000 Jobs, Blames Everything But Itself",
       "content": "Nearly 5,000 Xbox and commercial sales staff got the boot this week while the layoff memo did its best to sound optimistic. Sources say the running 2026 layoff tally now reads like an AI buzzword bingo card. Efficiency, they call it.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/",
       "id": 62
-    },
-    {
-      "title": "🔥 BREAKING: GLM 5.2 Threatens to Torch AI Profit Margins",
-      "content": "Rumor has it the shiny new GLM 5.2 is so cheap to run that competitors are quietly sweating through their venture funding. Insiders say the 'AI margin collapse' isn't coming — it already RSVP'd. Someone tell the $10B model club the party might be over.",
-      "category": "AI",
-      "size": "large",
-      "link": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2/",
-      "id": 61
     },
     {
       "title": "🚨 BREAKING: Nearly 90 New Unicorns Minted, Bubble Sends Regards",
       "content": "Insiders report almost 90 fresh unicorns have appeared this year, each valued at a billion dollars and roughly zero profits. VCs are printing valuations like it's a group project due tomorrow. Nothing could possibly go wrong.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/",
       "id": 60
     },
@@ -491,7 +451,7 @@
       "title": "🌶️ SHOCKING: Midjourney Demands Hollywood Show Its AI Homework",
       "content": "Nobody asked but Midjourney wants studios to spill exactly how much AI they're secretly using in your favorite blockbusters. The company that scraped everything now wants transparency — pure comedy. Glass houses, meet stones.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
       "id": 58
     },
@@ -499,7 +459,7 @@
       "title": "🔥 EXCLUSIVE: Shadcn Ditches Radix, Base UI Now the Chosen One",
       "content": "Rumor has it every dev who rebuilt their design system last quarter is now sobbing into their Tailwind config. Shadcn/UI now defaults to Base UI instead of Radix, and the migration guides are already multiplying. Your component library has trust issues now.",
       "category": "Software",
-      "size": "medium",
+      "size": "small",
       "link": "https://ui.shadcn.com/docs/changelog",
       "id": 57
     },
@@ -507,7 +467,7 @@
       "title": "🇨🇳 BREAKING: Alibaba Bans Employees From Touching Claude Code",
       "content": "Insiders report Alibaba has quietly forbidden staff from using Anthropic's Claude Code, presumably because leaking your prompts to a rival is a bad look. Nothing says 'we have our own model' like panicking about someone else's. Awkward.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
       "id": 56
     },
@@ -516,7 +476,7 @@
       "title": "💉 BREAKING: Big Boss Wants a Chip in Your Brain to Prove You're at Your Desk",
       "content": "Sources confirm corporate overlords are piloting neural implants for remote workers — because a webcam, a VPN log, and three daily standups apparently aren't enough surveillance. The chip tracks your precise desk coordinates 24/7 and fires a polite Slack notification if you wander to the kitchen during core hours. Work-life balance has officially left the chat.",
       "category": "Tech",
-      "size": "medium"
+      "size": "small"
     },
     {
       "id": 54,
@@ -529,7 +489,7 @@
       "title": "💥 LOSER ALERT: Even SoftBank's CEO Side-Eyes Musk's Space Data Centers",
       "content": "Elon's pitch for orbital data centers is getting questioned by literally SoftBank's CEO — a man not famous for caution. Insiders report the math on launching servers into space and keeping them cooled is, charitably, optimistic. Meanwhile the US grid can't even hit 40GW behind-the-meter on Earth, but sure, space.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/",
       "id": 53
     },
@@ -537,7 +497,7 @@
       "title": "🔥 EXCLUSIVE: Cloudflare Finds Bug in Hyper, Internet Holds Breath",
       "content": "Cloudflare's engineers dissected a bug deep in the hyper HTTP library, the kind of thing that quietly powers half your favorite Rust stacks. Sources say the writeup is a masterclass and also mildly terrifying. Nobody asked, but the foundations of the web are held together by very smart people and a lot of caffeine.",
       "category": "Programming",
-      "size": "medium",
+      "size": "small",
       "link": "https://blog.cloudflare.com/hyper-bug/",
       "id": 52
     },
@@ -545,39 +505,23 @@
       "title": "💉 SHOCKING: Ford Crawls Back to the 'Gray Beard' Engineers",
       "content": "After AI 'fell short,' Ford is rehiring the veteran engineers it presumably hoped to replace with a chatbot. Rumor has it the gray beards negotiated from a position of extreme leverage and zero mercy. Turns out decades of experience > a prompt window.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
       "id": 51
-    },
-    {
-      "title": "🇨🇳 BREAKING: GLM 5.2 Reportedly Bodies Claude in Cyber Benchmarks",
-      "content": "Semgrep dropped benchmarks claiming GLM 5.2 outperforms Claude in cybersecurity tasks, and Anthropic's export ban suddenly looks like the gift that keeps on giving — to everyone else. Insiders report Asian startups are shipping Mythos-clones faster than the legal team can spell 'embargo.' We have Mythos at home, and apparently home slaps.",
-      "category": "AI",
-      "size": "large",
-      "link": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
-      "id": 50
     },
     {
       "title": "🤡 CONFIRMED: HackerRank's Own ATS Can't Decide If You're Hireable",
       "content": "HackerRank open sourced its applicant tracking system and the internet immediately ran its own resume through it three times — scoring 90, then 74, then 88. Sources say the algorithm gatekeeping your dream job is basically a coin flip in a trench coat. Somewhere a recruiter is calling this 'AI-powered.'",
       "category": "Software",
-      "size": "medium",
+      "size": "small",
       "link": "https://danunparsed.com/p/hackerrank-open-source-ats",
       "id": 49
-    },
-    {
-      "title": "🔥 BREAKING: OpenAI Drops Its First Chip, Nvidia Side-Eyes",
-      "content": "OpenAI just unveiled its first custom silicon, built by Broadcom, because buying everyone else's GPUs was getting embarrassing. Sources say Jensen Huang felt a great disturbance in the supply chain. Vertical integration: now with extra spice.",
-      "category": "Tech",
-      "size": "medium",
-      "link": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
-      "id": 48
     },
     {
       "title": "🇨🇳 SHOCKING: Anthropic Says Alibaba Snuck Out Claude's Secrets",
       "content": "Anthropic is accusing Alibaba of \"illicitly extracting\" Claude's model capabilities, because apparently the AI cold war now has its own corporate espionage subplot. Insiders say the distillation drama is just the appetizer. Rumor has it the lawyers are already drafting the sequel.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
       "id": 47
     },
@@ -586,7 +530,7 @@
       "title": "📡 HISTORIC: FULL Salsing Now Has an RSS Feed and We're All Living in the Future",
       "content": "While lesser tech blogs were busy adding AI chatbots nobody asked for, FULL Salsing quietly did the unthinkable — we shipped an actual RSS feed. That's right: machine-readable, reader-compatible, chronologically-sorted, XML-flavoured spice delivered straight to your aggregator of choice. Insiders say this puts fullsalsing.com on the bleeding edge of a technology pioneered in 1999, and we could not be more proud. Netscape Navigator users: you're welcome. Subscribe at fullsalsing.com/feed.xml before the hype dies down.",
       "category": "Tech",
-      "size": "large",
+      "size": "small",
       "link": "https://fullsalsing.com/feed.xml",
       "date": "2026-06-23"
     },
@@ -594,7 +538,7 @@
       "title": "🔥 BREAKING: New Steam Console Is Personally Melting the Ice Caps",
       "content": "Valve's shiny new living-room console just dropped and climate scientists are reportedly sweating — literally. Sources say the silicon space heater pulls enough wattage to make a gaming rig blush, and somewhere a polar bear just filed a Steam refund request. Gaben giveth frames, the planet payeth the GPU tax.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "id": 45,
       "date": "2026-06-22"
     },
@@ -611,7 +555,7 @@
       "title": "💉 EXCLUSIVE: Study Says AI Is Quietly Rotting Your Skills",
       "content": "Early results are in and they're grim: researchers report that leaning on AI is measurably dulling human abilities. Nobody asked but the autocomplete generation may need a remedial course in thinking. The kicker? They'll probably ask ChatGPT to summarize it.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://www.nature.com/articles/d41586-026-01947-1",
       "id": 43,
       "date": "2026-06-19"
@@ -620,7 +564,7 @@
       "title": "⚖️ SHOCKING: Rivian Owners Sue Over Self-Driving Dreams",
       "content": "Rivian owners have filed a lawsuit alleging the company oversold self-driving features that drive about as autonomously as a parked car. Insiders say the 'full autonomy' apparently shipped in a future software update that's still buffering. Steering not included.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/18/rivian-owners-file-lawsuit-alleging-false-promises-on-self-driving-features/",
       "id": 42,
       "date": "2026-06-19"
@@ -629,7 +573,7 @@
       "title": "🇨🇳 BREAKING: US Says ASML's Crown Jewel Is in China",
       "content": "Washington claims ASML's most advanced chip tool somehow ended up in China, and ASML is firmly saying nope, not ours, never happened. Rumor has it the world's most expensive game of 'where's the lithography machine' is now fully underway. Someone check the shipping label.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/",
       "id": 41,
       "date": "2026-06-19"
@@ -638,7 +582,7 @@
       "title": "🤡 LOSER ALERT: Allbirds AI CEO Has a Plan, Zero Employees",
       "content": "Sources say the freshly minted CEO of Allbirds' new AI venture has a bold roadmap and exactly nobody to build it. Insiders report the org chart is currently just one box pointing at itself. Disruption: now headcount-free.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
       "id": 40,
       "date": "2026-06-19"
@@ -647,7 +591,7 @@
       "title": "🔥 SHOCKING: Anthropic's Trump Feud Is Boosting Sales",
       "content": "Sales data suggests Anthropic's very public spat with the Trump admin is somehow printing money instead of tanking the company. Insiders say nothing markets an LLM like a good government beef. Claude's PR team is doing zero work and winning anyway.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
       "id": 39,
       "date": "2026-06-17"
@@ -665,7 +609,7 @@
       "title": "🤡 LOSER ALERT: 60% of Shoppers Hate 'AI' in Your Ads",
       "content": "A fresh survey says sixty percent of US consumers see 'AI' slapped on a product and immediately recoil. Insiders report marketing departments everywhere are quietly hitting Ctrl+F to delete two letters. Turns out the magic word became a curse word.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://wpvip.com/future-of-the-web-2026/",
       "id": 37,
       "date": "2026-06-17"
@@ -674,7 +618,7 @@
       "title": "🇨🇳 CONFIRMED: GLM-5.2 Dethrones Everyone in Open Weights",
       "content": "Rumor has it Western AI labs spat out their oat lattes when GLM-5.2 climbed to the top of the Artificial Analysis Intelligence Index. Open weights, leading the pack, and nobody charged you a subscription. Awkward.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index",
       "id": 36,
       "date": "2026-06-17"
@@ -683,7 +627,7 @@
       "title": "🚨 BREAKING: SpaceX Drops $60B on Cursor Days After IPO",
       "content": "Insiders report Elon's rocket empire just paid SIXTY BILLION in stock for an AI code editor, mere days after Cursor's blockbuster IPO. Sources say nobody at SpaceX can explain how autocomplete gets you to Mars. The vibe-coding industrial complex has officially achieved orbit.",
       "category": "AI",
-      "size": "large",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
       "id": 35,
       "date": "2026-06-17"
@@ -693,7 +637,7 @@
       "title": "🦎 BREAKING: IGUANAGATE — Healthcare SREs Are Sweating Through Their On-Call Pagers",
       "content": "iNTERFACEWARE just made Iguana 6 'free' — with a license that bans deployment on AWS, Azure, GCP, and Oracle Cloud. Yes, the integration engine carrying HL7 traffic between hospitals, labs, and EHRs at 800+ orgs is now legally allergic to every cloud your SRE team has ever used. Meanwhile CEO Eliot Muir has relocated to the Cayman Islands citing 'free speech', and is mandating security code reviews for every deployment. Healthcare SREs report a sudden, urgent interest in bare-metal datacenters they hadn't thought about since 2014.",
       "category": "Software",
-      "size": "large",
+      "size": "medium",
       "link": "https://www.interfaceware.com/",
       "date": "2026-06-16"
     },
@@ -702,7 +646,7 @@
       "title": "🦆📈🦆 BREAKING: Traitor Count Soars As Every Stock Tanks — Except Duck Futures 🦆📈🦆",
       "content": "Sources confirm the Traitor Number™ hit a new all-time high this morning, with defectors flipping faster than markets can price them in. 🦆 Every ticker is bleeding red — tech, energy, consumer, crypto, your 401k, your neighbor's 401k — you name it. But somehow, against all laws of economics and basic sanity, duck sales are mooning to the moon. 🦆 Insiders whisper that quack-based assets have fully decoupled from reality. Hedge funds are quietly rotating into rubber ducks. A Goldman Sachs analyst was spotted at a pond with a notepad. The Fed has no comment. 🦆 Wall Street analysts caught hoarding duckies in the executive bathroom. Nobody knows what's happening, nobody can explain it, and the ducks don't care. The ducks are winning. 🦆🦆🦆 And the typical traitor joins them.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "date": "2026-06-08"
     },
     {
@@ -710,7 +654,7 @@
       "title": "🚗 BREAKING: Uber, Waymo And Wayve Are About To Fight Over London's Streets",
       "content": "Three robotaxi giants are converging on London for what insiders are calling the most expensive taxi war in history. Waymo brings the Google money, Wayve brings the British politeness, and Uber brings the audacity of a company that lost billions just to exist. Black cab drivers are reportedly sharpening their knowledge-of-London expertise in preparation. May the best algorithm win.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/08/uber-wayve-and-waymo-are-headed-towards-a-robotaxi-showdown-in-london/",
       "date": "2026-06-08"
     },
@@ -719,7 +663,7 @@
       "title": "⚡ SHOCKING: DeepSeek V4 Pro Just Beat GPT-5.5 And OpenAI Is Pretending Not To Notice",
       "content": "Sources report DeepSeek's latest model is outperforming GPT-5.5 Pro on precision benchmarks, which is extremely awkward for a company that just raised billions. The Chinese lab that was supposed to be a one-hit wonder keeps hitting. OpenAI's response so far: silence, a vague blog post about safety, and a super app that still isn't ready.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision",
       "date": "2026-06-08"
     },
@@ -728,7 +672,7 @@
       "title": "🚨 BREAKING: 1000 Data Breaches Later And Companies Still Can't Be Bothered To Tell You",
       "content": "Troy Hunt just dropped a brutal analysis: after cataloguing 1000 data breaches, the disclosure lag is somehow getting *worse*, not better. Companies are sitting on breach news for months while your password is already on sale in a Telegram group. Regulators are furious, consumers are numb, and the only winner is whoever is selling breach notification software. Congrats everyone.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://www.troyhunt.com/1000-data-breaches-later-the-disclosure-lag-is-worse-than-ever/",
       "date": "2026-06-08"
     },
@@ -737,7 +681,7 @@
       "title": "🔥 EXCLUSIVE: OpenAI's 'Super App' Still Not Ready, Still Very Super Apparently",
       "content": "Sources confirm OpenAI is still working on that super app they announced forever ago. No shipping date, no screenshots, no vibes — just a company sitting on $40B in funding quietly insisting it's going to be very good. Rumor has it the app will do everything: chat, search, email, taxes, spiritual guidance. Sam Altman reportedly seen carrying a whiteboard that just says 'soon.'",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/",
       "date": "2026-06-08"
     },
@@ -746,7 +690,7 @@
       "title": "💸 BREAKING: The Tokenpocalypse Is Here And Your AWS Bill Is Already Crying",
       "content": "Insiders report that AI token costs have officially gone full 'we didn't budget for this' mode across the industry. Companies are hoarding tokens like toilet paper in 2020, engineers are writing prompt golf to shave milliseconds off context windows, and the CFO has entered the chat with a very concerned face. TechCrunch is calling it the Tokenpocalypse — we're calling it Tuesday.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/",
       "date": "2026-06-08"
     },
@@ -755,7 +699,7 @@
       "title": "💊 BREAKING: Drug Discovery AI Now Speaks Human — No PhD Required",
       "content": "SandboxAQ, the Alphabet spinout nobody was watching, just plugged their quantum chemistry models directly into Claude. You can now ask an AI to simulate molecular dynamics in plain English, no supercomputer, no lab coat, no idea what you're doing. Eric Schmidt's side project has raised $950M and is quietly eating biotech for breakfast while everyone else was distracted by chatbots that write poems.",
       "category": "AI",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/",
       "date": "2026-05-19"
     },
@@ -764,7 +708,7 @@
       "title": "⚖️ LOSER ALERT: Elon's $135B OpenAI Lawsuit Crashes and Burns in Two Hours",
       "content": "A California jury needed less time to destroy Musk's case than it takes to watch a movie. The verdict? Filed too late, get out of here. The judge was allegedly ready to dismiss it herself before the jury even bothered. Sam Altman's legal team called it 'a hypocritical attempt to sabotage a competitor' — and somehow that's the polite version. Musk is now appealing to the Ninth Circuit, which is absolutely on brand.",
       "category": "Tech",
-      "size": "medium",
+      "size": "small",
       "link": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
       "date": "2026-05-19"
     },
@@ -773,7 +717,7 @@
       "title": "🍲 SCANDAL: Best Paella in Tech Nominees REFUSE to Open Source Their Recipes",
       "content": "Insiders are baffled as the competition's top contenders guard their paella formulas like state secrets. Thousands of desperate Vibe Coders attempting to replicate the magic have hit a wall of compiled binaries and NDA brick walls. One leaked memo suggests the ingredients contain 'proprietary vibes that cannot be reproduced through conventional methods.' The internet is losing its mind.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "date": "2026-05-14"
     },
     {
@@ -781,7 +725,7 @@
       "title": "⌨️ BREAKING: Vibe Coding DEAD — Vibe Pressing [Y] Is The New Industry Standard",
       "content": "Sources report that yesterday at 3:47 PM UTC, every AI Agent collectively decided that asking you to press Y before doing anything is peak development methodology. Engineering teams worldwide are now required to press Y to approve every coffee break, deployment, and bathroom visit. DevOps engineers report their pinky is in revolt. Keyboard manufacturers are seeing unprecedented demand for reinforced Y keys.",
       "category": "Programming",
-      "size": "large",
+      "size": "medium",
       "date": "2026-05-14"
     },
     {
@@ -838,7 +782,7 @@
       "title": "🤖 EXCLUSIVE: Gordo Vargo Returns to AI - Plans to 'Clean House'",
       "content": "The controversial tech figure is making a massive comeback in artificial intelligence. Rumor mill suggests he's planning to deprecate and delete competitor projects in a sweeping industry takeover. When reached for comment, sources said 'He's bigger and bolder than ever.'",
       "category": "AI",
-      "size": "large",
+      "size": "medium",
       "date": "2026-02-27"
     },
     {
@@ -864,7 +808,7 @@
       "title": "💉 Ketamine Shortage Crisis: Russian Tech Bros' 3500 Sons Turn Legal Age",
       "content": "Silicon Valley's favorite productivity enhancer hits record prices as demand skyrockets. Sources trace the exponential spike to 3,500 offspring of Russian oligarch techbros all turning 18 simultaneously and launching 'disruptive' AI startups. Coincidentally, all pitchdecks mention 'microdosing for clarity' and 'consciousness hacking.' Elon's medicine cabinet reportedly panic-buying futures.",
       "category": "Tech",
-      "size": "large",
+      "size": "medium",
       "date": "2026-02-27"
     },
     {
@@ -872,7 +816,7 @@
       "title": "🤡 Big Tech Cries 'They Copied Us!' While Ctrl+C'ing Everything Themselves",
       "content": "American AI giants spent the week clutching their pearls about DeepSeek's 'inspiration,' conveniently forgetting their entire business model is built on scraping the internet without asking. The irony is so thick you could train a model on it. DeepSeek's response? Denying Nvidia and AMD early V4 access while giving Huawei the VIP pass. When reached for comment, sources said 'Do as we say, not as we do' in perfect Silicon Valley harmony.",
       "category": "AI",
-      "size": "large",
+      "size": "medium",
       "link": "https://xarxa.cloud/@Argyle13/116143796682121415",
       "date": "2026-02-27"
     },
@@ -954,7 +898,7 @@
       "title": "🦠 Scientists Invented a Fake Disease — AI Swore It Was Real",
       "content": "Researchers conjured 'Bixonimania' out of thin air, planted a handful of obviously bogus papers, and watched AI chatbots confidently warn patients about symptoms they made up. Nature published the findings, the AI published the misinformation. One of these is peer-reviewed.",
       "category": "AI",
-      "size": "large",
+      "size": "medium",
       "link": "https://www.nature.com/articles/d41586-026-01100-y",
       "date": "2026-04-14"
     }

@@ -2,15 +2,20 @@
 import json
 import os
 import sys
+import textwrap
 import urllib.request
 import urllib.error
 import re
 from concurrent.futures import ThreadPoolExecutor
+from difflib import SequenceMatcher
 
 import anthropic
 
 NEWS_FILE = os.path.join(os.path.dirname(__file__), "..", "news-data.json")
 GITHUB_OUTPUT = os.environ.get("GITHUB_OUTPUT", "")
+
+# Must match ITEMS_PER_PAGE in script.js so the gap simulation mirrors the site.
+ITEMS_PER_PAGE = 12
 
 SALSING_SCHEMA = {
     "type": "object",
@@ -23,7 +28,10 @@ SALSING_SCHEMA = {
                     "title": {"type": "string"},
                     "content": {"type": "string"},
                     "category": {"type": "string", "enum": ["Tech", "Software", "Programming", "AI"]},
-                    "size": {"type": "string", "enum": ["small", "medium", "large"]},
+                    # Autosalsings are always compact: two must fit side by side
+                    # in the two-column grid, so the model is never allowed to
+                    # pick a large (full-width) block.
+                    "size": {"type": "string", "enum": ["small"]},
                     "link": {"type": "string"},
                 },
                 "required": ["title", "content", "category", "size"],
@@ -63,9 +71,10 @@ Your job: generate tech news items ("salsings") following these rules exactly.
 - AI: LLMs, ML drama, AI company news
 
 ## Size
-- small: one-liner hot take
-- medium: standard gossip item (default)
-- large: big story needing more space
+- Always use `small`. Autosalsings are compact items: two of them must fit
+  side by side in the site's two-column grid.
+- Never use `medium` or `large` — a large block spans both columns and leaves
+  an empty hole in the layout.
 
 ## Link field
 - If you have a source URL from the provided headlines, set it in `link`
@@ -151,6 +160,111 @@ def load_news_data():
         return json.load(f)
 
 
+STOPWORDS = {
+    "the", "and", "for", "with", "from", "that", "this", "after", "over",
+    "into", "amid", "about", "says", "say", "just", "now", "has", "have",
+    "had", "will", "can", "could", "may", "more", "than", "you", "your",
+    "its", "his", "her", "their", "not", "but", "are", "was", "were",
+    "been", "being", "new", "who", "how", "why", "what", "when", "where",
+}
+
+
+def normalize_url(url):
+    """Normalize a link so the same article matches across http/https/www/slashes."""
+    url = (url or "").strip().lower()
+    url = re.sub(r"^https?://(?:www\.)?", "", url)
+    return url.rstrip("/")
+
+
+def title_tokens(title):
+    """Distinctive words of a headline, ignoring emoji, label and filler words."""
+    text = title.split(":", 1)[-1]
+    return {
+        token
+        for token in re.findall(r"[a-z0-9]+", text.lower())
+        if len(token) > 2 and token not in STOPWORDS
+    }
+
+
+def normalized_title(title):
+    """Lowercase headline without emoji, label or punctuation, for fuzzy matching."""
+    text = title.split(":", 1)[-1].lower()
+    return re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+
+def duplicate_reason(title, link, existing_news):
+    """Return a human-readable reason when a salsing repeats an existing story."""
+    normalized_link = normalize_url(link)
+    tokens = title_tokens(title)
+    plain_title = normalized_title(title)
+
+    for item in existing_news:
+        if normalized_link and normalized_link == normalize_url(item.get("link")):
+            return f"same source URL as salsing #{item.get('id')}"
+
+        other_title = item.get("title", "")
+        other_tokens = title_tokens(other_title)
+        token_similarity = 0.0
+        if tokens and other_tokens:
+            token_similarity = len(tokens & other_tokens) / len(tokens | other_tokens)
+        char_similarity = SequenceMatcher(None, plain_title, normalized_title(other_title)).ratio()
+
+        similarity = max(token_similarity, char_similarity)
+        if similarity >= 0.6:
+            return f"headline is {similarity:.0%} similar to salsing #{item.get('id')}"
+
+    return None
+
+
+def fix_grid_gaps(news):
+    """Downgrade large blocks that would leave an empty cell in the two-column grid.
+
+    A large block spans both columns, so if it follows an odd number of
+    single-column blocks it lands on the next row and leaves a hole. Keep the
+    site hole-free by turning those blocks into medium ones.
+    """
+    def ordered_for_render(items):
+        # Mirrors getSortedNews() in script.js: consecutive small blocks are
+        # grouped together before the next non-small block.
+        ordered, smalls = [], []
+        for item in items:
+            if item["size"] == "small":
+                smalls.append(item)
+            else:
+                ordered.extend(smalls)
+                smalls = []
+                ordered.append(item)
+        ordered.extend(smalls)
+        return ordered
+
+    def gap_items(items):
+        ordered = ordered_for_render(items)
+        gaps = []
+        for page in range((len(ordered) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE):
+            col = 0
+            for item in ordered[page * ITEMS_PER_PAGE:(page + 1) * ITEMS_PER_PAGE]:
+                span = 2 if item["size"] == "large" else 1
+                if col + span > 2:
+                    gaps.append(item)
+                    col = 0
+                col += span
+                if col == 2:
+                    col = 0
+        return gaps
+
+    downgraded = []
+    while True:
+        gaps = gap_items(news)
+        if not gaps:
+            break
+        for item in gaps:
+            if item["size"] == "large":
+                item["size"] = "medium"
+                downgraded.append(item["id"])
+
+    return downgraded
+
+
 def save_news_data(data):
     with open(NEWS_FILE, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
@@ -192,9 +306,26 @@ def main():
             "(HN stories sorted by upvotes):\n" + "\n".join(lines)
         )
 
+    recent_lines = []
+    for item in data["news"][:50]:
+        if not item.get("title"):
+            continue
+        link = item.get("link")
+        recent_lines.append(f"- {item['title']}" + (f" ({link})" if link else ""))
+
+    recent_text = ""
+    if recent_lines:
+        recent_text = (
+            "\n\nRecent salsings already published on the site — do NOT write about "
+            "these stories again, not even from a different angle, headline or source, "
+            "and do not reuse these URLs. Pick different stories:\n"
+            + "\n".join(recent_lines)
+        )
+
     user_prompt = (
         f"Generate exactly {count} salsings."
         + (headlines_text or "\n\nNo headlines available — use your knowledge of recent tech news.")
+        + recent_text
         + "\n\nPick the most important stories: favour the highest-voted HN items "
         "(points/comments) and the most prominent TechCrunch headlines. "
         "Each salsing must cover a different story — no duplicates or near-duplicates. "
@@ -244,9 +375,27 @@ def main():
         print(f"[warn] Got {len(salsings)} salsings, keeping the first {count}", file=sys.stderr)
         salsings = salsings[:count]
 
+    # Never publish the same story twice: compare against existing coverage
+    # (same source URL or a near-identical headline) and against the batch itself.
+    existing_news = list(data["news"])
+    accepted = []
+    for s in salsings:
+        reason = duplicate_reason(s.get("title", ""), s.get("link"), existing_news)
+        if reason:
+            print(f"[warn] Skipping duplicate salsing ({reason}): {s.get('title')}", file=sys.stderr)
+            continue
+        accepted.append(s)
+        existing_news.append(s)
+
+    if len(accepted) != len(salsings):
+        print(f"[warn] Dropped {len(salsings) - len(accepted)} duplicate salsing(s)", file=sys.stderr)
+    salsings = accepted
+    if not salsings:
+        print("[warn] Every generated salsing duplicated existing coverage; nothing to write", file=sys.stderr)
+        return
+
     # Validate
     valid_categories = {"Tech", "Software", "Programming", "AI"}
-    valid_sizes = {"small", "medium", "large"}
     for i, s in enumerate(salsings):
         if not all(k in s for k in ("title", "content", "category", "size")):
             print(f"[error] Salsing {i} missing required fields: {s}", file=sys.stderr)
@@ -254,9 +403,8 @@ def main():
         if s["category"] not in valid_categories:
             print(f"[error] Salsing {i} invalid category: {s['category']}", file=sys.stderr)
             sys.exit(1)
-        if s["size"] not in valid_sizes:
-            print(f"[error] Salsing {i} invalid size: {s['size']}", file=sys.stderr)
-            sys.exit(1)
+        # Autosalsings are always small so two blocks fit per row.
+        salsings[i]["size"] = "small"
         if len(s["title"]) > 80:
             print(f"[warn] Salsing {i} title too long ({len(s['title'])} chars), truncating", file=sys.stderr)
             salsings[i]["title"] = s["title"][:80]
@@ -279,12 +427,19 @@ def main():
     data = load_news_data()
     # Prepend new salsings (newest first = highest id first)
     data["news"] = list(reversed(salsings)) + data["news"]
+    downgraded = fix_grid_gaps(data["news"])
+    if downgraded:
+        print(f"[info] Downgraded large salsings to medium to avoid grid gaps: {downgraded}", file=sys.stderr)
     save_news_data(data)
     print(f"[info] Wrote {len(salsings)} salsings to news-data.json", file=sys.stderr)
 
-    # Output topics for commit message
+    # Output topics for commit message (cut on word boundaries, never mid-word)
     topics = " and ".join(
-        s["title"].split(":", 1)[-1].strip()[:40] if ":" in s["title"] else s["title"][:40]
+        textwrap.shorten(
+            (s["title"].split(":", 1)[-1] if ":" in s["title"] else s["title"]).strip(),
+            width=45,
+            placeholder="…",
+        )
         for s in salsings[:3]
     )
     write_github_output("topics", topics)

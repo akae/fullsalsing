@@ -192,7 +192,9 @@ For each selected story, draft a salsing following PART 1 rules exactly:
 - Title: Emoji + ALL CAPS label + punchy headline (≤80 chars)
 - Content: 1–3 sentences, gossip tone, grounded in real details
 - Category: Tech / AI / Software / Programming
-- Size: small/medium/large (default: medium)
+- Size: **always `small`** — autosalsings must fit two per row in the two-column
+  grid, so never use `medium` or `large` (a large block spans both columns and
+  leaves a visible hole)
 
 ### Step 4 — Individual approval loop
 
@@ -221,6 +223,10 @@ After all items are reviewed:
 - Never write to `news-data.json` before all approval prompts are done
 - Never batch-approve — each salsing must be shown and confirmed individually
 - Always set `link` to the original article URL
+- **Never publish a story that is already on the site** — no repeats from a
+  different angle, headline or source. The CI autosalsing passes recent
+  headlines to the model and drops duplicates (same URL or ≥60% similar title).
+- **Autosalsings are always `small`** so two fit per row; never `large`.
 - IDs must be contiguous integers; re-check after all edits
 
 ---
