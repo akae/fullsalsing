@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🌶️ EXCLUSIVE: Ladybird Browser Crawls Into Alpha At Last",
+      "content": "The scrappy from-scratch browser that dared to not be Chromium finally hit alpha, and 958 HN upvoters lost their minds. Sources say devs are cautiously whispering 'maybe we won't be a Google monoculture forever.' Nobody asked but we're rooting for the bug.",
+      "category": "Software",
+      "size": "small",
+      "link": "https://ladybird.org/posts/alpha/",
+      "id": 121
+    },
+    {
+      "title": "💥 BREAKING: CrowdStrike Swallows Zscaler for a Cool $44B",
+      "content": "Insiders say CrowdStrike just dropped $44 billion to eat rival Zscaler whole, because nothing screams 'healthy security market' like two giants fusing into one. Rumor has it the antitrust lawyers are already warming up. Consolidation, baby.",
+      "category": "Tech",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/11/23/crowdstrike-to-acquire-zscaler-for-44-billion/",
+      "id": 120
+    },
+    {
       "title": "🚨 BREAKING: Nvidia Drops Another Flex Nobody Can Afford",
       "content": "Insiders report Nvidia's newsroom fired off yet another announcement, and Jensen Huang's leather jacket is reportedly more liquid than most national GDPs. Rumor has it the H-series roadmap now stretches so far into the future that competitors are filing for therapy, not just funding. Nobody asked but the market cap just sneezed and added a trillion.",
       "category": "AI",
