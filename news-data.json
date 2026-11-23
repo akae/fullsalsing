@@ -1,6 +1,14 @@
 {
   "news": [
     {
+      "title": "🚨 BREAKING: Nvidia Drops Another Flex Nobody Can Afford",
+      "content": "Insiders report Nvidia's newsroom fired off yet another announcement, and Jensen Huang's leather jacket is reportedly more liquid than most national GDPs. Rumor has it the H-series roadmap now stretches so far into the future that competitors are filing for therapy, not just funding. Nobody asked but the market cap just sneezed and added a trillion.",
+      "category": "AI",
+      "size": "large",
+      "link": "https://x.com/nvidianewsroom/status/2124865060397019480",
+      "id": 119
+    },
+    {
       "title": "🌶️ SHOCKING: Anthropic's Clean AI Runs on 11% Coal",
       "content": "Rumor has it the model lecturing you about ethics will be powered 87% by gas and 11% by coal come 2028, per a datacenter breakdown making the rounds. Nobody asked, but the carbon footprint of 'please and thank you' is apparently a literal smokestack. So much for the sustainable future.",
       "category": "AI",
