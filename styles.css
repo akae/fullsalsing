@@ -78,7 +78,7 @@ body {
     border-radius: 5px;
 }
 
-/* ===== "matrix" ASCII logo easter egg ===== */
+/* ===== "matrix" animated GIF easter egg ===== */
 body.matrix-on .header-link {
     width: min(64%, 780px);
     max-width: 780px;
@@ -88,94 +88,130 @@ body.matrix-on .header-banner {
     display: none;
 }
 
-.matrix-logo-wrap {
+.matrix-gif {
     display: none;
-    position: relative;
     width: 100%;
-    aspect-ratio: 2078 / 1174;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: auto;
     border-radius: 8px;
-    background:
-        radial-gradient(70% 90% at 50% 45%, rgba(255, 63, 152, 0.10), transparent 70%),
-        #0b0910;
     border: 1px solid rgba(255, 95, 174, 0.45);
+    background: #0b0910;
     box-shadow:
         0 10px 30px rgba(255, 105, 180, 0.22),
-        0 0 48px rgba(255, 63, 152, 0.12),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+        0 0 48px rgba(255, 63, 152, 0.12);
 }
 
-body.matrix-on .matrix-logo-wrap {
-    display: flex;
-    animation: matrixReveal 0.35s ease both;
-}
-
-.matrix-logo {
-    flex: 0 0 auto;
-    margin: 0;
-    padding: 0;
-    font-family: "DejaVu Sans Mono", "Liberation Mono", Menlo, Consolas, "Courier New", monospace;
-    font-size: 1px;
-    font-weight: 700;
-    line-height: 0.86;
-    letter-spacing: 0;
-    white-space: pre;
-    color: #fff;
-    filter: drop-shadow(0 0 18px rgba(255, 63, 152, 0.16));
-    animation: matrixFloat 8.5s ease-in-out infinite,
-               matrixGlow 5.2s ease-in-out infinite;
-}
-
-.matrix-logo .row {
+body.matrix-on .matrix-gif {
     display: block;
-    height: 0.86em;
-    animation: matrixRow 5.6s ease-in-out infinite;
-    animation-delay: calc(var(--i) * -0.085s);
-    will-change: transform;
+    animation: matrixGifIn 0.3s ease both;
 }
 
-.matrix-logo .tw {
-    animation: matrixTwinkle 4.8s ease-in-out infinite;
-    animation-delay: var(--d);
-}
-
-@keyframes matrixReveal {
-    from { opacity: 0; transform: scale(0.975); }
+@keyframes matrixGifIn {
+    from { opacity: 0; transform: scale(0.985); }
     to   { opacity: 1; transform: scale(1); }
 }
 
-@keyframes matrixFloat {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50%      { transform: translateY(-0.3%) scale(1.003); }
-}
-
-@keyframes matrixGlow {
-    0%, 100% { filter: drop-shadow(0 0 14px rgba(255, 63, 152, 0.12)); }
-    50%      { filter: drop-shadow(0 0 24px rgba(255, 63, 152, 0.22)); }
-}
-
-@keyframes matrixRow {
-    0%, 100% { transform: translate(0, 0); }
-    25%      { transform: translate(0.035em, -0.05em); }
-    50%      { transform: translate(0, -0.075em); }
-    75%      { transform: translate(-0.035em, -0.05em); }
-}
-
-@keyframes matrixTwinkle {
-    0%, 100% { opacity: 1;   text-shadow: 0 0 0 transparent; }
-    45%      { opacity: 0.55; text-shadow: 0 0 6px currentColor; }
-    55%      { opacity: 1;   text-shadow: 0 0 2px currentColor; }
+@media (max-width: 768px) {
+    body.matrix-on .header-link {
+        width: 94%;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .matrix-logo,
-    .matrix-logo .row,
-    .matrix-logo .tw,
-    body.matrix-on .matrix-logo-wrap {
-        animation: none !important;
+    body.matrix-on .matrix-gif {
+        animation: none;
+    }
+}
+
+/* ===== "game" Salsing Breaker easter egg ===== */
+body.game-on {
+    overflow: hidden;
+}
+
+.game-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    color: var(--text-dark);
+    background-color: var(--dark-bg);
+    background-image:
+        linear-gradient(rgba(255, 240, 245, 0.90), rgba(255, 228, 225, 0.94)),
+        url('background.png');
+    background-repeat: no-repeat, repeat;
+    background-size: auto, auto;
+    opacity: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    animation: gameReveal 0.25s ease forwards;
+}
+
+.game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    cursor: crosshair;
+}
+
+.game-close {
+    position: absolute;
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 105, 180, 0.6);
+    background: rgba(255, 255, 255, 0.72);
+    color: #c2185b;
+    font-family: var(--retro-font);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.25);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.game-close:hover {
+    background: #ff69b4;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.game-overlay .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes gameReveal {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-close {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .game-overlay {
+        animation: none;
+        opacity: 1;
     }
 }
 
@@ -749,14 +785,6 @@ body.matrix-on .matrix-logo-wrap {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-    body.matrix-on .header-link {
-        width: 94%;
-    }
-
-    body.matrix-on .matrix-logo-wrap {
-        padding: 8px;
-    }
-
     .title {
         font-size: 2.5rem;
     }

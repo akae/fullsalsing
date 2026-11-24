@@ -79,15 +79,26 @@ Say **"autosalsing"** to an AI agent (with `CLAUDE.md` loaded) to run the automa
 
 In CI, the **Generate Salsings** GitHub Action runs daily at 09:00 UTC and publishes 2 salsings picked from the top-voted / most important stories. These are always written with `size: "small"` so two fit side by side in the grid.
 
-## Easter egg
+## Easter eggs
 
 Type **`matrix`** anywhere on the site to replace the header sticker with an
 animated ASCII version of the logo. Type it again to bring the sticker back.
 The mode persists for the tab via `sessionStorage`.
 
 - `matrix.js` — key-sequence detection and mounting
-- `matrix-art.js` — generated artwork (loaded only on first trigger)
-- `styles.css` — the `matrix` section has the panel + animations
+- `ascii/fullsalsing-ascii.gif` — animated header artwork (loaded only on first trigger)
+- `styles.css` — the `matrix` section has the frame + reveal
+
+Type **`game`** anywhere to play **Salsing Breaker**, an inverted Arkanoid
+game. The pepper paddle sits at the top, the ball travels down through the
+newest salsings, and the bottom wall sends it back. Mouse/touch or ←/→ / A/D
+moves the pepper; Space serves and restarts; P pauses; Esc or × closes.
+
+- `game-loader.js` — key-sequence detection, loads the game on demand
+- `game.js` — canvas game, physics, blocks, HUD, win/lose states
+- `styles.css` — the `game` section has the overlay and close button
+- The ball is `pball.png`; it gets a spin/rotation kick whenever it hits the
+  walls, the pepper, or a block
 
 ## Design
 

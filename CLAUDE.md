@@ -117,9 +117,17 @@ fullsalsing/
 ### "matrix" easter egg
 - Typing `matrix` anywhere on the page replaces the header sticker with the animated ASCII logo; typing it again restores the sticker
 - `matrix.js` handles the key sequence, mounts the art, fits it to the header, and remembers the mode in `sessionStorage`
-- The artwork lives in `matrix-art.js` (generated) and is only fetched on first trigger
-- Styles and keyframes live in `styles.css` under the `matrix` section
-- Regenerate the asset with `scripts/generate_ascii_logo.py` (see `ascii/README.md`)
+- The artwork is `ascii/fullsalsing-ascii.gif`, only fetched on first trigger
+- `matrix.js` handles the sequence, loading, and `sessionStorage` persistence
+- Styles live in `styles.css` under the `matrix` section
+
+### "game" easter egg
+- Typing `game` anywhere launches **Salsing Breaker**, an inverted Arkanoid game: the pepper paddle is at the top, the ball travels down through the newest salsings, and the bottom wall sends it back up
+- `game-loader.js` watches for the word and loads `game.js` on demand (the payload is not fetched until the egg is triggered)
+- The board uses up to 24 real salsings from `newsStore` (12 on narrow screens), with generated fallback titles if the news has not loaded
+- Mouse/touch or ←/→ / A/D moves the pepper; Space serves/restarts; P pauses; Esc or the × button closes
+- The ball is `pball.png`; it gets a spin/rotation kick on wall, paddle, and block impacts
+- Overlay styles/keyframes live in `styles.css` under the `game` section
 
 ### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)

@@ -49,17 +49,10 @@ python3 scripts/generate_ascii_logo.py
 Optional: `--width 240` for a denser grid (and a wider file), `--out DIR`
 to write somewhere other than `ascii/`, `--gif` to refresh the preview.
 
-The main site's header egg uses a separate, header-sized grid. Rebuild it
-without clobbering the 200-column demo:
-
-```bash
-mkdir -p /tmp/matrix-build
-python3 scripts/generate_ascii_logo.py --width 120 --out /tmp/matrix-build \
-    --site-js matrix-art.js
-```
-
-Bump the `?v=` query in `index.html` / `matrix.js` when regenerating so
-browsers pick up the new asset.
+The main site's `matrix` egg now shows `ascii/fullsalsing-ascii.gif` directly.
+The old `--site-js` option still builds the live-text header asset for
+experiments, but the site no longer uses it. If you regenerate the GIF, bump
+the `?v=` query in `matrix.js`.
 
 ## Fonts
 

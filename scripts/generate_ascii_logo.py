@@ -546,7 +546,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=OUT_DIR, help="output directory")
     ap.add_argument("--gif", action="store_true", help="also write a preview GIF")
     ap.add_argument("--fragment", action="store_true", help="also write the bare art fragment")
-    ap.add_argument("--site-js", type=Path, help="write a matrix-art.js asset for the main site")
+    ap.add_argument("--site-js", type=Path, help="write a legacy live-text header JS asset")
     args = ap.parse_args()
 
     rows, colours = build_art(args.width, args.cell_aspect)
