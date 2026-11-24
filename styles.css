@@ -357,7 +357,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .news-block,
     .news-block::before,
-    .news-block::after {
+    .news-block::after,
+    .news-block.salsing-intensifies .block-category {
         animation: none;
     }
 }
@@ -464,6 +465,36 @@ body {
     box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
     border-radius: 4px;
     letter-spacing: 0.05em;
+}
+
+/* "Salsing intensifies" tag — vibrates like the intensifies memes */
+.news-block.salsing-intensifies .block-category {
+    display: inline-block;
+    transform-origin: center;
+    background: linear-gradient(90deg, #FF1493, #FFD700, #00CED1, #FF69B4, #FF1493);
+    background-size: 300% 100%;
+    animation:
+        categoryVibrate 0.16s linear infinite,
+        categoryRainbow 1.4s linear infinite;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 0 10px rgba(255, 20, 147, 0.7),
+        0 0 20px rgba(255, 215, 0, 0.45);
+    will-change: transform, background-position;
+}
+
+@keyframes categoryVibrate {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    20%  { transform: translate(-1.5px, 1px) rotate(-2deg); }
+    40%  { transform: translate(1.5px, -1px) rotate(2deg); }
+    60%  { transform: translate(-1px, -1.5px) rotate(-1.5deg); }
+    80%  { transform: translate(1px, 1.5px) rotate(1.5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes categoryRainbow {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 .block-image {
