@@ -79,6 +79,16 @@ Say **"autosalsing"** to an AI agent (with `CLAUDE.md` loaded) to run the automa
 
 In CI, the **Generate Salsings** GitHub Action runs daily at 09:00 UTC and publishes 2 salsings picked from the top-voted / most important stories. These are always written with `size: "small"` so two fit side by side in the grid.
 
+## Easter egg
+
+Type **`matrix`** anywhere on the site to replace the header sticker with an
+animated ASCII version of the logo. Type it again to bring the sticker back.
+The mode persists for the tab via `sessionStorage`.
+
+- `matrix.js` — key-sequence detection and mounting
+- `matrix-art.js` — generated artwork (loaded only on first trigger)
+- `styles.css` — the `matrix` section has the panel + animations
+
 ## Design
 
 - **Aesthetic**: Soft gossip magazine — pastel pink, glass-morphism

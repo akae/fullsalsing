@@ -114,6 +114,13 @@ fullsalsing/
 - Phrases defined in `script.js` → `CAROUSEL_SENTENCES` array
 - Timing in `styles.css` → `.carousel-item { animation: carouselFade 4s ... }`
 
+### "matrix" easter egg
+- Typing `matrix` anywhere on the page replaces the header sticker with the animated ASCII logo; typing it again restores the sticker
+- `matrix.js` handles the key sequence, mounts the art, fits it to the header, and remembers the mode in `sessionStorage`
+- The artwork lives in `matrix-art.js` (generated) and is only fetched on first trigger
+- Styles and keyframes live in `styles.css` under the `matrix` section
+- Regenerate the asset with `scripts/generate_ascii_logo.py` (see `ascii/README.md`)
+
 ### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
 - A compact right-aligned selector sits above the grid (`#pagination-top`), with the full-size one below (`#pagination`)
