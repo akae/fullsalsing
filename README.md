@@ -91,12 +91,23 @@ The mode persists for the tab via `sessionStorage`.
 
 Type **`game`** anywhere to play **Salsing Breaker**, an inverted Arkanoid
 game. The pepper paddle sits at the top, the ball travels down through the
-newest salsings, and the bottom wall sends it back. Mouse/touch or ←/→ / A/D
+salsings, and the bottom wall sends it back. Mouse/touch or ←/→ / A/D
 moves the pepper; Space serves and restarts; P pauses; Esc or × closes.
 
+The blocks are the **actual `.news-block` cards from the current page**,
+moved into the game board and arranged in a big, bottom-anchored wall:
+3 columns × 4 rows on desktop, 2 × 6 on mobile. The real card titles and
+content snippets are visible. On launch the cards fly from their original
+page positions into the wall, leaving rainbow trails. Everything is restored
+when the game closes. If the page has no cards yet, the game builds them
+from `newsStore` through the site's own `createNewsBlock` factory.
+
 - `game-loader.js` — key-sequence detection, loads the game on demand
-- `game.js` — canvas game, physics, blocks, HUD, win/lose states
-- `styles.css` — the `game` section has the overlay and close button
+- `game.js` — canvas physics/HUD, real DOM cards as targets, win/lose states
+- `styles.css` — the `game` section and the compact `.game-card` overrides
+- Every destroyed card pops a random exclamation: **SALSING!**, **PEIM!**,
+  **GOOD ONE!**, **CONCHETIZING!**, **CHIVITS!**, **JODETE ANDONI**,
+  **XABI TRAITOR**, **PAELLA DE CHORIZO**, or **ENSALADA DE HOSTIAS**
 - The ball is `pball.png`; it gets a spin/rotation kick whenever it hits the
   walls, the pepper, or a block
 

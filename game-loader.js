@@ -3,7 +3,7 @@
 
 (() => {
     const SECRET = 'game';
-    const GAME_SRC = 'game.js?v=20261124m';
+    const GAME_SRC = 'game.js?v=20261124w';
     const WINDOW_MS = 1500;
 
     let buffer = '';

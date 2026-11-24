@@ -17,6 +17,18 @@
     const FONT = '"DejaVu Sans Mono", "Liberation Mono", Menlo, Consolas, "Courier New", monospace';
     const EMOJI_FONT = '"Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
 
+    const POPUP_PHRASES = [
+        'SALSING!', 'PEIM!', 'GOOD ONE!', 'CONCHETIZING!', 'CHIVITS!',
+        'JODETE ANDONI', 'XABI TRAITOR', 'PAELLA DE CHORIZO', 'ENSALADA DE HOSTIAS'
+    ];
+    const POPUP_COLORS = [
+        ['#ff1493', '#ffd700'],
+        ['#ffd700', '#00ced1'],
+        ['#00ced1', '#7b68ee'],
+        ['#7b68ee', '#ff69b4'],
+        ['#ff69b4', '#ff1493']
+    ];
+
     // The ball image; it gets a rotational kick on every impact.
     const BALL_IMAGE_SRC = 'pball.png';
 
@@ -65,10 +77,21 @@
     let score = 0;
     let lives = 3;
     let blocks = [];
+    let board = null;
+    let trailCanvas = null;
+    let tctx = null;
+    let borrowed = [];
+    let flying = false;
+    let flightPending = false;
+    let flightTimer = 0;
+    let trailFade = 0;
     let particles = [];
+    let popups = [];
+    let lastPopupIndex = -1;
     let trail = [];
     let shake = 0;
     let lastFocus = null;
+    let savedScroll = 0;
     let resizeTimer = 0;
     let ballImage = null;
 
@@ -129,6 +152,7 @@
         if (isOpen) return;
         isOpen = true;
         lastFocus = document.activeElement;
+        savedScroll = window.scrollY;
 
         overlay = document.createElement('div');
         overlay.className = 'game-overlay';
@@ -137,12 +161,17 @@
         overlay.setAttribute('aria-modal', 'true');
         overlay.setAttribute('aria-label', 'Salsing Breaker arcade game');
         overlay.innerHTML =
+            '<div class="game-board" aria-hidden="true" inert></div>' +
+            '<canvas class="game-trails" aria-hidden="true"></canvas>' +
             '<canvas class="game-canvas" aria-hidden="true"></canvas>' +
             '<button type="button" class="game-close" aria-label="Close game">×</button>' +
             '<p class="sr-only">Move the pepper with the mouse, touch, arrow keys, or A and D. ' +
             'Press space to serve. Press escape to close the game.</p>';
         document.body.appendChild(overlay);
 
+        board = overlay.querySelector('.game-board');
+        trailCanvas = overlay.querySelector('.game-trails');
+        tctx = trailCanvas.getContext('2d');
         canvas = overlay.querySelector('.game-canvas');
         ctx = canvas.getContext('2d');
         closeBtn = overlay.querySelector('.game-close');
@@ -162,8 +191,10 @@
             ballImage.src = BALL_IMAGE_SRC;
         }
 
+        prepareBoard();
         resize(true);
         resetGame();
+        startFlight();
         lastTime = performance.now();
         raf = requestAnimationFrame(loop);
         overlay.focus({ preventScroll: true });
@@ -175,6 +206,10 @@
         cancelAnimationFrame(raf);
         raf = 0;
         clearTimeout(resizeTimer);
+        clearTimeout(flightTimer);
+        flying = false;
+        flightPending = false;
+        trailFade = 0;
 
         closeBtn.removeEventListener('click', onCloseClick);
         canvas.removeEventListener('pointermove', onPointerMove);
@@ -184,14 +219,19 @@
         window.removeEventListener('blur', onBlur);
         window.removeEventListener('resize', onResize);
 
+        restoreBorrowed();
         overlay.remove();
         overlay = null;
+        board = null;
+        trailCanvas = null;
+        tctx = null;
         canvas = null;
         ctx = null;
         closeBtn = null;
         document.body.classList.remove('game-on');
         keys.left = false;
         keys.right = false;
+        window.scrollTo(0, savedScroll);
 
         if (lastFocus && typeof lastFocus.focus === 'function') {
             lastFocus.focus({ preventScroll: true });
@@ -217,7 +257,14 @@
         canvas.style.height = H + 'px';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+        trailCanvas.width = Math.round(W * dpr);
+        trailCanvas.height = Math.round(H * dpr);
+        trailCanvas.style.width = W + 'px';
+        trailCanvas.style.height = H + 'px';
+        tctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
         layout();
+        if (!flying && !flightPending) applyPositions();
 
         if (!first && (state === 'playing' || state === 'ready')) {
             // A resize can put the ball inside the new block layout; re-serve.
@@ -226,8 +273,8 @@
     }
 
     function layout() {
-        const margin = clamp(W * 0.035, 14, 48);
-        const cols = clamp(Math.floor((W - margin * 2) / (W < 600 ? 115 : 150)), 3, 6);
+        const margin = clamp(W * 0.012, 6, 18);
+        const cols = W < 640 ? 2 : 3;
         const rows = Math.max(1, Math.ceil(blocks.length / cols));
 
         const oldCenter = paddle.w ? paddle.x + paddle.w / 2 : W / 2;
@@ -237,15 +284,14 @@
         paddle.x = clamp(oldCenter - paddle.w / 2, 8, W - 8 - paddle.w);
         paddle.targetX = paddle.x;
 
-        const topLimit = paddle.y + paddle.h + 64;
-        const gridTop = Math.max(topLimit, H * 0.26);
-        const bottomLimit = H - Math.max(64, H * 0.12);
-        const availH = Math.max(120, bottomLimit - gridTop);
-        const gap = clamp(W * 0.008, 4, 10);
+        const topLimit = paddle.y + paddle.h + 90;
+        const gridBottom = H - clamp(H * 0.015, 6, 18);
+        const availH = Math.max(120, gridBottom - topLimit);
+        const gap = clamp(W * 0.006, 4, 10);
         const blockW = (W - margin * 2 - (cols - 1) * gap) / cols;
-        const blockH = clamp((availH - (rows - 1) * gap) / rows, 30, 72);
-        const gridH = rows * blockH + (rows - 1) * gap;
-        const startY = gridTop;
+        const blockH = clamp((availH - (rows - 1) * gap) / rows, 30, 300);
+        const wallH = rows * blockH + (rows - 1) * gap;
+        const startY = gridBottom - wallH;
 
         blocks.forEach((block, index) => {
             block.col = index % cols;
@@ -257,38 +303,121 @@
         });
     }
 
-    function buildBlocks() {
-        const news = (typeof newsStore !== 'undefined' && Array.isArray(newsStore)) ? newsStore : [];
-        const maxBlocks = W < 600 ? 12 : MAX_BLOCKS;
-        const source = news.length ? news.slice(0, maxBlocks) : [];
+    function applyPositions() {
+        blocks.forEach((block) => {
+            if (!block.el) return;
+            block.el.style.left = block.x + 'px';
+            block.el.style.top = block.y + 'px';
+            block.el.style.width = block.w + 'px';
+            block.el.style.height = block.h + 'px';
+        });
+    }
 
-        blocks = source.map((item) => ({
-            title: item.title || 'SALSING',
-            category: item.category || 'Tech',
-            alive: true,
-            x: 0, y: 0, w: 0, h: 0,
-            col: 0, row: 0
-        }));
+    function categoryOf(card) {
+        const raw = (card.querySelector('.block-category')?.textContent || 'Tech').trim();
+        const key = Object.keys(CATEGORY_COLOR).find((name) => name.toLowerCase() === raw.toLowerCase());
+        return key || 'Tech';
+    }
 
-        while (blocks.length < maxBlocks) {
-            const title = FALLBACK_TITLES[blocks.length % FALLBACK_TITLES.length];
-            blocks.push({
-                title,
-                category: ['Tech', 'Software', 'Programming', 'AI'][blocks.length % 4],
-                alive: true,
-                x: 0, y: 0, w: 0, h: 0,
-                col: 0, row: 0
-            });
+    function makeFallbackCard(item, index) {
+        if (typeof createNewsBlock === 'function') {
+            try {
+                return createNewsBlock(item, index);
+            } catch (err) {
+                // fall through to a minimal real news-block
+            }
         }
+        const card = document.createElement('article');
+        card.className = `news-block medium ${(item.category || 'Tech').toLowerCase()}`;
+        card.style.setProperty('--stagger', index);
+        const category = document.createElement('span');
+        category.className = 'block-category';
+        category.textContent = item.category || 'Tech';
+        const title = document.createElement('h2');
+        title.className = 'block-title';
+        title.textContent = item.title || 'SALSING';
+        card.append(category, title);
+        return card;
+    }
+
+    function prepareBoard() {
+        board.innerHTML = '';
+        blocks = [];
+        borrowed = [];
+        flightPending = false;
+
+        const pageCards = Array.from(document.querySelectorAll('#blocks-container .news-block'));
+        if (pageCards.length) {
+            // Capture every original position before moving anything, otherwise
+            // the page grid reflows between reads.
+            const rects = pageCards.map((card) => card.getBoundingClientRect());
+            flightPending = true;
+
+            pageCards.forEach((card, index) => {
+                const rect = rects[index];
+                borrowed.push({ el: card, parent: card.parentNode, next: card.nextSibling });
+                card.classList.remove('is-destroyed');
+                card.classList.add('game-card');
+                card.style.left = rect.left + 'px';
+                card.style.top = rect.top + 'px';
+                card.style.width = rect.width + 'px';
+                card.style.height = rect.height + 'px';
+                board.appendChild(card);
+                blocks.push({
+                    el: card,
+                    alive: true,
+                    category: categoryOf(card),
+                    startX: rect.left + rect.width / 2,
+                    startY: rect.top + rect.height / 2
+                });
+            });
+            return;
+        }
+
+        const news = (typeof newsStore !== 'undefined' && Array.isArray(newsStore)) ? newsStore : [];
+        const items = news.length
+            ? news.slice(0, 12)
+            : FALLBACK_TITLES.slice(0, 12).map((title, index) => ({
+                title,
+                category: ['Tech', 'Software', 'Programming', 'AI'][index % 4],
+                content: ''
+            }));
+
+        items.forEach((item, index) => {
+            const card = makeFallbackCard(item, index);
+            card.classList.add('game-card');
+            card.style.setProperty('--stagger', index);
+            board.appendChild(card);
+            blocks.push({ el: card, alive: true, category: categoryOf(card), startX: null, startY: null });
+        });
+    }
+
+    function restoreBorrowed() {
+        for (let i = borrowed.length - 1; i >= 0; i -= 1) {
+            const item = borrowed[i];
+            item.el.classList.remove('game-card', 'is-destroyed', 'is-flying');
+            item.el.style.transitionDelay = '';
+            item.el.style.left = '';
+            item.el.style.top = '';
+            item.el.style.width = '';
+            item.el.style.height = '';
+            if (item.parent) item.parent.insertBefore(item.el, item.next);
+        }
+        borrowed = [];
     }
 
     function resetGame() {
         score = 0;
         lives = 3;
         particles = [];
+        popups = [];
+        lastPopupIndex = -1;
         trail = [];
         shake = 0;
-        buildBlocks();
+        blocks.forEach((block) => {
+            block.alive = true;
+            if (block.el) block.el.classList.remove('is-destroyed');
+        });
         layout();
         paddle.x = (W - paddle.w) / 2;
         paddle.targetX = paddle.x;
@@ -312,6 +441,7 @@
     }
 
     function serve() {
+        if (flying) return;
         if (state === 'ready') {
             ball.x = paddle.x + paddle.w / 2;
             ball.y = paddle.y + paddle.h + ball.r + 6;
@@ -458,6 +588,7 @@
         }
 
         updateParticles(dt);
+        updatePopups(dt);
         shake = Math.max(0, shake - dt * 55);
     }
 
@@ -539,12 +670,14 @@
 
     function hitBlock(block) {
         block.alive = false;
+        if (block.el) block.el.classList.add('is-destroyed');
         score += 10;
         shake = Math.max(shake, 5);
 
         const color = CATEGORY_COLOR[block.category] || '#ff5fae';
         burst(block.x + block.w / 2, block.y + block.h / 2, color, 12, 240);
         burst(block.x + block.w / 2, block.y + block.h / 2, '#ffd166', 4, 180);
+        spawnPopup(block);
 
         const cameFromLeft = ball.px + ball.r <= block.x;
         const cameFromRight = ball.px - ball.r >= block.x + block.w;
@@ -616,6 +749,81 @@
         }
     }
 
+    function spawnPopup(block) {
+        if (!block.el) return;
+        const rect = block.el.getBoundingClientRect();
+        let index = Math.floor(Math.random() * POPUP_PHRASES.length);
+        if (index === lastPopupIndex) index = (index + 1) % POPUP_PHRASES.length;
+        lastPopupIndex = index;
+
+        const colors = POPUP_COLORS[Math.floor(Math.random() * POPUP_COLORS.length)];
+        popups.push({
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height / 2,
+            vx: rand(-18, 18),
+            vy: rand(-92, -58),
+            spin: rand(-0.35, 0.35),
+            rotation: rand(-0.12, 0.12),
+            life: 0.95,
+            maxLife: 0.95,
+            size: clamp(W * 0.026, 20, 38),
+            text: POPUP_PHRASES[index],
+            colorA: colors[0],
+            colorB: colors[1]
+        });
+    }
+
+    function updatePopups(dt) {
+        for (let i = popups.length - 1; i >= 0; i -= 1) {
+            const p = popups[i];
+            p.life -= dt;
+            if (p.life <= 0) {
+                popups.splice(i, 1);
+                continue;
+            }
+            p.x += p.vx * dt;
+            p.y += p.vy * dt;
+            p.vy *= Math.exp(-2.5 * dt);
+            p.rotation += p.spin * dt;
+            p.spin *= Math.exp(-1.8 * dt);
+        }
+    }
+
+    function drawPopups() {
+        popups.forEach((p) => {
+            const age = 1 - p.life / p.maxLife;
+            const pop = 0.55 + 0.6 * Math.min(1, age * 6);
+            const alpha = Math.min(1, age * 10, p.life / 0.3);
+            if (alpha <= 0) return;
+
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rotation);
+            ctx.scale(pop, pop);
+            ctx.font = `900 ${p.size}px ${FONT}`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            const textWidth = ctx.measureText(p.text).width;
+            const gradient = ctx.createLinearGradient(-textWidth / 2, 0, textWidth / 2, 0);
+            gradient.addColorStop(0, p.colorA);
+            gradient.addColorStop(0.35, '#ffd700');
+            gradient.addColorStop(0.65, '#00ced1');
+            gradient.addColorStop(1, p.colorB);
+
+            ctx.lineJoin = 'round';
+            ctx.shadowColor = 'rgba(255, 20, 147, 0.35)';
+            ctx.shadowBlur = 12;
+            ctx.lineWidth = Math.max(3, p.size * 0.18);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.strokeText(p.text, 0, 0);
+            ctx.fillStyle = gradient;
+            ctx.fillText(p.text, 0, 0);
+            ctx.restore();
+        });
+    }
+
     function drawParticles() {
         particles.forEach((p) => {
             const alpha = Math.max(0, p.life / p.maxLife);
@@ -628,6 +836,114 @@
         ctx.globalAlpha = 1;
     }
 
+    function startFlight() {
+        if (!flightPending) {
+            applyPositions();
+            return;
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            flightPending = false;
+            applyPositions();
+            return;
+        }
+
+        flightPending = false;
+        flying = true;
+        trailFade = 1;
+
+        const movers = blocks.filter((block) => block.el && block.startX != null);
+        if (!movers.length) {
+            flying = false;
+            applyPositions();
+            return;
+        }
+
+        movers.forEach((block, index) => {
+            block.el.classList.add('is-flying');
+            block.el.style.transitionDelay = `${Math.min(index, 11) * 35}ms`;
+        });
+
+        // Force the initial styles to settle before starting the transition.
+        void board.offsetWidth;
+
+        movers.forEach((block) => {
+            block.el.style.left = block.x + 'px';
+            block.el.style.top = block.y + 'px';
+            block.el.style.width = block.w + 'px';
+            block.el.style.height = block.h + 'px';
+        });
+
+        const maxDelay = Math.min(movers.length - 1, 11) * 35;
+        clearTimeout(flightTimer);
+        flightTimer = setTimeout(() => {
+            flying = false;
+            trailFade = 1;
+            blocks.forEach((block) => {
+                if (!block.el) return;
+                block.el.classList.remove('is-flying');
+                block.el.style.transitionDelay = '';
+            });
+            applyPositions();
+        }, 760 + maxDelay);
+    }
+
+    function drawTrails(dt) {
+        if (!tctx) return;
+
+        if (!flying && trailFade <= 0) {
+            tctx.clearRect(0, 0, W, H);
+            return;
+        }
+
+        tctx.clearRect(0, 0, W, H);
+        blocks.forEach((block) => {
+            if (!block.el || block.startX == null) return;
+            const rect = block.el.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = cx - block.startX;
+            const dy = cy - block.startY;
+            const distance = Math.hypot(dx, dy);
+            if (distance < 4) return;
+
+            const gradient = tctx.createLinearGradient(block.startX, block.startY, cx, cy);
+            gradient.addColorStop(0, 'rgba(255, 20, 147, 0)');
+            gradient.addColorStop(0.08, 'rgba(255, 20, 147, 0.9)');
+            gradient.addColorStop(0.28, 'rgba(255, 215, 0, 0.9)');
+            gradient.addColorStop(0.48, 'rgba(0, 206, 209, 0.9)');
+            gradient.addColorStop(0.68, 'rgba(123, 104, 238, 0.9)');
+            gradient.addColorStop(0.86, 'rgba(255, 105, 180, 0.9)');
+            gradient.addColorStop(1, 'rgba(255, 246, 232, 0.95)');
+
+            const width = clamp(rect.width * 0.16, 10, 34);
+            const alpha = flying ? 0.6 : 0.6 * trailFade;
+
+            tctx.lineCap = 'round';
+            tctx.strokeStyle = gradient;
+
+            tctx.globalAlpha = alpha * 0.28;
+            tctx.lineWidth = width * 1.8;
+            tctx.beginPath();
+            tctx.moveTo(block.startX, block.startY);
+            tctx.lineTo(cx, cy);
+            tctx.stroke();
+
+            tctx.globalAlpha = alpha;
+            tctx.lineWidth = width;
+            tctx.beginPath();
+            tctx.moveTo(block.startX, block.startY);
+            tctx.lineTo(cx, cy);
+            tctx.stroke();
+        });
+        tctx.globalAlpha = 1;
+
+        if (!flying) {
+            trailFade = Math.max(0, trailFade - dt * 2.2);
+            if (trailFade === 0) tctx.clearRect(0, 0, W, H);
+        }
+    }
+
     // ------------------------------------------------------------------ draw
 
     function loop(now) {
@@ -636,6 +952,7 @@
         lastTime = now;
         update(dt);
         draw();
+        drawTrails(dt);
         raf = requestAnimationFrame(loop);
     }
 
@@ -648,7 +965,6 @@
         if (shake > 0.2) {
             ctx.translate(rand(-shake, shake), rand(-shake, shake));
         }
-        drawBlocks();
         drawParticles();
         if (state !== 'won' && state !== 'lost') {
             drawTrail();
@@ -659,50 +975,16 @@
 
         drawHud();
 
-        if (state === 'ready') drawReadyPrompt();
+        if (state === 'ready' && !flying) drawReadyPrompt();
         else if (state === 'paused') drawMessage('PAUSED', 'The kitchen is quiet.', 'P TO RESUME  ·  ESC TO EXIT');
         else if (state === 'won') drawMessage('SALSING COMPLETE', 'You minced every last one.', 'SPACE / TAP TO PLAY AGAIN  ·  ESC TO EXIT');
         else if (state === 'lost') drawMessage('GAME OVER', 'The salsings survived.', 'SPACE / TAP TO PLAY AGAIN  ·  ESC TO EXIT');
+
+        drawPopups();
     }
 
     function drawBackground() {
-        // The pastel base + tiled site background come from CSS; draw the
-        // soft glows and grid on the transparent canvas above it.
-        const pinkGlow = ctx.createRadialGradient(W * 0.5, 0, 0, W * 0.5, 0, H * 0.8);
-        pinkGlow.addColorStop(0, 'rgba(255, 182, 217, 0.30)');
-        pinkGlow.addColorStop(1, 'rgba(255, 182, 217, 0)');
-        ctx.fillStyle = pinkGlow;
-        ctx.fillRect(0, 0, W, H);
-
-        const cyanGlow = ctx.createRadialGradient(W * 0.9, H, 0, W * 0.9, H, H * 0.65);
-        cyanGlow.addColorStop(0, 'rgba(0, 206, 209, 0.08)');
-        cyanGlow.addColorStop(1, 'rgba(0, 206, 209, 0)');
-        ctx.fillStyle = cyanGlow;
-        ctx.fillRect(0, 0, W, H);
-
-        const goldGlow = ctx.createRadialGradient(W * 0.1, H, 0, W * 0.1, H, H * 0.6);
-        goldGlow.addColorStop(0, 'rgba(255, 215, 0, 0.07)');
-        goldGlow.addColorStop(1, 'rgba(255, 215, 0, 0)');
-        ctx.fillStyle = goldGlow;
-        ctx.fillRect(0, 0, W, H);
-
-        ctx.strokeStyle = 'rgba(255, 105, 180, 0.075)';
-        ctx.lineWidth = 1;
-        const cell = 48;
-        for (let x = 0; x <= W; x += cell) {
-            ctx.beginPath();
-            ctx.moveTo(x + 0.5, 0);
-            ctx.lineTo(x + 0.5, H);
-            ctx.stroke();
-        }
-        for (let y = 0; y <= H; y += cell) {
-            ctx.beginPath();
-            ctx.moveTo(0, y + 0.5);
-            ctx.lineTo(W, y + 0.5);
-            ctx.stroke();
-        }
-
-        // Bottom wall, the thing that sends the ball back up.
+        // The pastel base, glows, and grid live in CSS behind the real cards.
         const floor = ctx.createLinearGradient(0, H - 34, 0, H);
         floor.addColorStop(0, 'rgba(255, 20, 147, 0)');
         floor.addColorStop(1, 'rgba(255, 20, 147, 0.12)');
@@ -718,66 +1000,6 @@
         ctx.lineTo(W, H - 2);
         ctx.stroke();
         ctx.shadowBlur = 0;
-    }
-
-    function drawBlocks() {
-        blocks.forEach((block) => {
-            if (!block.alive) return;
-            const color = CATEGORY_COLOR[block.category] || '#ff5fae';
-            const radius = Math.min(9, block.h * 0.22);
-
-            ctx.save();
-            ctx.shadowColor = 'rgba(255, 105, 180, 0.18)';
-            ctx.shadowBlur = 12;
-            roundRect(block.x, block.y, block.w, block.h, radius);
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.82)';
-            ctx.fill();
-            ctx.shadowBlur = 0;
-
-            const sheen = ctx.createLinearGradient(0, block.y, 0, block.y + block.h);
-            sheen.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
-            sheen.addColorStop(0.55, 'rgba(255, 255, 255, 0.12)');
-            sheen.addColorStop(1, 'rgba(255, 182, 217, 0.08)');
-            ctx.fillStyle = sheen;
-            roundRect(block.x, block.y, block.w, block.h, radius);
-            ctx.fill();
-
-            ctx.strokeStyle = hexToRgba(color, 0.55);
-            ctx.lineWidth = 1;
-            roundRect(block.x + 0.5, block.y + 0.5, block.w - 1, block.h - 1, radius);
-            ctx.stroke();
-
-            roundRect(block.x + 5, block.y + 7, 3, Math.max(8, block.h - 14), 2);
-            ctx.fillStyle = hexToRgba(color, 0.9);
-            ctx.fill();
-
-            const fontSize = clamp(block.h * 0.22, 9, 12);
-            const emojiSize = Math.round(fontSize * 1.15);
-            const [emoji, title] = splitTitle(block.title);
-            const pad = Math.max(6, block.w * 0.045);
-            ctx.save();
-            roundRect(block.x + 4, block.y + 3, block.w - 8, block.h - 6, Math.max(2, radius - 2));
-            ctx.clip();
-
-            ctx.font = `${emojiSize}px ${EMOJI_FONT}`;
-            ctx.textAlign = 'left';
-            ctx.textBaseline = 'middle';
-            ctx.fillStyle = '#3a2b33';
-            ctx.fillText(emoji, block.x + pad + 5, block.y + block.h / 2 + 0.5);
-
-            const emojiWidth = ctx.measureText(emoji).width;
-            const titleX = block.x + pad + 5 + emojiWidth + 6;
-            const titleMax = block.x + block.w - pad - titleX;
-            const font = `700 ${fontSize}px ${FONT}`;
-            const label = fitText(title, Math.max(0, titleMax), font);
-
-            ctx.font = font;
-            ctx.fillStyle = '#3a2b33';
-            ctx.fillText(label, titleX, block.y + block.h / 2 + 0.5);
-            ctx.restore();
-
-            ctx.restore();
-        });
     }
 
     function drawTrail() {
@@ -941,7 +1163,7 @@
     function drawReadyPrompt() {
         const pulse = 0.55 + 0.45 * Math.sin(performance.now() / 280);
         const size = clamp(W * 0.013, 11, 15);
-        const y = paddle.y + paddle.h + 58;
+        const y = paddle.y + paddle.h + 50;
         const text = 'CLICK / TAP / SPACE TO SERVE';
 
         ctx.save();

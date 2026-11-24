@@ -124,10 +124,11 @@ fullsalsing/
 ### "game" easter egg
 - Typing `game` anywhere launches **Salsing Breaker**, an inverted Arkanoid game: the pepper paddle is at the top, the ball travels down through the newest salsings, and the bottom wall sends it back up
 - `game-loader.js` watches for the word and loads `game.js` on demand (the payload is not fetched until the egg is triggered)
-- The board uses up to 24 real salsings from `newsStore` (12 on narrow screens), with generated fallback titles if the news has not loaded
+- The board reuses the **actual `.news-block` elements** currently rendered in `#blocks-container`: they are moved into `.game-board`, restyled with `.game-card` into a bottom-anchored wall (3×4 desktop, 2×6 mobile, real titles + content snippets), and put back on close (scroll position restored). On launch they animate from their original page rects to the wall with a rainbow trail canvas (`.game-trails`). If none exist, real cards are built from `newsStore` via `createNewsBlock`
 - Mouse/touch or ←/→ / A/D moves the pepper; Space serves/restarts; P pauses; Esc or the × button closes
+- Each destroyed card spawns a canvas popup with a random exclamation: `SALSING!`, `PEIM!`, `GOOD ONE!`, `CONCHETIZING!`, `CHIVITS!`, `JODETE ANDONI`, `XABI TRAITOR`, `PAELLA DE CHORIZO`, `ENSALADA DE HOSTIAS`
 - The ball is `pball.png`; it gets a spin/rotation kick on wall, paddle, and block impacts
-- Overlay styles/keyframes live in `styles.css` under the `game` section
+- Overlay/board styles live in `styles.css` under the `game` section; the `.game-card` overrides are at the end so they beat the site's `.news-block` rules
 
 ### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
