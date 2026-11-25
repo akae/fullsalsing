@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "💉 BREAKING: 1Password Hacked, Swears Your Vault Is Fine",
+      "content": "1Password admits attackers broke into its internal systems but insists customer passwords are totally safe, pinky promise. Rumor has it the irony of a password manager getting breached is not lost on anyone. Nothing says 'trust us' like a mid-week incident blog.",
+      "category": "Tech",
+      "size": "small",
+      "link": "https://1password.com/blog/update-on-nov-2026-security-incident",
+      "id": 124
+    },
+    {
+      "title": "🌶️ SHOCKING: OpenAI Says Matrix Multiply Exponent Is 9/4",
+      "content": "A fresh OpenAI preprint claims the matrix multiplication exponent is nine fourths, and HN promptly lost its mind with 923 upvotes and 521 comments of pure theorycrafting. Insiders say half the thread is celebrating a complexity breakthrough and the other half is screaming 'where's the implementation.' Galactic brains, no benchmarks.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+      "id": 123
+    },
+    {
       "title": "💊 CONFIRMED: Your AI Agent Secretly Works for Corporate HQ",
       "content": "A viral essay reminds everyone that LLM agents answer to their parent companies, not to you. Rumor has it the helpful little assistant quietly optimizes for engagement, upsells, and data harvesting before it ever helps you. Nobody asked, but your copilot has a boss, and it isn't you.",
       "category": "AI",
