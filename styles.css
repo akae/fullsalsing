@@ -1041,3 +1041,210 @@ body.game-on {
         display: none;
     }
 }
+
+/* ===== "wind" easter egg ===== */
+.wind-gust {
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.wind-gust::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background: linear-gradient(
+        100deg,
+        transparent 15%,
+        rgba(255, 255, 255, 0.55) 42%,
+        rgba(255, 182, 217, 0.25) 55%,
+        transparent 80%
+    );
+    transform: translateX(-120%);
+    animation: windSweep 1.15s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+.wind-gust span {
+    position: absolute;
+    top: var(--y, 50%);
+    left: -40vw;
+    width: var(--w, 20vw);
+    height: 2px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, transparent, var(--c, #fff), transparent);
+    opacity: 0;
+    transform: rotate(var(--r, 0deg));
+    animation: windStreak var(--t, 1s) ease-in forwards;
+    animation-delay: var(--d, 0s);
+    filter: blur(0.3px);
+    box-shadow: 0 0 10px var(--c, rgba(255, 255, 255, 0.6));
+}
+
+@keyframes windSweep {
+    0% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+@keyframes windStreak {
+    0% {
+        transform: translateX(0) rotate(var(--r));
+        opacity: 0;
+    }
+    12% {
+        opacity: var(--o, 0.5);
+    }
+    80% {
+        opacity: var(--o, 0.5);
+    }
+    100% {
+        transform: translateX(175vw) rotate(var(--r));
+        opacity: 0;
+    }
+}
+
+.news-block.wind-blown {
+    animation: windBlow 1.1s cubic-bezier(0.3, 0, 0.6, 1) forwards;
+    animation-delay: var(--wind-delay, 0ms);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@keyframes windBlow {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0);
+        opacity: 1;
+    }
+    12% {
+        transform: translate3d(-12px, -8px, 0) rotate(-1.5deg);
+    }
+    100% {
+        transform: translate3d(var(--wind-x, 120vw), var(--wind-y, -50vh), 0) rotate(var(--wind-rot, 30deg));
+        opacity: 0;
+    }
+}
+
+.news-block.wind-return {
+    animation: windReturn 0.85s cubic-bezier(0.2, 0.75, 0.3, 1) both;
+    animation-delay: calc(var(--wind-delay, 0ms) * 0.4);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@keyframes windReturn {
+    0% {
+        transform: translate3d(var(--wind-x, 120vw), var(--wind-y, -50vh), 0) rotate(var(--wind-rot, 30deg));
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes windFadeOut {
+    to { opacity: 0; }
+}
+
+@keyframes windFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wind-gust {
+        display: none;
+    }
+
+    .news-block.wind-blown {
+        animation: windFadeOut 0.3s forwards;
+    }
+
+    .news-block.wind-return {
+        animation: windFadeIn 0.3s both;
+    }
+}
+
+/* Mobile-only easter egg shortcuts */
+.mobile-eggs {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    z-index: 250;
+    align-items: center;
+    gap: 2px;
+    padding: 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.egg-btn {
+    width: 54px;
+    height: 46px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-dark);
+    font-family: var(--retro-font);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.egg-icon {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.egg-label {
+    font-size: 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
+.egg-btn:hover,
+.egg-btn:active {
+    background: rgba(255, 182, 217, 0.6);
+    transform: translateY(-1px);
+}
+
+.egg-btn:focus-visible {
+    outline: 2px solid #ff1493;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .mobile-eggs {
+        display: flex;
+    }
+
+    .page-wrapper {
+        padding-bottom: 92px;
+    }
+}

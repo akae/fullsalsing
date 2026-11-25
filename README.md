@@ -111,6 +111,15 @@ from `newsStore` through the site's own `createNewsBlock` factory.
 - The ball is `pball.png`; it gets a spin/rotation kick whenever it hits the
   walls, the pepper, or a block
 
+Type **`wind`** anywhere to send a gust across the page. The real salsing
+cards tumble off to the right, a gust of streaks sweeps over the page, and
+then they flutter back after a beat. Reduced-motion users get a simple fade
+instead of the flight.
+
+On mobile, a fixed glass dock at the bottom gives you the three eggs without
+typing: **▦ ASCII**, **🎮 GAME**, **🌬️ WIND**. The buttons use the same
+`MatrixLogo`, `SalsingGameLoader`, and `Wind` APIs as the typed triggers.
+
 ## Design
 
 - **Aesthetic**: Soft gossip magazine — pastel pink, glass-morphism

@@ -11,6 +11,7 @@
     let loading = false;
 
     function start() {
+        if (window.Wind && window.Wind.isBusy()) return;
         if (window.SalsingGame) {
             if (!window.SalsingGame.isOpen()) window.SalsingGame.open();
             return;
@@ -35,6 +36,7 @@
     document.addEventListener('keydown', (event) => {
         if (event.ctrlKey || event.metaKey || event.altKey || event.repeat) return;
         if (window.SalsingGame && window.SalsingGame.isOpen()) return;
+        if (window.Wind && window.Wind.isBusy()) return;
 
         const target = event.target;
         if (target && target.matches && target.matches('input, textarea, select, [contenteditable="true"]')) {
@@ -56,4 +58,9 @@
             start();
         }
     });
+
+    window.SalsingGameLoader = {
+        open: start,
+        isBusy: () => loading
+    };
 })();

@@ -130,7 +130,13 @@ fullsalsing/
 - The ball is `pball.png`; it gets a spin/rotation kick on wall, paddle, and block impacts
 - Overlay/board styles live in `styles.css` under the `game` section; the `.game-card` overrides are at the end so they beat the site's `.news-block` rules
 
-### Pagination
+### "wind" easter egg
+- Typing `wind` blows every real `.news-block` card off the page with a gust overlay and then returns them; it uses per-card CSS variables (`.wind-blown` / `.wind-return`) and a fixed `.wind-gust` streak layer
+- Ignored while the game is open or while a gust is busy; `window.Wind.isBusy()` is checked by `game-loader.js`
+- Reduced-motion falls back to a short fade instead of the flight
+- On mobile, the bottom `.mobile-eggs` dock exposes ASCII/GAME/WIND buttons; `mobile-eggs.js` calls `window.MatrixLogo`, `window.SalsingGameLoader`, and `window.Wind`
+
+### Pagination### Pagination
 - 12 salsings per page (`ITEMS_PER_PAGE` in `script.js`)
 - A compact right-aligned selector sits above the grid (`#pagination-top`), with the full-size one below (`#pagination`)
 - The top bar keeps the current scroll position; the bottom bar scrolls back to the news
