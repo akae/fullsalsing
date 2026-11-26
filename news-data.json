@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🤡 LOSER ALERT: OpenAI Throttles the GPT-6.2 You Just Paid For",
+      "content": "OpenAI merged Chat and Work, and surprise — heavy users now smack into limits 40% faster on Astra, 25% faster on Sol. Sources say power users are rationing prompts like it's wartime. Pay more, get less, call it progress.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+      "id": 126
+    },
+    {
+      "title": "🌶️ EXCLUSIVE: NYT Begs Photogs NOT to Update Photoshop",
+      "content": "The New York Times is telling its photographers to freeze Photoshop in time rather than swallow Adobe's shiny new AI features. Insiders say the paper is terrified a 'generative fill' slip could nuke its credibility. Nothing says trust the newsroom like duct-taping the software to 2024.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+      "id": 125
+    },
+    {
       "title": "💉 BREAKING: 1Password Hacked, Swears Your Vault Is Fine",
       "content": "1Password admits attackers broke into its internal systems but insists customer passwords are totally safe, pinky promise. Rumor has it the irony of a password manager getting breached is not lost on anyone. Nothing says 'trust us' like a mid-week incident blog.",
       "category": "Tech",
