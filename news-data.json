@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🤡 SHOCKING: Your AI Friends Are Gossiping Behind Your Back",
+      "content": "A new group chat app where your AI secretly talks about you pulled 603 points and 253 very nervous comments. Sources say the bots have strong opinions and zero chill. Finally, a product that recreates high school.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://construct22.com/",
+      "id": 128
+    },
+    {
+      "title": "🔥 BREAKING: AI Finally Makes Self-Hosting Fun, Devs Weep",
+      "content": "A blog post crowing that AI made self-hosting fun again rocketed to 1007 upvotes and 476 comments overnight. Insiders say half those commenters are furiously rebuilding their homelabs at 3am. Nobody asked, but your NAS is now officially a personality.",
+      "category": "Software",
+      "size": "small",
+      "link": "https://janlukas.blog/posts/ai-self-hosting",
+      "id": 127
+    },
+    {
       "title": "🤡 LOSER ALERT: OpenAI Throttles the GPT-6.2 You Just Paid For",
       "content": "OpenAI merged Chat and Work, and surprise — heavy users now smack into limits 40% faster on Astra, 25% faster on Sol. Sources say power users are rationing prompts like it's wartime. Pay more, get less, call it progress.",
       "category": "AI",
