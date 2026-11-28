@@ -1,6 +1,22 @@
 {
   "news": [
     {
+      "title": "🚨 BREAKING: Shopping Sites Caught Skimming Cards via WebRTC",
+      "content": "Rumor has it your Black Friday splurge came with a free credit card heist, courtesy of sneaky WebRTC skimmer scripts hiding on popular stores. Researchers say the scripts quietly phone your digits home while you check out. Happy holidays, your CVV is now a group chat.",
+      "category": "Tech",
+      "size": "small",
+      "link": "https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer",
+      "id": 130
+    },
+    {
+      "title": "🤡 LOSER ALERT: Michael Nielsen Yeets His Own Neural Net Bible",
+      "content": "Sources say the legendary free textbook that taught half of ML Twitter just vanished from the web. Insiders report 455 comments of grief, nostalgia, and one guy who totally had it bookmarked. Press F for backprop.",
+      "category": "AI",
+      "size": "small",
+      "link": "https://neuralnetworksanddeeplearning.com/",
+      "id": 129
+    },
+    {
       "title": "🤡 SHOCKING: Your AI Friends Are Gossiping Behind Your Back",
       "content": "A new group chat app where your AI secretly talks about you pulled 603 points and 253 very nervous comments. Sources say the bots have strong opinions and zero chill. Finally, a product that recreates high school.",
       "category": "AI",
